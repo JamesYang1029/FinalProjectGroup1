@@ -1,8 +1,5 @@
 // config/settings.js
-export default {
-    mongoConfig: {
-      serverUrl: "mongodb://localhost:27017/",
-      database: "terrabaseDb"
-    },
-    port: 3000
-  };
+export const mongoConfig = {
+  serverUrl: 'mongodb://localhost:27017/',
+  database: 'terrabaseDB'
+};

@@ -1,9 +1,3 @@
-import { getCryptoScore } from "./data/cryptos.js";
+import { getCryptoScore, getCryptoData, getJustNames, saveSustainabilityToDb, saveFinancialDataToDb } from "./data/cryptos.js";
 
-async function fetchCryptoScore() {
-    const cryptos = ["Bitcoin", "Ethereum", "Solana"];
-    const score = await getCryptoScore(cryptos);
-    console.log("Sustainability Score:", score);
-  }
-  
-  fetchCryptoScore();
+console.log(await saveFinancialDataToDb());

@@ -1,26 +1,31 @@
 // data/cryptos.js
-import connectToDb from "../config/mongoConnections.js";
-import collections from "../config/mongoCollections.js";
+//import connectToDb from "../config/mongoConnections.js";
+import {cryptoRatings, financialData} from "../config/mongoCollections.js";
 import OpenAI from "openai";
 import dotenv from "dotenv";
 dotenv.config();
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-
 export async function getCryptoScore(cryptos) {
+  const openai = new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY,
+  });
   try {
     const completion = await openai.chat.completions.create({
       model: "gpt-4o",
       messages: [
           {
               role: "user",
-              content: `Rank the following cryptos based on sustainability ${cryptos}.`,
+              content: 
+              `Give a 0-10 rating of the following cryptos based on their 
+              relative sustainability with 10 being no environmental harm and 0 being 
+              extreme evironmental harm: ${cryptos}. Also provide a breif explanation of each
+              rating. Output the result in JSON format with the keys "crypto", "score", and 
+              "explaination. Output the result as raw JSON only, without any additional text or formatting. 
+              Do not include Markdown or code block formatting.".`,
           },
       ],
   });
-    let score = completion.choices[0].message.content;
+    let score = JSON.parse(completion.choices[0].message.content);
 
     return score;
   } catch (error) {
@@ -29,6 +34,51 @@ export async function getCryptoScore(cryptos) {
   }
 }
 
+export async function getCryptoData(number) {
+  const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=${number}&page=1&sparkline=false`;
+  const options = {method: 'GET', headers: {accept: 'application/json'}};
+
+  try {
+    const res = await fetch(url, options);
+    const data = await res.json();
+    return data;
+  } catch (err) {
+    console.error('Error fetching crypto data:', err);
+    throw err;
+  }
+}
+
+export async function getJustNames(number) {
+  let data = await getCryptoData(number);
+  let names = data.map(crypto => crypto.name);
+  return names;
+}
+
+export async function saveSustainabilityToDb() {
+  const cryptoRatingsCollection = await cryptoRatings();
+  let cryptos = await getCryptoScore(await getJustNames(5))
+  try {
+    await cryptoRatingsCollection.deleteMany({});
+    await cryptoRatingsCollection.insertMany(cryptos);
+    return("Data saved to database");
+  }
+  catch (e) {
+    console.error(e);
+  }
+}
+
+export async function saveFinancialDataToDb() {
+  const financialDataCollection = await financialData();
+  let cryptos = await getCryptoData(5);
+  try {
+    await financialDataCollection.deleteMany({});
+    await financialDataCollection.insertMany(cryptos);
+    return("Data saved to database");
+  }
+  catch (e) {
+    console.error(e);
+  }
+}
 
 export async function getAllCryptos() {
   const db = await connectToDb();
