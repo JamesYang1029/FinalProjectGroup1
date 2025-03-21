@@ -1,8 +1,5 @@
-// data/index.js
-import * as cryptos from "./data/cryptos.js";
-import * as news from "./data/news.js";
+import * as cryptoDataFunctions from './cryptos.js'; 
+// import newsDataFunctions from './news.js';
 
-export default {
-  cryptos,
-  news
-};
+export const cryptoData = cryptoDataFunctions;
+// export const newsData = newsDataFunctions;

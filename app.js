@@ -1,30 +1,26 @@
-// app.js
-import express from "express";
-import bodyParser from "body-parser";
-import settings from "./config/settings.js";
+import express from 'express';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import configRoutesFunction from './routes/index.js';
 
 const app = express();
+const PORT = 3000;
 
-// Middleware to parse JSON bodies
-app.use(bodyParser.json());
+// Required for __dirname in ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-// Import routes
-import indexRoutes from "./routes/index.js";
-import cryptoRoutes from "./routes/cryptos.js";
-import newsRoutes from "./routes/news.js";
+// Serve static files from the public folder
+app.use(express.static(path.join(__dirname, 'public')));
 
-// Mount routes
-app.use("/", indexRoutes);
-app.use("/api/cryptos", cryptoRoutes);
-app.use("/api/news", newsRoutes);
-
-// Optional: Global error handling middleware
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({ error: "Something went wrong!" });
+// Optional: Serve index.html manually for "/"
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
-app.listen(settings.port, () => {
-  console.log(`Server is running on port ${settings.port}`);
-});
+configRoutesFunction(app);
 
+app.listen(PORT, () => {
+  console.log("We've now got a server!");
+  console.log(`Your routes will be running on http://localhost:${PORT}`);
+});
