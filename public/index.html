@@ -15,7 +15,11 @@
         const list = document.getElementById('crypto-list');
         data.forEach(crypto => {
           const li = document.createElement('li');
+          const a = document.createElement('a');
           li.textContent = `${crypto.crypto}: ${crypto.score}`;
+          a.href = `/main/${crypto.crypto}`;
+          a.textContent = crypto.crypto;
+          li.appendChild(a);
           list.appendChild(li);
         });
       })

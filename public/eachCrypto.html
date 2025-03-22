@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Crypto Detail</title>
+</head>
+<body>
+  <h1 id="crypto-name"></h1>
+  <p id="crypto-description"></p>
+  <p id="crypto-score"></p>
+
+  <script>
+    const cryptoName = window.location.pathname.split('/').pop(); // Get the crypto name from the URL
+    fetch(`/cryptos/${cryptoName}`)
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('crypto-name').textContent = data.name;
+        console.log(data);
+      })
+      .catch(error => {
+        console.error('Error fetching crypto details:', error);
+      });
+  </script>
+</body>
+</html>

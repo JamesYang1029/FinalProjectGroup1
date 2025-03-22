@@ -80,6 +80,12 @@ export async function saveFinancialDataToDb() {
   }
 }
 
+export async function getSpecificListing(name) {
+  const financialDataCollection = await financialData();
+  const crypto = await financialDataCollection.findOne({name: name});
+  return crypto;
+}
+
 // export async function getAllCryptos() {
 //   const db = await connectToDb();
 //   const cryptosCollection = await db.collection(collections.cryptos);

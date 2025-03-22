@@ -1,3 +1,3 @@
-import { getCryptoScore, getCryptoData, getJustNames, saveSustainabilityToDb, saveFinancialDataToDb } from "./data/cryptos.js";
+import { getCryptoScore, getCryptoData, getJustNames, saveSustainabilityToDb, saveFinancialDataToDb, getSpecificListing } from "./data/cryptos.js";
 
-console.log(await saveFinancialDataToDb());
+console.log(await getSpecificListing("Bitcoin"));
