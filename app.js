@@ -1,30 +1,33 @@
-import express from 'express';
-import path from 'path';
-import { fileURLToPath } from 'url';
-import configRoutesFunction from './routes/index.js';
+import express from "express";
+import exphbs from "express-handlebars";
+import path from "path";
+import configRoutes from "./routes/index.js";
 
 const app = express();
 const PORT = 3000;
 
-// Required for __dirname in ES modules
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// Middleware to serve static files
+//app.use("/public", express.static(path.resolve("public")));
+app.use(express.static(path.resolve("public")));
 
-// Serve static files from the public folder
-app.use(express.static(path.join(__dirname, 'public')));
+// Set Handlebars as the templating engine
+app.engine(
+  "hbs",
+  exphbs.engine({
+    defaultLayout: "home",
+    extname: "hbs",
+    layoutsDir: path.resolve("views/layouts"),
+  })
+);
+app.set("view engine", "hbs");
 
-// Optional: Serve index.html manually for "/"
-app.get('/main', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/index.html'));
-});
+// Set views directory
+app.set("views", path.resolve("views"));
 
-app.get('/main/:name', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/eachCrypto.html'));
-});
+// Use routes
+configRoutes(app);
 
-configRoutesFunction(app);
-
+// Start server
 app.listen(PORT, () => {
-  console.log("We've now got a server!");
-  console.log(`Your routes will be running on http://localhost:${PORT}`);
+  console.log(`Server is running at http://localhost:${PORT}`);
 });
