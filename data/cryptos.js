@@ -1,6 +1,7 @@
 // data/cryptos.js
 //import connectToDb from "../config/mongoConnections.js";
 import {cryptoRatings, financialData} from "../config/mongoCollections.js";
+import { getNews } from "./news.js";
 import OpenAI from "openai";
 import dotenv from "dotenv";
 dotenv.config();
@@ -83,7 +84,11 @@ export async function saveFinancialDataToDb() {
 export async function getSpecificListing(name) {
   const financialDataCollection = await financialData();
   const crypto = await financialDataCollection.findOne({name: name});
-  return crypto;
+  const news = await getNews(name);
+  return  {
+    crypto,
+    news
+  };
 }
 
 // export async function getAllCryptos() {

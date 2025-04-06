@@ -20,6 +20,10 @@ const constructorMethod = (app) => {
     res.render('cryptoResearch', { title: 'Crypto Research' });
   });
 
+  app.get('/crypto-details', (req, res) => {
+    res.render('crypto-details', { title: 'Crypto Details' });
+  });
+
   // Screener Route
   app.get('/scanner', (req, res) => {
     res.render('scanner', { title: 'Screener' });

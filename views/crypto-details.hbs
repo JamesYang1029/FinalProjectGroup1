@@ -1,0 +1,55 @@
+<h1 id="crypto-name"></h1>
+<p id="crypto-description"></p>
+<p id="crypto-score"></p>
+<ul id="crypto-news"></ul>
+
+<a href="/">← Back to list</a>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const cryptoName = params.get('name');
+
+  if (cryptoName) {
+    fetch(`/cryptos/${cryptoName}`)
+      .then(res => res.json())
+      .then(data => {
+        const { crypto, news } = data;
+
+        // Set name
+        document.getElementById('crypto-name').textContent = crypto?.name || 'Crypto not found';
+
+        // Set description / current price
+        document.getElementById('crypto-description').textContent =
+          crypto?.current_price
+            ? `Current Price: $${crypto.current_price}`
+            : 'No price data available.';
+
+        document.getElementById('crypto-score').textContent =
+          crypto?.market_cap
+            ? `Market Cap: $${crypto.market_cap}`
+            : 'Market cap not available.';
+
+        const newsList = document.getElementById('crypto-news');
+        if (news && news.length > 0) {
+          news.slice(0, 5).forEach(article => {
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = article.url;
+            a.textContent = article.title;
+            a.target = '_blank';
+            li.appendChild(a);
+            newsList.appendChild(li);
+          });
+        } else {
+          const li = document.createElement('li');
+          li.textContent = 'No recent news available.';
+          newsList.appendChild(li);
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching crypto details:', error);
+      });
+  } else {
+    document.getElementById('crypto-name').textContent = "No crypto selected.";
+  }
+</script>
