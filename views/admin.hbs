@@ -1,0 +1,77 @@
+{{> layout}}
+
+<div class="admin-container">
+  <h1>Admin Dashboard</h1>
+
+  <div class="action-section">
+    <h2>1. Upload JSON File to Seed Database</h2>
+    <form id="upload-json-form" enctype="multipart/form-data">
+      <input type="file" name="file" accept="application/json" required>
+      <button type="submit">Upload JSON</button>
+    </form>
+  </div>
+
+  <div class="action-section">
+    <h2>2. Update Entire Database</h2>
+    <button id="update-db-btn">Update Entire Database</button>
+  </div>
+
+  <div class="action-section">
+    <h2>3. Incremental Update (Latest Data)</h2>
+    <button id="incremental-update-btn">Incremental Update</button>
+  </div>
+
+  <div id="status-message"></div>
+</div>
+
+<script>
+  const uploadForm = document.getElementById('upload-json-form');
+  const updateDbBtn = document.getElementById('update-db-btn');
+  const incrementalUpdateBtn = document.getElementById('incremental-update-btn');
+  const statusMessage = document.getElementById('status-message');
+
+  // Handle JSON file upload
+  uploadForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const formData = new FormData(uploadForm);
+    try {
+      const response = await fetch('/admin/upload-json', {
+        method: 'POST',
+        body: formData
+      });
+
+      const data = await response.json();
+      statusMessage.textContent = data.message;
+    } catch (error) {
+      statusMessage.textContent = 'Error uploading JSON file.';
+    }
+  });
+
+  // Handle update entire database
+  updateDbBtn.addEventListener('click', async () => {
+    try {
+      const response = await fetch('/admin/update-database', {
+        method: 'POST'
+      });
+
+      const data = await response.json();
+      statusMessage.textContent = data.message;
+    } catch (error) {
+      statusMessage.textContent = 'Error updating database.';
+    }
+  });
+
+  // Handle incremental update
+  incrementalUpdateBtn.addEventListener('click', async () => {
+    try {
+      const response = await fetch('/admin/incremental-update', {
+        method: 'POST'
+      });
+
+      const data = await response.json();
+      statusMessage.textContent = data.message;
+    } catch (error) {
+      statusMessage.textContent = 'Error performing incremental update.';
+    }
+  });
+</script>
