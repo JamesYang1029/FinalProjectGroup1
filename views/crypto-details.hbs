@@ -1,9 +1,15 @@
 <h1 id="crypto-name"></h1>
+<h4>Sustainability Info</h4>
+<p id="crypto-sustainability"></p>
+<p id="sustainability-description"></p>
+<h4>Financial Data</h4>
 <p id="crypto-description"></p>
 <p id="crypto-score"></p>
+<h4>Recent News</h4>
 <ul id="crypto-news"></ul>
 
-<a href="/">← Back to list</a>
+
+<a href="/crypto-research">← Back to list</a>
 
 <script>
   const params = new URLSearchParams(window.location.search);
@@ -13,19 +19,27 @@
     fetch(`/cryptos/${cryptoName}`)
       .then(res => res.json())
       .then(data => {
-        const { crypto, news } = data;
+        const { crypto, news, sustainability } = data;
 
-        // Set name
-        document.getElementById('crypto-name').textContent = crypto?.name || 'Crypto not found';
+        document.getElementById('crypto-name').textContent = crypto.name || 'Crypto not found';
 
-        // Set description / current price
         document.getElementById('crypto-description').textContent =
-          crypto?.current_price
+          crypto.current_price
             ? `Current Price: $${crypto.current_price}`
             : 'No price data available.';
+        
+        document.getElementById('crypto-sustainability').textContent =
+          sustainability.score
+            ? `Sustainability Score: ${sustainability.score}`
+            : 'Sustainability score not available.';
+
+        document.getElementById('sustainability-description').textContent =
+          sustainability.explanation
+            ? `Sustainability Description: ${sustainability.explanation}`
+            : 'No sustainability description available.';
 
         document.getElementById('crypto-score').textContent =
-          crypto?.market_cap
+          crypto.market_cap
             ? `Market Cap: $${crypto.market_cap}`
             : 'Market cap not available.';
 
@@ -37,6 +51,8 @@
             a.href = article.url;
             a.textContent = article.title;
             a.target = '_blank';
+            li.classList.add('crypto-news-item');
+
             li.appendChild(a);
             newsList.appendChild(li);
           });

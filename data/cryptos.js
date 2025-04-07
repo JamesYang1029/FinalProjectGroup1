@@ -17,15 +17,23 @@ export async function getCryptoScore(cryptos) {
           {
               role: "user",
               content: 
-              `Give a 0-10 rating of the following cryptos based on their 
-              relative sustainability with 10 being no environmental harm and 0 being 
-              extreme evironmental harm: ${cryptos}. Also provide a breif explanation of each
-              rating. Output the result in JSON format with the keys "crypto", "score", and 
-              "explaination. Output the result as raw JSON only, without any additional text or formatting. 
-              Do not include Markdown or code block formatting.".`,
+              `For the following cryptocurrencies: ${cryptos}, provide a 0-10 sustainability rating for each, where 10 means no environmental harm and 0 means extreme environmental harm. Include a brief explanation for each rating.
+              
+              Output the result as a valid JSON array with the following structure:
+              [
+                {
+                  "crypto": "CryptoName",
+                  "score": 0-10,
+                  "explanation": "Brief explanation of the rating."
+                },
+                ...
+              ]
+              
+              Do not include any additional text, Markdown, or formatting. Only output the raw JSON array.`,
           },
       ],
   });
+    console.log("Raw OpenAI Response:", completion.choices[0].message.content);
     let score = JSON.parse(completion.choices[0].message.content);
 
     return score;
@@ -55,9 +63,9 @@ export async function getJustNames(number) {
   return names;
 }
 
-export async function saveSustainabilityToDb() {
+export async function saveSustainabilityToDb(number) {
   const cryptoRatingsCollection = await cryptoRatings();
-  let cryptos = await getCryptoScore(await getJustNames(5))
+  let cryptos = await getCryptoScore(await getJustNames(number))
   try {
     await cryptoRatingsCollection.deleteMany({});
     await cryptoRatingsCollection.insertMany(cryptos);
@@ -68,9 +76,9 @@ export async function saveSustainabilityToDb() {
   }
 }
 
-export async function saveFinancialDataToDb() {
+export async function saveFinancialDataToDb(number) {
   const financialDataCollection = await financialData();
-  let cryptos = await getCryptoData(5);
+  let cryptos = await getCryptoData(number);
   try {
     await financialDataCollection.deleteMany({});
     await financialDataCollection.insertMany(cryptos);
@@ -85,9 +93,14 @@ export async function getSpecificListing(name) {
   const financialDataCollection = await financialData();
   const crypto = await financialDataCollection.findOne({name: name});
   const news = await getNews(name);
+  const cryptoRatingsCollection = await cryptoRatings();
+  const sustainability = await cryptoRatingsCollection.findOne({
+    crypto: { $regex: new RegExp(`^${name}$`, 'i') }
+  });
   return  {
     crypto,
-    news
+    news,
+    sustainability
   };
 }
 

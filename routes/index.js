@@ -34,6 +34,10 @@ const constructorMethod = (app) => {
     res.render('paperTrading', { title: 'Paper Trading' });
   });
 
+  app.get('/about', (req, res) => {
+    res.render('about', { title: 'about' });
+  });
+
   // Admin Panel
   app.get('/admin', (req, res) => {
     res.render('admin', { title: 'Admin Panel' });
