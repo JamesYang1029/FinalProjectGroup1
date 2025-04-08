@@ -35,6 +35,7 @@ export async function getCryptoScore(cryptos) {
   });
     console.log("Raw OpenAI Response:", completion.choices[0].message.content);
     let score = JSON.parse(completion.choices[0].message.content);
+    
 
     return score;
   } catch (error) {
