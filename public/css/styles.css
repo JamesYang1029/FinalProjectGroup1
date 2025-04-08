@@ -201,3 +201,41 @@
     }
   }
   
+  /* Crypto List Styles */
+  .crypto-item {
+    margin-bottom: 10px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    list-style: none;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+  }
+  
+  .crypto-item:hover {
+    background-color: #e3f2fd;
+  }
+  
+  .crypto-item a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+  }
+
+  .crypto-news-item {
+    margin-bottom: 10px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    list-style: none;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+  }
+
+  h4 {
+    margin-bottom: 10px;
+    margin-top: 10px;
+
+  }

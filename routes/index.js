@@ -20,6 +20,10 @@ const constructorMethod = (app) => {
     res.render('cryptoResearch', { title: 'Crypto Research' });
   });
 
+  app.get('/crypto-details', (req, res) => {
+    res.render('crypto-details', { title: 'Crypto Details' });
+  });
+
   // Screener Route
   app.get('/scanner', (req, res) => {
     res.render('scanner', { title: 'Screener' });
@@ -28,6 +32,10 @@ const constructorMethod = (app) => {
   // Paper Trading Route
   app.get('/paper-trading', (req, res) => {
     res.render('paperTrading', { title: 'Paper Trading' });
+  });
+
+  app.get('/about', (req, res) => {
+    res.render('about', { title: 'about' });
   });
 
   // Admin Panel
