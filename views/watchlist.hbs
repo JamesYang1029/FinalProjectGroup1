@@ -1,0 +1,40 @@
+<!-- views/watchlist.hbs -->
+<section class="page-container">
+  <h1>📈 Your Watchlist</h1>
+
+  {{#if watchlist.length}}
+    <p><strong>Portfolio Sustainability Score:</strong> {{averageScore}}</p>
+    <ul>
+      {{#each watchlist}}
+        <li>
+          <strong>{{this.name}}</strong> ({{this.symbol}}) - Score: {{this.sustainabilityScore}}
+          <button class="remove-watchlist-btn" data-id="{{this._id}}">Remove</button>
+        </li>
+      {{/each}}
+    </ul>
+  {{else}}
+    <p>You haven't added any cryptocurrencies to your watchlist yet.</p>
+  {{/if}}
+  <p id="remove-msg" style="color: green;"></p>
+</section>
+
+<script>
+  document.querySelectorAll('.remove-watchlist-btn').forEach(button => {
+    button.addEventListener('click', async (e) => {
+      const id = e.target.dataset.id;
+      try {
+        const res = await fetch(`/watchlist/remove/${id}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' }
+        });
+        if (res.ok) {
+          location.reload();
+        } else {
+          document.getElementById('remove-msg').textContent = 'Failed to remove crypto from watchlist.';
+        }
+      } catch (err) {
+        document.getElementById('remove-msg').textContent = 'Request error.';
+      }
+    });
+  });
+</script>
