@@ -1,77 +1,82 @@
-{{> layout}}
+<section class="update-section">
+  <h2>Admin Page</h2>
 
-<div class="admin-container">
-  <h1>Admin Dashboard</h1>
+  {{#if successMessage}}
+    <div class="success-message">{{successMessage}}</div>
+  {{/if}}
 
-  <div class="action-section">
-    <h2>1. Upload JSON File to Seed Database</h2>
-    <form id="upload-json-form" enctype="multipart/form-data">
-      <input type="file" name="file" accept="application/json" required>
-      <button type="submit">Upload JSON</button>
-    </form>
-  </div>
+  {{#if errorMessage}}
+    <div class="error-message">{{errorMessage}}</div>
+  {{/if}}
 
-  <div class="action-section">
-    <h2>2. Update Entire Database</h2>
-    <button id="update-db-btn">Update Entire Database</button>
-  </div>
+  <form id="updateForm" action="/admin" method="POST" enctype="multipart/form-data" class="update-form">
+    <div class="form-group">
+      <label for="updateMethod">Choose update method:</label>
+      <select id="updateMethod" name="updateMethod" required>
+        <option value="" disabled selected>Select an option</option>
+        <option value="manual">Manual Update</option>
+        <option value="api">API Update</option>
+      </select>
+    </div>
 
-  <div class="action-section">
-    <h2>3. Incremental Update (Latest Data)</h2>
-    <button id="incremental-update-btn">Incremental Update</button>
-  </div>
+    <div id="apiOptions" class="form-group hidden">
+      <label for="updateMode">Choose update mode:</label>
+      <select id="updateMode" name="updateMode">
+        <option value="incremental">Incremental</option>
+        <option value="full">Full</option>
+      </select>
 
-  <div id="status-message"></div>
-</div>
 
-<script>
-  const uploadForm = document.getElementById('upload-json-form');
-  const updateDbBtn = document.getElementById('update-db-btn');
-  const incrementalUpdateBtn = document.getElementById('incremental-update-btn');
-  const statusMessage = document.getElementById('status-message');
+    </div>
 
-  // Handle JSON file upload
-  uploadForm.addEventListener('submit', async (event) => {
-    event.preventDefault();
-    const formData = new FormData(uploadForm);
-    try {
-      const response = await fetch('/admin/upload-json', {
-        method: 'POST',
-        body: formData
-      });
+    <div id="manualOptions" class="form-group hidden">
+      <label for="jsonFile">Upload JSON file:</label>
+      <input type="file" id="jsonFile" name="jsonFile" accept=".json" />
+      <p class="note">Only files with correct structure will be accepted.</p>
+      
+      <div class="info-box">
+        <strong>API Example:</strong>
+        <code>https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false</code>
+      </div>
 
-      const data = await response.json();
-      statusMessage.textContent = data.message;
-    } catch (error) {
-      statusMessage.textContent = 'Error uploading JSON file.';
-    }
-  });
+      <div class="sample-json">
+        <h4>Sample JSON format:</h4>
+        <pre><code>[
+  {
+    "id": "bitcoin",
+    "symbol": "btc",
+    "name": "Bitcoin",
+    "image": "https://coin-images.coingecko.com/coins/images/1/large/bitcoin.png?1696501400",
+    "current_price": 83446,
+    "market_cap": 1656759954192,
+    "market_cap_rank": 1,
+    "fully_diluted_valuation": 1656762291077,
+    "total_volume": 28617618534,
+    "high_24h": 85732,
+    "low_24h": 83197,
+    "price_change_24h": -1869.07,
+    "price_change_percentage_24h": -2.19,
+    "market_cap_change_24h": -35224528531,
+    "market_cap_change_percentage_24h": -2.08,
+    "circulating_supply": 19850903,
+    "total_supply": 19850931,
+    "max_supply": 21000000,
+    "ath": 108786,
+    "ath_change_percentage": -23.24,
+    "ath_date": "2025-01-20T09:11:54.494Z",
+    "atl": 67.81,
+    "atl_change_percentage": 123035.87,
+    "atl_date": "2013-07-06T00:00:00.000Z",
+    "roi": null,
+    "last_updated": "2025-04-13T23:46:54.606Z"
+  }
+]</code></pre>
+      </div>
+    </div>
 
-  // Handle update entire database
-  updateDbBtn.addEventListener('click', async () => {
-    try {
-      const response = await fetch('/admin/update-database', {
-        method: 'POST'
-      });
+    <button type="submit" class="btn">Run Update</button>
+  </form>
+</section>
 
-      const data = await response.json();
-      statusMessage.textContent = data.message;
-    } catch (error) {
-      statusMessage.textContent = 'Error updating database.';
-    }
-  });
-
-  // Handle incremental update
-  incrementalUpdateBtn.addEventListener('click', async () => {
-    try {
-      const response = await fetch('/admin/incremental-update', {
-        method: 'POST'
-      });
-
-      const data = await response.json();
-      statusMessage.textContent = data.message;
-    } catch (error) {
-      statusMessage.textContent = 'Error performing incremental update.';
-    }
-  });
-</script>
+<!-- External JS -->
+<script src="../public/js/admin.js"></script>
