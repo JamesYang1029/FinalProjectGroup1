@@ -1,0 +1,25 @@
+<section class="page-container">
+  <h1>About</h1>
+  <p>,,,,</p>
+
+  <script>
+    fetch('/cryptos')
+      .then(res => res.json())
+      .then(data => {
+        const list = document.getElementById('crypto-list');
+        data.forEach(crypto => {
+          const li = document.createElement('li');
+          li.classList.add('crypto-item');
+          const a = document.createElement('a');
+          a.textContent = `${crypto.crypto}: ${crypto.score}`;
+          a.href = `/crypto-details?name=${crypto.crypto}`;
+
+          li.appendChild(a);
+          list.appendChild(li);
+        });
+      })
+      .catch(error => {
+        console.error('Error fetching cryptos:', error);
+      });
+</script>
+</section>
