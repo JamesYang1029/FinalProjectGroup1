@@ -20,4 +20,4 @@ NOTE: YOU WILL NEED TO CHANGE THE CODE BELOW TO HAVE THE COLLECTION(S) REQUIRED 
 export const cryptoRatings = getCollectionFn('cryptoRatings');
 export const financialData = getCollectionFn('financialData');
 export const newsData = getCollectionFn('newsData');
-export const offsetData = getCollectionFn('offsetData');
+export const users = getCollectionFn('users');

@@ -1,6 +1,7 @@
 <section class="page-container">
   <h1>🔐 Login</h1>
-  <form action="/login" method="POST" class="login-form">
+    <form id="loginForm" action="/login" method="POST" class="login-form">
+
     <label for="username">Username</label>
     <input type="text" id="username" name="username" required />
 
@@ -9,7 +10,41 @@
 
     <button type="submit">Login</button>
   </form>
-  <div class="placeholder">
-    <p>Login functionality coming soon...</p>
-  </div>
+  <p class="form-footer">
+    Don’t have an account? <a href="/register">Register here</a>
+  </p>
+  <p id="error" class="error">{{error}}</p>
 </section>
+
+<script>
+  document.getElementById('loginForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value;
+    const errorDisplay = document.getElementById('error');
+    errorDisplay.textContent = '';
+
+    if (!username || !password) {
+      errorDisplay.textContent = 'Both fields are required.';
+      return;
+    }
+
+    try {
+      const response = await fetch('/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({ username, password })
+      });
+
+      if (response.redirected) {
+        window.location.href = response.url;
+      } else {
+        const text = await response.text();
+        document.open(); document.write(text); document.close();
+      }
+    } catch (err) {
+      errorDisplay.textContent = 'Login failed. Please try again.';
+    }
+  });
+</script>

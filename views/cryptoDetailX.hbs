@@ -1,0 +1,237 @@
+<h1>{{#if name}}{{name}}{{else}}Unknown Name{{/if}} ({{#if symbol}}{{symbol}}{{else}}Unknown Symbol{{/if}})</h1>
+<img src="{{#if image}}{{image}}{{else}}/default-image.jpg{{/if}}" alt="{{#if name}}{{name}}{{else}}Unknown{{/if}} logo" style="width: 100px; margin-bottom: 20px;" />
+
+<!-- Tabs for Sections -->
+<div class="tabs">
+  <button class="tab-btn active" data-tab="overview">Overview</button>
+  <button class="tab-btn" data-tab="price">Price Details</button>
+  <button class="tab-btn" data-tab="market">Market Info</button>
+  <button class="tab-btn" data-tab="supply">Supply & Valuation</button>
+  <button class="tab-btn" data-tab="alltime">All-Time Stats</button>
+  <button class="tab-btn" data-tab="change">Change Metrics</button>
+</div>
+
+<!-- Overview Tab -->
+<div class="tab-content active" id="overview">
+  <div class="info-row">
+    <div class="info-label">Symbol:</div>
+    <div class="info-value">{{#if symbol}}{{symbol}}{{else}}Unknown Symbol{{/if}}</div>
+  </div>
+  <div class="info-row">
+    <div class="info-label">Current Price:</div>
+    <div class="info-value">${{#if current_price}}{{current_price}}{{else}}0.00{{/if}}</div>
+  </div>
+  <div class="info-row">
+    <div class="info-label">Market Cap Rank:</div>
+    <div class="info-value">{{#if market_cap_rank}}{{market_cap_rank}}{{else}}N/A{{/if}}</div>
+  </div>
+  <div class="info-row">
+    <div class="info-label">Market Cap:</div>
+    <div class="info-value">${{#if market_cap}}{{market_cap}}{{else}}0.00{{/if}}</div>
+  </div>    
+  <div class="info-row">
+    <div class="info-label">Last Updated:</div>
+    <div class="info-value">{{#if last_updated}}{{last_updated}}{{else}}Unknown Last Updated{{/if}}</div>
+  </div>
+</div>
+
+<!-- Price Details Tab -->
+<div class="tab-content" id="price">
+  <div class="info-row">
+    <div class="info-label">Current Price:</div>
+    <div class="info-value">${{#if current_price}}{{current_price}}{{else}}0.00{{/if}}</div>
+  </div>
+  <div class="info-row">
+    <div class="info-label">24h High:</div>
+    <div class="info-value">${{#if high_24h}}{{high_24h}}{{else}}0.00{{/if}}</div>
+  </div>
+  <div class="info-row">
+    <div class="info-label">24h Low:</div>
+    <div class="info-value">${{#if low_24h}}{{low_24h}}{{else}}0.00{{/if}}</div>
+  </div>
+</div>
+
+<!-- Market Info Tab -->
+<div class="tab-content" id="market">
+  <div class="info-row">
+    <div class="info-label">Market Cap:</div>
+    <div class="info-value">${{#if market_cap}}{{market_cap}}{{else}}0.00{{/if}}</div>
+  </div>
+  <div class="info-row">
+    <div class="info-label">Market Cap Rank:</div>
+    <div class="info-value">{{#if market_cap_rank}}{{market_cap_rank}}{{else}}N/A{{/if}}</div>
+  </div>
+  <div class="info-row">
+    <div class="info-label">Total Volume:</div>
+    <div class="info-value">${{#if total_volume}}{{total_volume}}{{else}}0.00{{/if}}</div>
+  </div>
+</div>
+
+<!-- Supply & Valuation Tab -->
+<div class="tab-content" id="supply">
+  <div class="info-row">
+    <div class="info-label">Circulating Supply:</div>
+    <div class="info-value">{{#if circulating_supply}}{{circulating_supply}}{{else}}Unknown Supply{{/if}}</div>
+  </div>
+  <div class="info-row">
+    <div class="info-label">Total Supply:</div>
+    <div class="info-value">{{#if total_supply}}{{total_supply}}{{else}}Unknown Supply{{/if}}</div>
+  </div>
+  <div class="info-row">
+    <div class="info-label">Max Supply:</div>
+    <div class="info-value">{{#if max_supply}}{{max_supply}}{{else}}Unknown Supply{{/if}}</div>
+  </div>
+  <div class="info-row">
+    <div class="info-label">Fully Diluted Valuation:</div>
+    <div class="info-value">${{#if fully_diluted_valuation}}{{fully_diluted_valuation}}{{else}}0.00{{/if}}</div>
+  </div>
+</div>
+
+<!-- All-Time Stats Tab -->
+<div class="tab-content" id="alltime">
+  <div class="info-row">
+    <div class="info-label">All-Time High (ATH):</div>
+    <div class="info-value">${{#if ath}}{{ath}}{{else}}0.00{{/if}} on {{#if ath_date}}{{ath_date}}{{else}}Unknown Date{{/if}}</div>
+  </div>
+  <div class="info-row">
+    <div class="info-label">ATH Change %:</div>
+    <div class="info-value">{{#if ath_change_percentage}}{{ath_change_percentage}}{{else}}0%{{/if}}</div>
+  </div>
+  <div class="info-row">
+    <div class="info-label">All-Time Low (ATL):</div>
+    <div class="info-value">${{#if atl}}{{atl}}{{else}}0.00{{/if}} on {{#if atl_date}}{{atl_date}}{{else}}Unknown Date{{/if}}</div>
+  </div>
+  <div class="info-row">
+    <div class="info-label">ATL Change %:</div>
+    <div class="info-value">{{#if atl_change_percentage}}{{atl_change_percentage}}{{else}}0%{{/if}}</div>
+  </div>
+</div>
+
+<!-- Change Metrics Tab -->
+<div class="tab-content" id="change">
+  <div class="info-row">
+    <div class="info-label">Price Change 24h:</div>
+    <div class="info-value">${{#if price_change_24h}}{{price_change_24h}}{{else}}0.00{{/if}}</div>
+  </div>
+  <div class="info-row">
+    <div class="info-label">Price Change % 24h:</div>
+    <div class="info-value">{{#if price_change_percentage_24h}}{{price_change_percentage_24h}}{{else}}0%{{/if}}</div>
+  </div>
+  <div class="info-row">
+    <div class="info-label">Market Cap Change 24h:</div>
+    <div class="info-value">${{#if market_cap_change_24h}}{{market_cap_change_24h}}{{else}}0.00{{/if}}</div>
+  </div>
+  <div class="info-row">
+    <div class="info-label">Market Cap Change % 24h:</div>
+    <div class="info-value">{{#if market_cap_change_percentage_24h}}{{market_cap_change_percentage_24h}}{{else}}0%{{/if}}</div>
+  </div>
+</div>
+
+<!-- Back Link -->
+<a href="/cryptoDetails" class="back-link">← Back to Crypto List</a>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<style>
+  /* Tabs Container */
+  .tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+  }
+
+  /* Tab Buttons */
+  .tab-btn {
+    padding: 10px 18px;
+    font-size: 16px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 6px 6px 0 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Active Tab Button */
+  .tab-btn.active {
+    background-color: #007BFF;
+    color: white;
+    font-weight: bold;
+    border-bottom: 2px solid white;
+  }
+
+  /* Tab Content Panels */
+  .tab-content {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    background-color: #fff;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  /* Active Tab Content */
+  .tab-content.active {
+    display: block;
+  }
+
+  /* Simple Fade In Animation */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* Optional: Style the back link */
+  .back-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .back-link:hover {
+    text-decoration: underline;
+  }
+
+  /* Info Row Styling */
+  .info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .info-label {
+    font-weight: bold;
+    color: #333;
+    width: 30%;
+    min-width: 120px;
+  }
+
+  .info-value {
+    color: #555;
+    width: 65%;
+    word-break: break-word;
+    text-align: left;
+  }
+</style>
+
+<script>
+  $(document).ready(function () {
+    $('.tab-btn').click(function () {
+      const target = $(this).data('tab');
+
+      // Toggle active tab button
+      $('.tab-btn').removeClass('active');
+      $(this).addClass('active');
+
+      // Show corresponding content
+      $('.tab-content').removeClass('active');
+      $('#' + target).addClass('active');
+    });
+  });
+</script>

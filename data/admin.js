@@ -6,15 +6,14 @@ import { ObjectId } from 'mongodb';
 
 export async function apiUpdate(mode = 'full') {
   const cryptoCollection = await cryptoRatings();
-  const dbCryptos = await cryptoCollection.find().toArray(); // Get all cryptos from DB
+  const dbCryptos = await cryptoCollection.find().toArray();
   const dbCount = dbCryptos.length;
 
   let cryptos = [];
   let page = 1;
   const perPage = 25;
-  
-  // Loop through pages until all records are fetched from the API
-  while (cryptos.length < dbCount) {
+
+  while (true) {
     const response = await axios.get(
       'https://api.coingecko.com/api/v3/coins/markets',
       {
@@ -28,94 +27,97 @@ export async function apiUpdate(mode = 'full') {
       }
     );
 
-    if (!Array.isArray(response.data)) throw 'Invalid API response format';
+    if (!Array.isArray(response.data)) throw new Error('Invalid API response format');
 
-    cryptos = cryptos.concat(response.data);  // Accumulate the response data
+    cryptos = cryptos.concat(response.data);
     page++;
-    
-    if (response.data.length < perPage) {
-      break;  // Exit the loop if fewer records are returned than requested (end of API data)
-    }
+
+    if (response.data.length < perPage) break;
   }
 
   const validCryptos = validateCryptoData(cryptos);
 
   if (mode === 'full') {
-    // Full mode: Clear the collection and insert all valid cryptos
-    await cryptoCollection.deleteMany({});
-    await cryptoCollection.insertMany(validCryptos);
-  } else if (mode === 'incremental') {
+    if (validCryptos.length > 0) {
+      await cryptoCollection.deleteMany({});
+      await cryptoCollection.insertMany(validCryptos);
+    }
+    return { inserted: validCryptos.length };
+  }
+
+  if (mode === 'incremental') {
     const updated = [];
-    const skipped = [];
+    const inserted = [];
 
-    // Update or insert the cryptos
     for (const crypto of validCryptos) {
-      const existingCrypto = dbCryptos.find(c => c.id === crypto.id);
+      const existing = dbCryptos.find(c => c.id === crypto.id);
+      const { _id, ...cryptoWithoutId } = crypto;
 
-      if (existingCrypto) {
-        // Exclude the _id from the update to avoid modifying it
-        const { _id, ...cryptoWithoutId } = crypto;
-
-        // Update the existing record in DB, without modifying _id
+      if (existing) {
         await cryptoCollection.updateOne(
           { id: crypto.id },
           { $set: cryptoWithoutId }
         );
-        updated.push(crypto.id);  // Track updated records
+        updated.push(crypto.id);
       } else {
-        // Insert new record into DB
         await cryptoCollection.insertOne(crypto);
-        skipped.push(crypto.id);  // Track new records added
+        inserted.push(crypto.id);
       }
     }
 
     return {
       mode: 'incremental',
       updated: updated.length,
-      skipped: skipped.length,
-      skippedIds: skipped
+      inserted: inserted.length,
+      insertedIds: inserted
     };
-  } else {
-    throw 'Invalid update mode. Must be "full" or "incremental".';
   }
 
-  return { inserted: validCryptos.length };
+  throw new Error('Invalid update mode. Must be "full" or "incremental".');
 }
 
 export async function manualUpdateFromFile(filePath, mode = 'full') {
   const cryptoCollection = await cryptoRatings();
+  let fileData;
 
+  try {
+    fileData = await fs.readFile(filePath, 'utf-8');
+  } catch {
+    throw new Error('Unable to read file or file not found.');
+  }
 
-  const fileData = await fs.readFile(filePath, 'utf-8');
   let jsonData;
   try {
     jsonData = JSON.parse(fileData);
-  } catch (e) {
-    throw 'Invalid JSON format.';
+  } catch {
+    throw new Error('Invalid JSON format.');
   }
 
-  if (!Array.isArray(jsonData)) throw 'JSON must be an array of objects.';
+  if (!Array.isArray(jsonData)) throw new Error('JSON must be an array of objects.');
 
-  const validCryptos = validateCryptoData(jsonData, mode === 'full');
+  const validCryptos = validateCryptoData(jsonData);
 
   if (mode === 'full') {
-    await cryptoCollection.deleteMany({});
-    await cryptoCollection.insertMany(validCryptos);
-  } else if (mode === 'incremental') {
+    if (validCryptos.length > 0) {
+      await cryptoCollection.deleteMany({});
+      await cryptoCollection.insertMany(validCryptos);
+    }
+    return { inserted: validCryptos.length };
+  }
+
+  if (mode === 'incremental') {
     for (const crypto of validCryptos) {
       const { _id, ...cryptoWithoutId } = crypto;
-
       await cryptoCollection.updateOne(
         { id: crypto.id },
         { $set: cryptoWithoutId },
         { upsert: true }
       );
     }
-  } else {
-    throw 'Invalid update mode. Must be "full" or "incremental".';
+    return { processed: validCryptos.length };
   }
 
-  return { processed: validCryptos.length };
+  throw new Error('Invalid update mode. Must be "full" or "incremental".');
 }
 
 function validateCryptoData(data) {
@@ -130,13 +132,13 @@ function validateCryptoData(data) {
   return data.map((crypto, idx) => {
     for (const field of requiredFields) {
       if (!(field in crypto)) {
-        throw `Missing field '${field}' in crypto object at index ${idx}`;
+        throw new Error(`Missing field '${field}' in crypto object at index ${idx}`);
       }
     }
 
     return {
       ...crypto,
-      _id: new ObjectId() // Only used on initial insert
+      _id: new ObjectId()
     };
   });
 }

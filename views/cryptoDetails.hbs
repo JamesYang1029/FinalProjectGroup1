@@ -1,0 +1,124 @@
+<section>
+<h1>Top Cryptocurrencies</h1>
+
+<div class="crypto-grid">
+  {{#each cryptos}}
+    <div class="crypto-tile" data-id="{{id}}">
+      <img src="{{image}}" alt="{{name}} logo" />
+      <h2>{{name}} ({{symbol}})</h2>
+      <p>Price: ${{current_price}}</p>
+      <p>Market Cap: ${{market_cap}}</p>
+      <button class="view-detail" data-id="{{id}}">View Details</button>
+    </div>
+  {{/each}}
+</div>
+
+<div class="pagination">
+  {{#if hasPrev}}
+    <a href="/cryptoDetails?page={{prevPage}}">Previous</a>
+  {{/if}}
+
+  <span>Page {{currentPage}}</span>
+
+  {{#if hasNext}}
+    <a href="/cryptoDetails?page={{nextPage}}">Next</a>
+  {{/if}}
+</div>
+
+<!-- Modal for Crypto Details -->
+<div id="crypto-detail-overlay" class="overlay hidden">
+  <div class="popup" role="dialog" aria-modal="true">
+    <span class="close-btn" title="Close">&times;</span>
+    <div id="crypto-detail-container"></div>
+  </div>
+</div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  function attachHandlers() {
+    $('.view-detail').on('click', async function () {
+      const id = $(this).data('id');
+      try {
+        const data = await $.ajax(`/cryptoDetails/${id}`);
+        $('#crypto-detail-container').html(`
+          <h2>${data.name} (${data.symbol.toUpperCase()})</h2>
+          <img src="${data.image}" alt="${data.name} logo" style="width: 80px; margin-bottom: 12px;" />
+          <p><strong>Current Price:</strong> $${data.current_price.toLocaleString()}</p>
+          <p><strong>Market Cap:</strong> $${data.market_cap.toLocaleString()}</p>
+          <p><strong>ATH:</strong> $${data.ath} (${new Date(data.ath_date).toDateString()})</p>
+          <p><strong>ATL:</strong> $${data.atl} (${new Date(data.atl_date).toDateString()})</p>
+          <p><strong>24h High:</strong> $${data.high_24h}</p>
+          <p><strong>24h Low:</strong> $${data.low_24h}</p>
+          <p><strong>Circulating Supply:</strong> ${data.circulating_supply.toLocaleString()}</p>
+          <a href="/cryptoDetails/X/${id}" target="_blank" class="full-detail-link">More Details →</a>
+        `);
+        $('#crypto-detail-overlay').removeClass('hidden');
+      } catch (error) {
+        $('#crypto-detail-container').html(`<p class="error">Error loading details. Please try again later.</p>`);
+        $('#crypto-detail-overlay').removeClass('hidden');
+      }
+    });
+
+    // Close the modal when clicking close button or outside the popup
+    $('.close-btn, #crypto-detail-overlay').on('click', function (e) {
+      if (e.target.className === 'close-btn' || e.target.id === 'crypto-detail-overlay') {
+        $('#crypto-detail-overlay').addClass('hidden');
+        $('#crypto-detail-container').html('');
+      }
+    });
+  }
+
+  $(document).ready(function () {
+    attachHandlers();
+  });
+</script>
+
+<style>
+ .overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.hidden {
+  display: none;
+}
+
+.popup {
+  background-color: #fff;
+  padding: 24px 32px;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.full-detail-link {
+  display: inline-block;
+  margin-top: 12px;
+  color: #1e88e5;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.full-detail-link:hover {
+  text-decoration: underline;
+}
+</style>
