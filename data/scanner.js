@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 // data/scanner.js
 import { cryptoRatings } from '../config/mongoCollections.js';
 
@@ -56,24 +55,4 @@ export const getFilteredCryptos = async ({
     totalPages,
     total: totalCryptos  // Optional if you want to use it on frontend
   };
-=======
-import { cryptoRatings } from '../config/mongoCollections.js';
-import { dbConnection } from '../config/mongoConnections.js';
-
-/**
- * Fetches all stored crypto data, optionally filtered by asset name.
- * @param {string} name (optional) - Filter results by asset name
- */
-export const getAllCryptoData = async (name = "") => {
-  const db = await dbConnection();
-  const cryptoInfoCollection = await cryptoRatings();
-
-  // If there's a search query, filter by name using regex (case-insensitive)
-  let query = name ? { name: new RegExp(name, "i") } : {};
-
-  // Fetch all cryptos matching the query
-  const cryptos = await cryptoInfoCollection.find(query).toArray();
-
-  return cryptos;
->>>>>>> Stashed changes
 };

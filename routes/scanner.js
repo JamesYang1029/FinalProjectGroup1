@@ -1,5 +1,4 @@
 import express from 'express';
-<<<<<<< Updated upstream
 import { getFilteredCryptos } from '../data/scanner.js';
 
 const router = express.Router();
@@ -54,24 +53,4 @@ router.get('/scannerTable', async (req, res) => {
   });
   
 
-=======
-import { getAllCryptoData } from '../data/scanner.js';
-const router = express.Router();
-
-// Route to get all cryptocurrencies with search functionality
-router.get('/', async (req, res) => {
-  try {
-    const searchQuery = req.query.search || '';  // Get search query from the URL
-    const cryptos = await getAllCryptoData(searchQuery);  // Pass searchQuery to filter if provided
-    res.render('scanner', {
-      title: 'Screener',
-      cryptos,
-      searchQuery
-    });
-  } catch (e) {
-    res.status(500).render('error', { title: 'Error', error: e.message });
-  }
-});
-
->>>>>>> Stashed changes
 export default router;

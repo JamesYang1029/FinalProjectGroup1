@@ -1,31 +1,22 @@
-<<<<<<< Updated upstream
 // routes/cryptos.js
 import express from "express";
 import { getCryptoScore, getCryptoData, getJustNames, saveSustainabilityToDb, saveFinancialDataToDb, getSpecificListing } from "../data/cryptos.js";
 import { getNews } from "../data/news.js";
 import { cryptoRatings } from "../config/mongoCollections.js";
-=======
-import express from 'express';
-import { getAllCryptoData } from '../data/cryptos.js';
->>>>>>> Stashed changes
 const router = express.Router();
 
-// Route to get all cryptos or search by name
-router.get('/', async (req, res) => {
+// GET /api/cryptos - Return a ranked list of cryptocurrencies by sustainability score
+router.get("/", 
+  async (req, res) => {
   try {
-    const searchQuery = req.query.search || '';  // Get search query from the URL
-    const cryptos = await getAllCryptoData(searchQuery);  // Pass searchQuery to filter if provided
-    res.render('scanner', {
-      title: 'Crypto Screener',
-      cryptos,
-      searchQuery
-    });
-  } catch (e) {
-    res.status(500).render('error', { title: 'Error', error: e.message });
+    const cryptosRatingCollection = await cryptoRatings();
+    const cryptos = await cryptosRatingCollection.find({}).toArray();
+    res.json(cryptos);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to fetch cryptocurrencies" });
   }
 });
 
-<<<<<<< Updated upstream
 
 router.get("/:name", async (req, res) => {
   const name = req.params.name;
@@ -51,6 +42,3 @@ router.get("/:name", async (req, res) => {
 // });
 
 export default router;
-=======
-export default router;
->>>>>>> Stashed changes
