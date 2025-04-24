@@ -3,7 +3,7 @@ import adminRoutes from './admin.js';
 import scannerRoutes from './scanner.js';
 import path from 'path';
 import { static as staticDir } from 'express';
-//import cryptoDetailsRoute from './cryptoDetails.js';
+import cryptoDetailsRoute from './cryptoDetails.js';
 
 
 const constructorMethod = (app) => {
@@ -18,7 +18,7 @@ const constructorMethod = (app) => {
     res.render('news', { title: 'Crypto News' });
   });
   
-  // app.use('/crypto-details', cryptoDetailsRoute);
+  app.use('/crypto-details', cryptoDetailsRoute);
 
   // Crypto Research Route
   app.get('/crypto-research', (req, res) => {

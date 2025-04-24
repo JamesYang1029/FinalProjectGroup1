@@ -5,16 +5,109 @@
 <h4>Financial Data</h4>
 <p id="crypto-description"></p>
 <p id="crypto-score"></p>
+<p id="crypto-history"></p>
+<canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+<p id = "error-message"></p>
+
 <h4>Recent News</h4>
 <ul id="crypto-news"></ul>
 
-
 <a href="/crypto-research">← Back to list</a>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
 <script>
   const params = new URLSearchParams(window.location.search);
   const cryptoName = params.get('name');
+  let cryptoNameLower = cryptoName.toLowerCase();
+  if (cryptoNameLower.trim().split(' ').length > 1) {
+    cryptoNameLower = cryptoNameLower.split(' ').join('-');
+  }
+  if (cryptoNameLower.includes(')')) {
+    cryptoNameLower = cryptoNameLower.replace(')', '');
+  }
+  if (cryptoNameLower.includes('(')) {
+    cryptoNameLower = cryptoNameLower.replace('(', '');
+  }
 
+  $.ajax({
+    url: `https://api.coingecko.com/api/v3/simple/price`,
+    method: "GET",
+    data: {
+      vs_currencies: "usd",
+      ids: cryptoNameLower,
+    },
+    success: function (response) {
+      try {
+      const price = response[cryptoNameLower].usd;
+      document.getElementById('crypto-description').textContent = `Current Price: $${price}`;
+      } catch (error) {
+        document.getElementById('crypto-description').textContent = "No price data available.";
+      }
+    },
+    error: function (xhr, status, error) {
+      document.getElementById('crypto-description').textContent = "No price data available.";
+    }
+  })
+
+  $.ajax({
+      url: `https://api.coingecko.com/api/v3/coins/${cryptoNameLower}/market_chart`,
+      method: "GET",
+      data: {
+        vs_currency: "usd",
+        days: 30,
+        interval: "daily"
+      },
+      success: function (response) {
+        let output = '';
+        let xaxis = [];
+        let yaxis = [];
+        response.prices.forEach(([timestamp, price]) => {
+          const date = new Date(timestamp).toLocaleDateString();
+          xaxis.push(date);
+          yaxis.push(price);
+          output += `${date}: $${price.toFixed(2)}\n`;
+        });
+
+        new Chart("myChart", {
+          type: "line",
+          data: {
+            labels: xaxis,
+            datasets: [{
+              label: `${cryptoName} Price in USD`,
+              backgroundColor: "rgba(0,0,255,0.1)",
+              borderColor: "rgba(0,0,255,1.0)",
+              data: yaxis,
+              fill: true
+            }]
+          },
+          options: {
+            responsive: true,
+            scales: {
+              y: {
+                beginAtZero: false,
+                display: false
+              },
+              x: {
+                display: false
+              }
+            }
+          }
+        });
+
+        //$('#crypto-history').text(output);
+      },
+      error: function (xhr, status, error) {
+        if (xhr.status === 429) {
+          console.warn("Rate limit exceeded:", xhr.responseText);
+        } else {
+          console.error("AJAX Error:", error);
+          document.getElementById("myChart").style.display = "none";
+          document.getElementById("error-message").textContent = "Too many requests on our free-tier api. Please try again in 60 secounds.";
+        }
+      }
+    });
+    
   if (cryptoName) {
     fetch(`/cryptos/${cryptoName}`)
       .then(res => res.json())
@@ -23,10 +116,10 @@
 
         document.getElementById('crypto-name').textContent = crypto.name || 'Crypto not found';
 
-        document.getElementById('crypto-description').textContent =
-          crypto.current_price
-            ? `Current Price: $${crypto.current_price}`
-            : 'No price data available.';
+        //document.getElementById('crypto-description').textContent =
+        //  crypto.current_price
+        //    ? `Current Price: $${crypto.current_price}`
+        //    : 'No price data available.';
         
         document.getElementById('crypto-sustainability').textContent =
           sustainability.score
