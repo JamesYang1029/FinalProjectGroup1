@@ -2,4 +2,4 @@ import { getCryptoScore, getCryptoData, getJustNames, saveSustainabilityToDb, sa
 import { getNews } from "./data/news.js";
 import {cryptoRatings, financialData} from "./config/mongoCollections.js";
 
-console.log(await saveFinancialDataToDb(25));
+console.log(await saveFinancialDataToDb(100));
