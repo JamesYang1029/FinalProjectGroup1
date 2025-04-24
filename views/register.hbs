@@ -1,0 +1,72 @@
+<!-- views/register.hbs -->
+<section class="page-container">
+  <h1>📝 Register</h1>
+
+  <!-- Registration form with POST method to /register -->
+  <form id="registerForm" method="POST" action="/register" class="login-form">
+    
+    <!-- Username input -->
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required minlength="3">
+    <!-- Browser-level validation: required, minimum 3 characters -->
+
+    <!-- Password input -->
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required minlength="6">
+    <!-- Browser-level validation: required, minimum 6 characters -->
+
+    <!-- Submit button -->
+    <button type="submit">Register</button>
+  </form>
+
+  <!-- Link to login page -->
+  <p class="form-footer">
+    Already have an account? <a href="/login">Login here</a>
+  </p>
+
+  <!-- Paragraph to display error messages -->
+  <p id="error" class="error">{{error}}</p>
+</section>
+
+<!-- Client-side JavaScript for AJAX registration -->
+<script>
+  // Listen for form submission
+  document.getElementById('registerForm').addEventListener('submit', async function (e) {
+    e.preventDefault(); // Prevent default form submission (page reload)
+
+    // Get and sanitize user input
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value;
+
+    // Get reference to error message element
+    const errorDisplay = document.getElementById('error');
+    errorDisplay.textContent = ''; // Clear any previous error
+
+    // Basic client-side validation
+    if (!username || username.length < 3 || !password || password.length < 6) {
+      errorDisplay.textContent = 'Username must be at least 3 characters, password at least 6.';
+      return;
+    }
+
+    try {
+      // Send POST request to /register with form data encoded
+      const response = await fetch('/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({ username, password }) // Encode as URL params
+      });
+
+      if (response.redirected) {
+        // If server sends a redirect (i.e., successful registration), follow it
+        window.location.href = response.url;
+      } else {
+        // If registration failed, display returned HTML (likely includes error)
+        const text = await response.text();
+        document.open(); document.write(text); document.close();
+      }
+    } catch (err) {
+      // If request fails (network error or server crash)
+      errorDisplay.textContent = 'Something went wrong. Please try again.';
+    }
+  });
+</script>

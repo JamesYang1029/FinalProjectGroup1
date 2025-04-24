@@ -1,0 +1,33 @@
+{
+  "name": "finalprojectgroup1",
+  "version": "1.0.0",
+  "description": "based on our example code and labs we've done.\r i created this frame with basic code\r it is feature based according to what professor suggested \r i 've done the code frame of our first two core features:\r Main Page\r ● Displays a ranked list of popular cryptocurrencies based on their sustainability score.\r Crypto Sustainability News\r ● Aggregates news from various sources regarding the environmental impact of cryptocurrencies.",
+  "homepage": "https://github.com/JamesYang1029/FinalProjectGroup1#readme",
+  "bugs": {
+    "url": "https://github.com/JamesYang1029/FinalProjectGroup1/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JamesYang1029/FinalProjectGroup1.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "axios": "^1.8.4",
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-handlebars": "^8.0.1",
+    "express-session": "^1.18.1",
+    "mongodb": "^6.15.0",
+    "multer": "^1.4.5-lts.2",
+    "newsapi": "^2.4.1",
+    "openai": "^4.89.0"
+  }
+}
