@@ -13,6 +13,15 @@
       <a href="/" class="logo-link">Terrabase</a>
     </div>
     <nav class="main-nav">
+       <form id="global-search-form" style="display: inline-block; margin: 10px 20px;">
+        <input
+          type="text"
+          id="global-search-input"
+          placeholder="🔍 Search crypto name"
+          style="padding: 6px;"
+        />
+        <button type="submit">Search</button>
+      </form>
       <ul class="nav-list">
         <li class="nav-item home-item"><a href="/" class="nav-link">Home</a></li>
 <<<<<<< HEAD
@@ -38,6 +47,28 @@
     {{{body}}}
   </main>
 
+  <script>
+    document.getElementById("global-search-form").addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const name = document.getElementById("global-search-input").value.trim().toLowerCase();
+      if (!name) return;
+
+      try {
+        const response = await fetch("/api/cryptos");
+        const cryptos = await response.json();
+
+        const match = cryptos.find(c => c.name.toLowerCase() === name);
+        if (match) {
+          window.location.href = `/filter/${match.id}`;
+        } else {
+          alert("Crypto not found. Please check the name and try again.");
+        }
+      } catch (err) {
+        console.error(err);
+        alert("An error occurred while searching.");
+      }
+    });
+  </script>
   <!-- Footer Section -->
   <footer class="main-footer">
     <p>&copy; 2025 Terrabase. All rights reserved.</p>

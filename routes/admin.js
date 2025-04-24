@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import express from 'express';
 <<<<<<< HEAD
 import multer from 'multer';
@@ -76,58 +77,61 @@ import multer from 'multer';
 import path from 'path';
 import { cryptoRatings } from '../config/mongoCollections.js';
 import { ObjectId } from 'mongodb';
+=======
+import express from "express";
+import {
+  generateDatabase,
+  updateDailyData,
+  modifyCryptoData,
+  getAllCryptoData
+} from "../data/admin.js";
+>>>>>>> Stashed changes
 
-// Initialize router
 const router = express.Router();
 
-// Serve the admin page
-router.get('/', (req, res) => {
-    res.render('admin'); // This should render your admin.hbs template
-  });
-
-// Set up multer for file uploads
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, 'uploads/');
-  },
-  filename: (req, file, cb) => {
-    cb(null, file.originalname);
-  },
-});
-
-const upload = multer({ storage });
-
-// POST route to upload a JSON file to seed the database
-router.post('/upload-json', upload.single('file'), async (req, res) => {
+// Generate the entire database (delete old & fetch new)
+router.post("/generate-database", async (req, res) => {
   try {
-    const filePath = path.join(__dirname, `../uploads/${req.file.filename}`);
-    await uploadJsonFile(filePath);
-    res.status(200).json({ message: 'Database seeded successfully.' });
-  } catch (err) {
-    console.error('Error uploading JSON:', err);
-    res.status(500).json({ error: 'Error uploading JSON file.' });
+    await generateDatabase();
+    res.json({ success: true, message: "Database successfully generated!" });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
   }
 });
 
-// POST route to update the entire database
-router.post('/update-database', async (req, res) => {
+// Perform daily update
+router.post("/update-daily", async (req, res) => {
   try {
-    await updateEntireDatabase();
-    res.status(200).json({ message: 'Database updated successfully.' });
-  } catch (err) {
-    console.error('Error updating database:', err);
-    res.status(500).json({ error: 'Error updating database.' });
+    await updateDailyData();
+    res.json({ success: true, message: "Daily update completed!" });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
   }
 });
 
-// POST route to perform incremental update
-router.post('/incremental-update', async (req, res) => {
+// Modify a specific crypto entry
+router.put("/modify", async (req, res) => {
   try {
-    await incrementalUpdate();
-    res.status(200).json({ message: 'Incremental update completed.' });
-  } catch (err) {
-    console.error('Error during incremental update:', err);
-    res.status(500).json({ error: 'Error performing incremental update.' });
+    const { id, updates } = req.body;
+    if (!id || !updates) {
+      return res.status(400).json({ success: false, message: "Missing required parameters." });
+    }
+
+    const result = await modifyCryptoData(id, updates);
+    res.json({ success: true, message: "Data updated successfully!", data: result });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+});
+
+// Fetch all stored crypto data (optionally filter by asset name)
+router.get("/cryptos", async (req, res) => {
+  try {
+    const { name } = req.query; // Optional filtering by asset name
+    const cryptos = await getAllCryptoData(name);
+    res.render("admin", { title: "Admin Panel", cryptos });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
   }
 });
 

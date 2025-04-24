@@ -27,8 +27,11 @@ app.use(session({
 }));
 
 // Middleware to serve static files
+<<<<<<< Updated upstream
 //app.use("/public", express.static(path.resolve("public")));
 >>>>>>> 719f7b3d (Updated local code with Watchlist, Register features, and bug fixes)
+=======
+>>>>>>> Stashed changes
 app.use(express.static(path.resolve("public")));
 
 // Set Handlebars as the templating engine

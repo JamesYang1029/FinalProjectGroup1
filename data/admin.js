@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 import axios from 'axios';
 import fs from 'fs/promises';
@@ -145,89 +146,154 @@ function validateCryptoData(data) {
 import { cryptoRatings, financialData } from '../config/mongoCollections.js';
 import fs from 'fs';
 import path from 'path';
+=======
+import axios from "axios";
+import { cryptoRatings, financialData } from "../config/mongoCollections.js";
+import { dbConnection } from "../config/mongoConnections.js";
+>>>>>>> Stashed changes
 
-// Function to upload and seed data from a JSON file
-export async function uploadJsonFile(filePath) {
-  try {
-    const fileData = JSON.parse(fs.readFileSync(filePath, 'utf8')); // Read the uploaded JSON file
+// API URL for fetching crypto market data
+const API_URL = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=false";
 
-    const cryptoRatingsCollection = await cryptoRatings();
-    const financialDataCollection = await financialData();
+/**
+ * Generates the entire database:
+ * - Deletes old data
+ * - Fetches new data from CoinGecko
+ * - Stores it in MongoDB
+ */
+export const generateDatabase = async () => {
+    const db = await dbConnection();
+    const cryptoInfoCollection = await cryptoRatings();
+    const ohlcCollection = await financialData();
 
-    // Insert the data into the respective collections
-    await cryptoRatingsCollection.insertMany(fileData.cryptoRatings);
-    await financialDataCollection.insertMany(fileData.financialData);
-  } catch (err) {
-    throw new Error('Error uploading JSON file: ' + err.message);
-  }
-}
+    // Delete old data
+    await cryptoInfoCollection.deleteMany({});
+    await ohlcCollection.deleteMany({});
 
-// Function to update the entire database by deleting old data and inserting new data
-export async function updateEntireDatabase() {
-  try {
-    const cryptoRatingsCollection = await cryptoRatings();
-    const financialDataCollection = await financialData();
+    // Fetch new cryptocurrency data
+    const response = await axios.get(API_URL);
+    const cryptoData = response.data;
 
-    // Delete old data from both collections
-    await cryptoRatingsCollection.deleteMany({});
-    await financialDataCollection.deleteMany({});
+    // Prepare data for database storage
+    const cryptoInfoDocs = cryptoData.map(crypto => ({
+        id: crypto.id,
+        name: crypto.name,
+        symbol: crypto.symbol.toUpperCase(),
+        market_cap: crypto.market_cap,
+        current_price: crypto.current_price,
+        circulating_supply: crypto.circulating_supply,
+        total_supply: crypto.total_supply,
+        ath: crypto.ath,
+        ath_date: crypto.ath_date,
+        last_updated: new Date()
+    }));
 
-    // Fetch the latest data (you can implement your data-fetching logic here)
-    const latestData = await fetchLatestData();
+    // Store general crypto information
+    await cryptoInfoCollection.insertMany(cryptoInfoDocs);
 
-    // Insert the fresh data into the collections
-    await cryptoRatingsCollection.insertMany(latestData.cryptoRatings);
-    await financialDataCollection.insertMany(latestData.financialData);
-  } catch (err) {
-    throw new Error('Error updating entire database: ' + err.message);
-  }
-}
+    // Fetch and store OHLC data (past year) for each crypto
+    for (let crypto of cryptoData) {
+        const ohlcUrl = `https://api.coingecko.com/api/v3/coins/${crypto.id}/ohlc?vs_currency=usd&days=365`;
+        try {
+            const ohlcResponse = await axios.get(ohlcUrl);
+            const ohlcData = ohlcResponse.data;
 
-// Function to perform an incremental update (only add/update new data since the last update)
-export async function incrementalUpdate() {
-  try {
-    const lastUpdateTime = await getLastUpdateTimestamp();
-    const newData = await fetchNewData(lastUpdateTime);
-
-    if (newData.length > 0) {
-      const cryptoRatingsCollection = await cryptoRatings();
-      const financialDataCollection = await financialData();
-
-      // Insert or update new data
-      await cryptoRatingsCollection.insertMany(newData.cryptoRatings);
-      await financialDataCollection.insertMany(newData.financialData);
-
-      // Update the last update timestamp (to be implemented)
-      await updateLastUpdateTimestamp();
+            await ohlcCollection.insertOne({
+                id: crypto.id,
+                name: crypto.name,
+                symbol: crypto.symbol.toUpperCase(),
+                ohlc: ohlcData,
+                last_updated: new Date()
+            });
+        } catch (error) {
+            console.error(`Error fetching OHLC for ${crypto.id}:`, error.message);
+        }
     }
-  } catch (err) {
-    throw new Error('Error during incremental update: ' + err.message);
-  }
-}
 
-// Example of a function that would fetch the latest data from external sources (CoinGecko, OpenAI, etc.)
-async function fetchLatestData() {
-  return {
-    cryptoRatings: [],  // Replace with actual data from APIs
-    financialData: []    // Replace with actual data from APIs
-  };
-}
+    console.log("Database successfully generated!");
+    return { message: "Database successfully generated!" };
+};
 
-// Example function to fetch new data since the last update
-async function fetchNewData(lastUpdateTime) {
-  return {
-    cryptoRatings: [],  // Replace with actual new data based on last update timestamp
-    financialData: []    // Replace with actual new data based on last update timestamp
-  };
-}
+/**
+ * Updates market data daily:
+ * - Updates price, market cap, and supply details
+ * - Keeps existing OHLC data
+ */
+export const updateDailyData = async () => {
+    const cryptoInfoCollection = await cryptoRatings();
 
-// Helper function to get the last update timestamp (could be stored in metadata)
-async function getLastUpdateTimestamp() {
-  return new Date('2025-03-01T00:00:00');  // Replace with actual timestamp logic
-}
+    // Fetch new cryptocurrency data
+    const response = await axios.get(API_URL);
+    const cryptoData = response.data;
 
+<<<<<<< Updated upstream
 // Helper function to update the last update timestamp
 async function updateLastUpdateTimestamp() {
   // Implement logic to update the last update timestamp in your metadata
 }
 >>>>>>> 719f7b3d (Updated local code with Watchlist, Register features, and bug fixes)
+=======
+    for (let crypto of cryptoData) {
+        await cryptoInfoCollection.updateOne(
+            { id: crypto.id },
+            {
+                $set: {
+                    market_cap: crypto.market_cap,
+                    current_price: crypto.current_price,
+                    circulating_supply: crypto.circulating_supply,
+                    total_supply: crypto.total_supply,
+                    last_updated: new Date()
+                }
+            }
+        );
+    }
+
+    console.log("Daily data update completed!");
+    return { message: "Daily data update completed!" };
+};
+
+/**
+ * Modifies a specific cryptocurrency's data manually
+ * @param {string} id - The ID of the cryptocurrency
+ * @param {Object} updates - The updated fields and values
+ */
+export const modifyCryptoData = async (id, updates) => {
+    const cryptoInfoCollection = await cryptoRatings();
+    
+    // Ensure valid update fields
+    const validFields = ["market_cap", "current_price", "circulating_supply", "total_supply", "ath", "ath_date"];
+    const filteredUpdates = {};
+    for (let key in updates) {
+        if (validFields.includes(key)) {
+            filteredUpdates[key] = updates[key];
+        }
+    }
+
+    if (Object.keys(filteredUpdates).length === 0) {
+        throw new Error("No valid fields provided for update.");
+    }
+
+    // Perform the update
+    const result = await cryptoInfoCollection.updateOne(
+        { id },
+        { $set: { ...filteredUpdates, last_updated: new Date() } }
+    );
+
+    if (result.modifiedCount === 0) {
+        throw new Error("Crypto ID not found or no changes applied.");
+    }
+
+    console.log(`Crypto ${id} updated successfully.`);
+    return { message: `Crypto ${id} updated successfully.` };
+};
+
+/**
+ * Fetches all stored crypto data, optionally filtered by asset name.
+ * @param {string} name (optional) - Filter results by asset name
+ */
+export const getAllCryptoData = async (name = "") => {
+    const cryptoInfoCollection = await cryptoRatings();
+    let query = name ? { name: new RegExp(name, "i") } : {}; // Case-insensitive search
+    return await cryptoInfoCollection.find(query).toArray();
+};
+>>>>>>> Stashed changes

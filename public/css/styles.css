@@ -660,6 +660,7 @@ select, input[type="file"], .btn {
     }
   }
   
+<<<<<<< Updated upstream
   /* Crypto List Styles */
   .crypto-item {
     margin-bottom: 10px;
@@ -699,3 +700,46 @@ select, input[type="file"], .btn {
 
   }
 >>>>>>> 719f7b3d (Updated local code with Watchlist, Register features, and bug fixes)
+=======
+  .page-container {
+    margin: 30px auto;
+    max-width: 1000px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+  }
+  
+  .page-container h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .page-container p {
+    font-size: 1rem;
+    color: #444;
+  }
+  
+  .screener-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .screener-table th,
+  .screener-table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+  }
+  
+  .screener-table th {
+    background-color: #eee;
+  }
+  
+  .placeholder {
+    margin-top: 30px;
+    text-align: center;
+    color: #888;
+  }
+  
+>>>>>>> Stashed changes

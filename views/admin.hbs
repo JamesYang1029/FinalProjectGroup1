@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <section class="update-section">
   <h2>Admin Page</h2>
@@ -83,61 +84,157 @@
 <script src="../public/js/admin.js"></script>
 =======
 
+=======
+<section class="admin-container">
+{{!-- Admin Panel --}}
+ <h1>Admin Panel</h1>
+>>>>>>> Stashed changes
 
-<div class="admin-container">
-  <h1>Admin Dashboard</h1>
+ <label for="dbSelection">Select Database:</label>
+ <select id="dbSelection">
+    <option value="cryptoRatings">Crypto Ratings</option>
+    <option value="financialData">Financial Data</option>
+ </select>
 
-  <div class="action-section">
-    <h2>1. Upload JSON File to Seed Database</h2>
-    <form id="upload-json-form" enctype="multipart/form-data">
-      <input type="file" name="file" accept="application/json" required>
-      <button type="submit">Upload JSON</button>
+ <div id="updateOptions">
+    <button id="fullUpdate">Update Entire Database</button>
+    <button id="individualUpdate">Update Individual Asset</button>
+ </div>
+
+ <div id="individualAssetSection" style="display: none;">
+    <label for="assetSelection">Select Asset:</label>
+    <select id="assetSelection"></select>
+    
+    <button id="autoUpdate">Auto Update</button>
+    <button id="manualUpdate">Manual Update</button>
+ </div>
+
+ <div id="manualUpdateSection" style="display: none;">
+    <form id="manualUpdateForm">
+        <label for="marketCap">Market Cap:</label>
+        <input type="text" id="marketCap" name="marketCap" required>
+
+        <label for="currentPrice">Current Price:</label>
+        <input type="text" id="currentPrice" name="currentPrice" required>
+
+        <label for="circulatingSupply">Circulating Supply:</label>
+        <input type="text" id="circulatingSupply" name="circulatingSupply" required>
+
+        <label for="totalSupply">Total Supply:</label>
+        <input type="text" id="totalSupply" name="totalSupply" required>
+
+        <label for="ath">All-Time High:</label>
+        <input type="text" id="ath" name="ath" required>
+
+        <label for="athDate">ATH Date:</label>
+        <input type="date" id="athDate" name="athDate" required>
+
+        <button type="submit">Submit Update</button>
     </form>
-  </div>
+ </div>
 
-  <div class="action-section">
-    <h2>2. Update Entire Database</h2>
-    <button id="update-db-btn">Update Entire Database</button>
-  </div>
+ <table border="1">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Market Cap</th>
+            <th>Price</th>
+            <th>Circulating Supply</th>
+            <th>Total Supply</th>
+            <th>ATH</th>
+            <th>Last Updated</th>
+        </tr>
+    </thead>
+    <tbody id="cryptoTableBody"></tbody>
+ </table>
 
-  <div class="action-section">
-    <h2>3. Incremental Update (Latest Data)</h2>
-    <button id="incremental-update-btn">Incremental Update</button>
-  </div>
+ <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+        const dbSelection = document.getElementById("dbSelection");
+        const fullUpdateBtn = document.getElementById("fullUpdate");
+        const individualUpdateBtn = document.getElementById("individualUpdate");
+        const individualAssetSection = document.getElementById("individualAssetSection");
+        const assetSelection = document.getElementById("assetSelection");
+        const autoUpdateBtn = document.getElementById("autoUpdate");
+        const manualUpdateBtn = document.getElementById("manualUpdate");
+        const manualUpdateSection = document.getElementById("manualUpdateSection");
+        const manualUpdateForm = document.getElementById("manualUpdateForm");
+        const tableBody = document.getElementById("cryptoTableBody");
+        
+        async function fetchAssets() {
+            const response = await fetch("/admin/cryptos");
+            const data = await response.json();
+            assetSelection.innerHTML = "";
+            data.forEach(asset => {
+                let option = document.createElement("option");
+                option.value = asset.id;
+                option.textContent = asset.name;
+                assetSelection.appendChild(option);
+            });
+        }
+        
+        async function fetchAndRenderTable() {
+            const response = await fetch("/admin/cryptos");
+            const data = await response.json();
+            tableBody.innerHTML = "";
+            data.forEach(asset => {
+                let row = `<tr>
+                    <td>${asset.name}</td>
+                    <td>${asset.market_cap}</td>
+                    <td>${asset.current_price}</td>
+                    <td>${asset.circulating_supply}</td>
+                    <td>${asset.total_supply}</td>
+                    <td>${asset.ath}</td>
+                    <td>${asset.last_updated}</td>
+                </tr>`;
+                tableBody.innerHTML += row;
+            });
+        }
 
-  <div id="status-message"></div>
-</div>
+        fullUpdateBtn.addEventListener("click", async () => {
+            await fetch("/admin/generate-database", { method: "POST" });
+            fetchAndRenderTable();
+        });
 
-<script>
-  const uploadForm = document.getElementById('upload-json-form');
-  const updateDbBtn = document.getElementById('update-db-btn');
-  const incrementalUpdateBtn = document.getElementById('incremental-update-btn');
-  const statusMessage = document.getElementById('status-message');
+        individualUpdateBtn.addEventListener("click", async () => {
+            individualAssetSection.style.display = "block";
+            await fetchAssets();
+        });
 
-  // Handle JSON file upload
-  uploadForm.addEventListener('submit', async (event) => {
-    event.preventDefault();
-    const formData = new FormData(uploadForm);
-    try {
-      const response = await fetch('/admin/upload-json', {
-        method: 'POST',
-        body: formData
-      });
+        autoUpdateBtn.addEventListener("click", async () => {
+            const id = assetSelection.value;
+            await fetch("/admin/update-daily", { method: "POST" });
+            fetchAndRenderTable();
+        });
 
-      const data = await response.json();
-      statusMessage.textContent = data.message;
-    } catch (error) {
-      statusMessage.textContent = 'Error uploading JSON file.';
-    }
-  });
+        manualUpdateBtn.addEventListener("click", () => {
+            manualUpdateSection.style.display = "block";
+        });
 
-  // Handle update entire database
-  updateDbBtn.addEventListener('click', async () => {
-    try {
-      const response = await fetch('/admin/update-database', {
-        method: 'POST'
-      });
+        manualUpdateForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const id = assetSelection.value;
+            const updates = {
+                market_cap: document.getElementById("marketCap").value,
+                current_price: document.getElementById("currentPrice").value,
+                circulating_supply: document.getElementById("circulatingSupply").value,
+                total_supply: document.getElementById("totalSupply").value,
+                ath: document.getElementById("ath").value,
+                ath_date: document.getElementById("athDate").value,
+            };
+            await fetch("/admin/modify", {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ id, updates }),
+            });
+            fetchAndRenderTable();
+        });
+        
+        fetchAndRenderTable();
+    });
+ </script>
 
+<<<<<<< Updated upstream
       const data = await response.json();
       statusMessage.textContent = data.message;
     } catch (error) {
@@ -160,3 +257,6 @@
   });
 </script>
 >>>>>>> 719f7b3d (Updated local code with Watchlist, Register features, and bug fixes)
+=======
+</section>
+>>>>>>> Stashed changes

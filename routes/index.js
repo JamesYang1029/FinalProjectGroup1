@@ -1,7 +1,11 @@
 import cryptoRoutes from './cryptos.js';
 import adminRoutes from './admin.js';
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 import scannerRoutes from './scanner.js';
+=======
+import { getAllCryptoData } from '../data/cryptos.js'; // make sure this path is correct
+>>>>>>> Stashed changes
 import path from 'path';
 import { static as staticDir } from 'express';
 import cryptoDetailsRoute from './cryptoDetails.js';
@@ -33,6 +37,7 @@ const constructorMethod = (app) => {
     res.render('cryptoResearch', { title: 'Crypto Research' });
   });
 
+<<<<<<< Updated upstream
   app.get('/crypto-details', (req, res) => {
     res.render('crypto-details', { title: 'Crypto Details' });
   });
@@ -43,6 +48,19 @@ const constructorMethod = (app) => {
 =======
   app.get('/scanner', (req, res) => {
     res.render('scanner', { title: 'Screener' });
+=======
+  // ✅ Screener Route - now pulls from DB
+  app.get('/scanner', async (req, res) => {
+    try {
+      const cryptos = await getAllCryptoData();
+      res.render('scanner', {
+        title: 'Screener',
+        cryptos
+      });
+    } catch (e) {
+      res.status(500).render('error', { title: 'Error', error: e.message });
+    }
+>>>>>>> Stashed changes
   });
 >>>>>>> 719f7b3d (Updated local code with Watchlist, Register features, and bug fixes)
 

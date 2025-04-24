@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <h1>Crypto Scanner</h1>
 
@@ -137,3 +138,49 @@
   });
 </script>
 >>>>>>> 719f7b3d (Updated local code with Watchlist, Register features, and bug fixes)
+=======
+  <section class="page-container">
+    <h1>📊 Crypto Screener</h1>
+    <p>Filter and analyze cryptocurrencies based on market performance and sustainability.</p>
+
+    <!-- Search Bar -->
+    <form action="/scanner" method="get" class="search-form">
+      <input type="text" name="search" placeholder="Search by name..." value="{{searchQuery}}">
+      <button type="submit">Search</button>
+    </form>
+
+    <div class="placeholder">
+      <p>Screener results will be shown here.</p>
+    </div>
+
+    <!-- Crypto Table -->
+    <table class="crypto-table">
+      <thead>
+        <tr>
+          <th>Asset</th>
+          <th>Symbol</th>
+          <th>Market Cap</th>
+          <th>Current Price</th>
+          <th>Circulating Supply</th>
+          <th>ATH</th>
+          <th>ATH Date</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each cryptos}}
+        <tr>
+          <td>{{this.name}}</td>
+          <td>{{this.symbol}}</td>
+          <td>${{this.market_cap}}</td>
+          <td>${{this.current_price}}</td>
+          <td>{{this.circulating_supply}}</td>
+          <td>${{this.ath}}</td>
+          <td>{{this.ath_date}}</td>
+          <td><a href="/cryptos/{{this.id}}">View Details</a></td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </section>
+>>>>>>> Stashed changes

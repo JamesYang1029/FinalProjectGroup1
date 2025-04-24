@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 // data/cryptos.js
 //import connectToDb from "../config/mongoConnections.js";
 <<<<<<< HEAD
@@ -182,3 +183,24 @@ export async function getSpecificListing(name) {
 //   cryptos.sort((a, b) => b.sustainabilityScore - a.sustainabilityScore);
 //   return cryptos;
 // }
+=======
+import { cryptoRatings } from '../config/mongoCollections.js';
+import { dbConnection } from '../config/mongoConnections.js';
+
+/**
+ * Fetches all stored crypto data, optionally filtered by asset name.
+ * @param {string} name (optional) - Filter results by asset name
+ */
+export const getAllCryptoData = async (name = "") => {
+  const db = await dbConnection();
+  const cryptoInfoCollection = await cryptoRatings();
+
+  // If there's a search query, filter by name using regex (case-insensitive)
+  let query = name ? { name: new RegExp(name, "i") } : {};
+
+  // Fetch all cryptos matching the query
+  const cryptos = await cryptoInfoCollection.find(query).toArray();
+
+  return cryptos;
+};
+>>>>>>> Stashed changes
