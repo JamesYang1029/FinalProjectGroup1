@@ -2,12 +2,12 @@ import express from "express";
 import exphbs from "express-handlebars";
 import path from "path";
 import configRoutes from "./routes/index.js";
+import * as helpers from './util/helpers.js';
 
 const app = express();
 const PORT = 3000;
 
 // Middleware to serve static files
-//app.use("/public", express.static(path.resolve("public")));
 app.use(express.static(path.resolve("public")));
 
 // Set Handlebars as the templating engine
@@ -17,6 +17,7 @@ app.engine(
     defaultLayout: "home",
     extname: "hbs",
     layoutsDir: path.resolve("views/layouts"),
+    helpers
   })
 );
 app.set("view engine", "hbs");
