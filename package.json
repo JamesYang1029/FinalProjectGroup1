@@ -19,10 +19,18 @@
     "start": "node app.js"
   },
   "dependencies": {
+<<<<<<< HEAD
     "axios": "^1.8.4",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "express-handlebars": "^8.0.1",
+=======
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-handlebars": "^8.0.1",
+    "express-session": "^1.18.1",
+>>>>>>> 719f7b3d (Updated local code with Watchlist, Register features, and bug fixes)
     "mongodb": "^6.15.0",
     "multer": "^1.4.5-lts.2",
     "newsapi": "^2.4.1",

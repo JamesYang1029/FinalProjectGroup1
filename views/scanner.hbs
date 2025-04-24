@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1>Crypto Scanner</h1>
 
 <!-- Filter Inputs -->
@@ -92,3 +93,47 @@
 </div>
 
 <script src="/public/js/Scanner.js"></script>
+=======
+<section class="page-container">
+  <h1>📊 Screener / Crypto Scanner</h1>
+  <p>Filter and analyze cryptocurrencies based on market performance and sustainability.</p>
+
+  <ul id="crypto-list">
+    {{#each cryptos}}
+      <li class="crypto-item">
+        <strong>{{this.name}}</strong> ({{this.symbol}}) - Score: {{this.sustainabilityScore}}
+        <button class="watchlist-btn" data-id="{{this._id}}">Add to Watchlist</button>
+      </li>
+    {{/each}}
+  </ul>
+
+  <p id="watchlist-message" style="color: green;"></p>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.watchlist-btn').forEach(button => {
+      button.addEventListener('click', async (e) => {
+        const cryptoId = e.target.dataset.id;
+        try {
+          const res = await fetch(`/watchlist/add/${cryptoId}`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          });
+
+          if (res.ok) {
+            document.getElementById('watchlist-message').textContent = '✅ Added to watchlist!';
+          } else {
+            const data = await res.json();
+            document.getElementById('watchlist-message').textContent = data.error || '❌ Failed to add to watchlist.';
+          }
+        } catch (err) {
+          document.getElementById('watchlist-message').textContent = '⚠️ Request error.';
+        }
+      });
+    });
+  });
+</script>
+>>>>>>> 719f7b3d (Updated local code with Watchlist, Register features, and bug fixes)

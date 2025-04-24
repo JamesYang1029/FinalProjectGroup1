@@ -1,10 +1,15 @@
 import cryptoRoutes from './cryptos.js';
 import adminRoutes from './admin.js';
+<<<<<<< HEAD
 import scannerRoutes from './scanner.js';
 import path from 'path';
 import { static as staticDir } from 'express';
 import cryptoDetailsRoute from './cryptoDetails.js';
 
+=======
+import path from 'path';
+import { static as staticDir } from 'express';
+>>>>>>> 719f7b3d (Updated local code with Watchlist, Register features, and bug fixes)
 
 const constructorMethod = (app) => {
   // Crypto-related routes
@@ -17,8 +22,11 @@ const constructorMethod = (app) => {
   app.get('/news', (req, res) => {
     res.render('news', { title: 'Crypto News' });
   });
+<<<<<<< HEAD
   
   app.use('/crypto-details', cryptoDetailsRoute);
+=======
+>>>>>>> 719f7b3d (Updated local code with Watchlist, Register features, and bug fixes)
 
   // Crypto Research Route
   app.get('/crypto-research', (req, res) => {
@@ -30,7 +38,13 @@ const constructorMethod = (app) => {
   });
 
   // Screener Route
+<<<<<<< HEAD
   app.use('/scanner', scannerRoutes);
+=======
+  app.get('/scanner', (req, res) => {
+    res.render('scanner', { title: 'Screener' });
+  });
+>>>>>>> 719f7b3d (Updated local code with Watchlist, Register features, and bug fixes)
 
   // Paper Trading Route
   app.get('/paper-trading', (req, res) => {
