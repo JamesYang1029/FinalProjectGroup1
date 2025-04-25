@@ -1,6 +1,8 @@
 <h1>{{#if name}}{{name}}{{else}}Unknown Name{{/if}} ({{#if symbol}}{{symbol}}{{else}}Unknown Symbol{{/if}})</h1>
 <img src="{{#if image}}{{image}}{{else}}/default-image.jpg{{/if}}" alt="{{#if name}}{{name}}{{else}}Unknown{{/if}} logo" style="width: 100px; margin-bottom: 20px;" />
 
+
+
 <!-- Tabs for Sections -->
 <div class="tabs">
   <button class="tab-btn active" data-tab="overview">Overview</button>
@@ -9,6 +11,8 @@
   <button class="tab-btn" data-tab="supply">Supply & Valuation</button>
   <button class="tab-btn" data-tab="alltime">All-Time Stats</button>
   <button class="tab-btn" data-tab="change">Change Metrics</button>
+  <button class="tab-btn" data-tab="news">News</button>
+  <button class="tab-btn" data-tab="sustainability">Sustainability</button>
 </div>
 
 <!-- Overview Tab -->
@@ -127,6 +131,81 @@
   </div>
 </div>
 
+<div class="tab-content" id="news">
+  <div class="info-row">
+    <div class="info-label">Relevant Articles:</div>
+    <div id="news-info-value"></div>
+  </div>
+</div>
+
+<div class="tab-content" id="sustainability">
+  <div class="info-row">
+    <div class="info-label">Sustainability Score:</div>
+    <div id="score-info-value"></div>
+  </div>
+  <div class="info-row">
+    <div class="info-label">Reasoning for Score:</div>
+    <div id="explanation-info-value"></div>
+  </div>
+</div>
+
+<script>
+const name = "{{name}}";
+fetch(`/cryptos/${name}`)
+      .then(res => res.json())
+      .then(data => {
+        let news = data.news;
+        let sustainabilityData = data.sustainabilityData;
+        const newsList = document.getElementById('news-info-value');
+        const score = document.getElementById('score-info-value');
+        const explanation = document.getElementById('explanation-info-value');
+
+        if (!newsList) {
+          console.error('#news-info-value not found');
+        }
+
+        if (news && news.length > 0) {
+          news.slice(0, 5).forEach(article => {
+            const p = document.createElement('p');
+            const a = document.createElement('a');
+            a.href = article.url;
+            a.textContent = article.title;
+            a.target = '_blank';
+            p.classList.add('news-info-value');
+
+            p.appendChild(a);
+            newsList.appendChild(p);
+          });
+        } else {
+          const p = document.createElement('p');
+          p.textContent = 'No recent news available.';
+          newsList.appendChild(p);
+        }
+////////////////////////////////////////////////////////////////////////
+        if (sustainabilityData.score) {
+          const pscore = document.createElement('p');
+          pscore.classList.add('score-info-value');
+          pscore.textContent = `${sustainabilityData.score}`;
+          score.appendChild(pscore);
+        } else {
+          const p = document.createElement('p');
+          pscore.textContent = 'No sustainability score available.';
+          score.appendChild(pscore);
+        }
+
+        if (sustainabilityData.explanation) {
+          const pexplan = document.createElement('p');
+          pexplan.classList.add('explanation-info-value');
+          pexplan.textContent = `${sustainabilityData.explanation}`;
+          explanation.appendChild(pexplan);
+        } else {
+          const p = document.createElement('p');
+          pexplan.textContent = 'No sustainability score available.';
+          explanation.appendChild(pexplan);
+        }
+      });
+ 
+</script>
 <!-- Back Link -->
 <a href="/cryptoDetails" class="back-link">← Back to Crypto List</a>
 
@@ -217,6 +296,13 @@
     width: 65%;
     word-break: break-word;
     text-align: left;
+  }
+  .score-info-value {
+    text-align: left;
+  }
+  .explanation-info-value {
+    text-align: left;
+
   }
 </style>
 

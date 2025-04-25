@@ -1,6 +1,6 @@
 // data/cryptos.js
 //import connectToDb from "../config/mongoConnections.js";
-import {cryptoRatings, financialData} from "../config/mongoCollections.js";
+import { cryptoRatings, financialData, sustainability } from "../config/mongoCollections.js";
 import { getNews } from "./news.js";
 import OpenAI from "openai";
 import dotenv from "dotenv";
@@ -65,7 +65,7 @@ export async function getJustNames(number) {
 }
 
 export async function saveSustainabilityToDb(number) {
-  const cryptoRatingsCollection = await cryptoRatings();
+  const cryptoRatingsCollection = await sustainability();
   let cryptos = await getCryptoScore(await getJustNames(number))
   try {
     await cryptoRatingsCollection.deleteMany({});
@@ -94,14 +94,14 @@ export async function getSpecificListing(name) {
   const financialDataCollection = await financialData();
   const crypto = await financialDataCollection.findOne({name: name});
   const news = await getNews(name);
-  const cryptoRatingsCollection = await cryptoRatings();
-  const sustainability = await cryptoRatingsCollection.findOne({
+  const cryptoRatingsCollection = await sustainability();
+  const sustainabilityData = await cryptoRatingsCollection.findOne({
     crypto: { $regex: new RegExp(`^${name}$`, 'i') }
   });
   return  {
     crypto,
     news,
-    sustainability
+    sustainabilityData
   };
 }
 

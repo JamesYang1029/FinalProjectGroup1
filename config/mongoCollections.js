@@ -19,5 +19,6 @@ const getCollectionFn = (collection) => {
 NOTE: YOU WILL NEED TO CHANGE THE CODE BELOW TO HAVE THE COLLECTION(S) REQUIRED BY THE ASSIGNMENT */
 export const cryptoRatings = getCollectionFn('cryptoRatings');
 export const financialData = getCollectionFn('financialData');
+export const sustainability = getCollectionFn('sustainability');
 export const newsData = getCollectionFn('newsData');
 export const users = getCollectionFn('users');
