@@ -28,6 +28,12 @@ async function fetchTableData() {
   totalPages = data.totalPages;
 
   data.cryptos.forEach(c => {
+    //add watchlist button in the table
+    const watchlistCell = window.isLoggedInGlobal
+      ? `<form method="POST" action="/watchlist/add/${c._id}">
+           <button type="submit">Add to Watchlist</button>
+         </form>`
+      : '';
     const row = `
       <tr>
         <td>${c.name} (${c.symbol.toUpperCase()})</td>
@@ -36,6 +42,7 @@ async function fetchTableData() {
         <td>$${c.ath?.toLocaleString()}</td>
         <td>$${c.atl?.toLocaleString()}</td>
         <td>${c.price_change_percentage_24h?.toFixed(2)}%</td>
+        <td>${watchlistCell}</td>
       </tr>
     `;
     tableBody.innerHTML += row;

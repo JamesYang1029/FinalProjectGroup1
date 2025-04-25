@@ -5,7 +5,8 @@ import configRoutes from "./routes/index.js";
 import authRoutes from './routes/auth.js';
 import session from "express-session";
 import * as helpers from './util/helpers.js';
-
+import watchlistRoutes from "./routes/watchlist.js";
+import { ensureAuthenticated } from "./middleware/auth.js";
 
 
 const app = express();
@@ -21,10 +22,10 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }));
-
 // Middleware to serve static files
 //app.use("/public", express.static(path.resolve("public")));
 app.use(express.static(path.resolve("public")));
+
 
 // Set Handlebars as the templating engine
 app.engine(
@@ -44,6 +45,9 @@ app.set("views", path.resolve("views"));
 
 //register the auth routes
 app.use('/', authRoutes);
+
+//watchlist routes
+app.use("/", watchlistRoutes);
 
 // Use routes
 configRoutes(app);

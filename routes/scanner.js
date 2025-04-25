@@ -3,10 +3,16 @@ import { getFilteredCryptos } from '../data/scanner.js';
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
+/*router.get('/', (req, res) => {
   res.render('scanner', { title: 'Crypto Scanner' });
 });
-
+*/
+router.get('/', (req, res) => {
+  res.render('scanner', {
+    title: 'Crypto Scanner',
+    user: req.session.user || null   // ← pass the logged-in user (or null)
+  });
+});
 
 router.get('/scannerTable', async (req, res) => {
     const {

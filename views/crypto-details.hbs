@@ -5,7 +5,6 @@
 <h4>Financial Data</h4>
 <p id="crypto-description"></p>
 <p id="crypto-score"></p>
-<<<<<<< HEAD
 <p id="crypto-history"></p>
 <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
 <p id = "error-message"></p>
@@ -16,18 +15,10 @@
 <a href="/crypto-research">← Back to list</a>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-=======
-<h4>Recent News</h4>
-<ul id="crypto-news"></ul>
-
-
-<a href="/crypto-research">← Back to list</a>
->>>>>>> 719f7b3d (Updated local code with Watchlist, Register features, and bug fixes)
 
 <script>
   const params = new URLSearchParams(window.location.search);
   const cryptoName = params.get('name');
-<<<<<<< HEAD
   let cryptoNameLower = cryptoName.toLowerCase();
   if (cryptoNameLower.trim().split(' ').length > 1) {
     cryptoNameLower = cryptoNameLower.split(' ').join('-');
@@ -117,9 +108,6 @@
       }
     });
     
-=======
-
->>>>>>> 719f7b3d (Updated local code with Watchlist, Register features, and bug fixes)
   if (cryptoName) {
     fetch(`/cryptos/${cryptoName}`)
       .then(res => res.json())
@@ -128,17 +116,10 @@
 
         document.getElementById('crypto-name').textContent = crypto.name || 'Crypto not found';
 
-<<<<<<< HEAD
-        //document.getElementById('crypto-description').textContent =
-        //  crypto.current_price
-        //    ? `Current Price: $${crypto.current_price}`
-        //    : 'No price data available.';
-=======
         document.getElementById('crypto-description').textContent =
           crypto.current_price
             ? `Current Price: $${crypto.current_price}`
             : 'No price data available.';
->>>>>>> 719f7b3d (Updated local code with Watchlist, Register features, and bug fixes)
         
         document.getElementById('crypto-sustainability').textContent =
           sustainability.score
