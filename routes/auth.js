@@ -2,17 +2,23 @@
 import express from 'express';
 import bcrypt from 'bcrypt';
 import { users } from '../config/mongoCollections.js';
-import { ObjectId } from 'mongodb';
+import { registerUser, loginUser } from '../data/users.js';
 
 const router = express.Router();
 
 // GET /login
 router.get('/login', (req, res) => {
+  if (req.session.user) {
+    return res.render('alreadyLoggedIn', { username: req.session.user.username });
+  }
   res.render('login', { title: 'Login' });
 });
 
 // GET /register
 router.get('/register', (req, res) => {
+  if (req.session.user) {
+    return res.render('alreadyLoggedIn', { username: req.session.user.username });
+  }
   res.render('register', { title: 'Register' });
 });
 

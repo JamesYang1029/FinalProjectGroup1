@@ -116,10 +116,10 @@
 
         document.getElementById('crypto-name').textContent = crypto.name || 'Crypto not found';
 
-        //document.getElementById('crypto-description').textContent =
-        //  crypto.current_price
-        //    ? `Current Price: $${crypto.current_price}`
-        //    : 'No price data available.';
+        document.getElementById('crypto-description').textContent =
+          crypto.current_price
+            ? `Current Price: $${crypto.current_price}`
+            : 'No price data available.';
         
         document.getElementById('crypto-sustainability').textContent =
           sustainability.score

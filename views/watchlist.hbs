@@ -1,0 +1,18 @@
+<!-- views/watchlist.hbs -->
+<section class="page-container">
+  <h1>⭐ Your Watchlist</h1>
+
+  {{#if watchlist.length}}
+    <ul class="watchlist">
+      {{#each watchlist}}
+        <li>
+          <h2>{{this.name}} ({{this.symbol}})</h2>
+          <p>Sustainability Score: {{this.sustainabilityScore}}</p>
+          <p>Price: ${{this.price}}</p>
+        </li>
+      {{/each}}
+    </ul>
+  {{else}}
+    <p>You haven’t added any coins yet. Go to the Scanner to add!</p>
+  {{/if}}
+</section>

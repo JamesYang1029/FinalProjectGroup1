@@ -2,12 +2,18 @@ import express from "express";
 import exphbs from "express-handlebars";
 import path from "path";
 import configRoutes from "./routes/index.js";
-import * as helpers from './util/helpers.js';
 import authRoutes from './routes/auth.js';
 import session from "express-session";
+import * as helpers from './util/helpers.js';
+import watchlistRoutes from "./routes/watchlist.js";
+import { ensureAuthenticated } from "./middleware/auth.js";
+
 
 const app = express();
 const PORT = 3000;
+
+// Middleware to parse form data
+app.use(express.urlencoded({ extended: true }));
 
 // Setup session middleware
 app.use(session({
@@ -17,6 +23,7 @@ app.use(session({
   saveUninitialized: false
 }));
 // Middleware to serve static files
+//app.use("/public", express.static(path.resolve("public")));
 app.use(express.static(path.resolve("public")));
 
 
@@ -27,7 +34,8 @@ app.engine(
     defaultLayout: "home",
     extname: "hbs",
     layoutsDir: path.resolve("views/layouts"),
-    helpers
+    helpers,
+    partialsDir: path.resolve("views")
   })
 );
 app.set("view engine", "hbs");
@@ -37,6 +45,9 @@ app.set("views", path.resolve("views"));
 
 //register the auth routes
 app.use('/', authRoutes);
+
+//watchlist routes
+app.use("/", watchlistRoutes);
 
 // Use routes
 configRoutes(app);

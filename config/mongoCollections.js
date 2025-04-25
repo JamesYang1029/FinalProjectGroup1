@@ -21,4 +21,3 @@ export const cryptoRatings = getCollectionFn('cryptoRatings');
 export const financialData = getCollectionFn('financialData');
 export const newsData = getCollectionFn('newsData');
 export const users = getCollectionFn('users');
-export const offsetData = getCollectionFn('offsetData');

@@ -1,0 +1,35 @@
+<section class="page-container">
+  <h1>📊 Screener / Crypto Scanner</h1>
+  <p>Filter and analyze cryptocurrencies based on market performance and sustainability.</p>
+
+  {{#if cryptos.length}}
+    <table class="screener-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Symbol</th>
+          <th>Market Cap ($)</th>
+          <th>Price ($)</th>
+          <th>ATH ($)</th>
+          <th>Last Updated</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each cryptos}}
+          <tr>
+            <td><a href="/filter/{{id}}">{{name}}</a></td>
+            <td>{{symbol}}</td>
+            <td>{{market_cap}}</td>
+            <td>{{current_price}}</td>
+            <td>{{ath}}</td>
+            <td>{{last_updated}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  {{else}}
+    <div class="placeholder">
+      <p>Screener results will be shown here.</p>
+    </div>
+  {{/if}}
+</section>
