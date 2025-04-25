@@ -10,3 +10,5 @@ Crypto Sustainability News
 
 Hari-Branch:
 Created for implementing Filtering and Detail Page functionalities.
+yang- branch: 
+finished login/register system. Registered users can save their favorite cryptocurrencies into watchlist

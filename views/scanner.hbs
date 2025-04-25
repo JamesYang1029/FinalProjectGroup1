@@ -66,6 +66,7 @@
       <th data-sort="ath">ATH <span id="ath-arrow"></span></th>
       <th data-sort="atl">ATL <span id="atl-arrow"></span></th>
       <th data-sort="price_change_percentage_24h">24h Change % <span id="change-arrow"></span></th>
+      <th>Watchlist</th>
     </tr>
   </thead>
   <tbody id="scanner-table-body">
@@ -90,5 +91,10 @@
   <button id="nextPage">Next</button>
   <span id="totalPages">/ Total: 1</span>
 </div>
+
+{{!-- make login status available to scanner.js --}}
+<script>
+  window.isLoggedInGlobal = {{#if user}}true{{else}}false{{/if}};
+</script>
 
 <script src="/public/js/Scanner.js"></script>
