@@ -1,5 +1,9 @@
 <section>
 <h1>Top Cryptocurrencies</h1>
+<div class = "buttons">
+  <button id="sort-button">Sort by Sustainability High to Low</button>
+  <button id="sort-button2">Sort by Sustainability Low to High</button>
+</div>
 
 <div class="crypto-grid">
   {{#each cryptos}}
@@ -34,6 +38,31 @@
         }
       });
   });
+
+  document.getElementById('sort-button').addEventListener('click', () => {
+    const results = Array.from(document.querySelectorAll('.crypto-tile'));
+    results.sort((a, b) => {
+      let scoreA = parseFloat(a.querySelector('.score-info-value').textContent.split(': ')[1]) || 0;
+      let scoreB = parseFloat(b.querySelector('.score-info-value').textContent.split(': ')[1]) || 0;
+      return scoreB - scoreA; 
+    });
+    const pageOutput = document.querySelector('.crypto-grid');
+    pageOutput.innerHTML = ''; 
+    results.forEach(tile => pageOutput.appendChild(tile)); 
+  });
+
+    document.getElementById('sort-button2').addEventListener('click', () => {
+    const results = Array.from(document.querySelectorAll('.crypto-tile'));
+    results.sort((a, b) => {
+      const scoreA = parseFloat(a.querySelector('.score-info-value').textContent.split(': ')[1]) || 0;
+      const scoreB = parseFloat(b.querySelector('.score-info-value').textContent.split(': ')[1]) || 0;
+      return scoreA - scoreB; 
+    });
+    const pageOutput = document.querySelector('.crypto-grid');
+    pageOutput.innerHTML = ''; 
+    results.forEach(tile => pageOutput.appendChild(tile)); 
+  });
+
 </script>
 
 <div class="pagination">
@@ -148,6 +177,33 @@
 .score-info-value {
   font-weight: bold;
   color: #00d607; 
+}
+
+.buttons {
+  text-align: center;
+}
+
+#sort-button {
+  font-weight: bold;
+  padding: 8px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  background-color: #1e88e5;
+  color: white;
+  border: none;
+  border-radius: 40px;
+}
+
+#sort-button2 {
+  font-weight: bold;
+  padding: 8px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  background-color: #1e88e5;
+  color: white;
+  border: none;
+  border-radius: 40px;
+  align-self: center;
 }
 </style>
 
