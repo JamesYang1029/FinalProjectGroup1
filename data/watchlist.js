@@ -8,9 +8,21 @@ export async function addToWatchlist(userId, cryptoId) {
   const userCol = await users();
   const cryptoCol = await cryptoRatings();
 
+  // 1. Find the crypto you want to add
   const crypto = await cryptoCol.findOne({ _id: new ObjectId(cryptoId) });
   if (!crypto) throw new Error('Crypto not found');
+  // 2. Find existing user watchlist
+  const user = await userCol.findOne({ _id: new ObjectId(userId) });
+  if (!user) throw new Error("User not found");
 
+  // 3. Check if the crypto already exists in watchlist
+  const exists = (user.watchlist || []).some(item => {
+    return item._id && item._id.toString() === cryptoId;
+  });
+  if (exists) {
+    console.log("Already in watchlist, skip adding.");
+    return;
+  }
   // 🔥 Exact match by name (not symbol), no toLowerCase
   const sustainability = sustainabilityData.find(entry =>
     entry?.crypto === crypto?.name);

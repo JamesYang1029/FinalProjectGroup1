@@ -28,7 +28,17 @@ router.get(
   async (req, res, next) => {
     try {
       const list = await getWatchlist(req.session.user._id);
-      res.render('watchlist', { watchlist: list });
+      // Calculate the average sustainability score
+    let totalScore = 0;
+    let count = 0;
+    for (const crypto of list) {
+      if (crypto.sustainabilityScore && !isNaN(crypto.sustainabilityScore)) {
+        totalScore += crypto.sustainabilityScore;
+        count++;
+      }
+    }
+    const averageScore = count > 0 ? (totalScore / count).toFixed(2) : "N/A";
+      res.render('watchlist', { watchlist: list, averageScore });
     } catch (e) {
       next(e);
     }
