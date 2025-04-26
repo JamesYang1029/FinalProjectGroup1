@@ -10,6 +10,7 @@ export const getFilteredCryptos = async ({
   athMax,
   atlMin,
   atlMax,
+  sustainability_score,
   page,
   sortBy,
   sortOrder
@@ -37,7 +38,6 @@ export const getFilteredCryptos = async ({
     if (atlMin !== undefined) filter.atl.$gte = atlMin;
     if (atlMax !== undefined) filter.atl.$lte = atlMax;
   }
-
   const sortOrderNum = sortOrder === 'asc' ? 1 : -1;
 
   const totalCryptos = await collection.countDocuments(filter);

@@ -4,7 +4,7 @@ dotenv.config();
 
 export async function getNews(cryptoName) {
     const API_KEY = process.env.NEWSAPI_KEY;
-    const url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(cryptoName)}&language=en&sortBy=publishedAt&apiKey=${API_KEY}`;
+    const url = `https://newsapi.org/v2/everything?q=${cryptoName}&language=en&sortBy=publishedAt&apiKey=${API_KEY}`;
     
     try {
         const res = await fetch(url);
@@ -12,7 +12,6 @@ export async function getNews(cryptoName) {
     
         if (!data.articles) return [];
     
-        // Use map to transform the article list
         const articles = data.articles.slice(0, 5).map(article => ({        
         title: article.title,
         url: article.url,

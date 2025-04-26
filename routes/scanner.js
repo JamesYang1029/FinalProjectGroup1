@@ -24,6 +24,7 @@ router.get('/scannerTable', async (req, res) => {
       athMax,
       atlMin,
       atlMax,
+      sustainability_score,
       page = 1,
       sortBy = 'market_cap',
       sortOrder = 'desc'
@@ -37,7 +38,8 @@ router.get('/scannerTable', async (req, res) => {
       athMin: athMin ? Number(athMin) : undefined,
       athMax: athMax ? Number(athMax) : undefined,
       atlMin: atlMin ? Number(atlMin) : undefined,
-      atlMax: atlMax ? Number(atlMax) : undefined
+      atlMax: atlMax ? Number(atlMax) : undefined,
+      sustainability_score: sustainability_score ? Number(sustainability_score) : undefined
     };
   
     try {

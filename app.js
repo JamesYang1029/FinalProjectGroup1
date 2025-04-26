@@ -7,13 +7,17 @@ import session from "express-session";
 import * as helpers from './util/helpers.js';
 import watchlistRoutes from "./routes/watchlist.js";
 import { ensureAuthenticated } from "./middleware/auth.js";
-
+import { seedStart } from "./config/susseed.js";
+import { finSeedStart } from "./config/finseed.js";
 
 const app = express();
 const PORT = 3000;
 
 // Middleware to parse form data
 app.use(express.urlencoded({ extended: true }));
+
+seedStart();
+finSeedStart();
 
 // Setup session middleware
 app.use(session({

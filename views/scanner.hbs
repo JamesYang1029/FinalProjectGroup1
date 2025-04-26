@@ -1,4 +1,5 @@
 <h1>Crypto Scanner</h1>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <!-- Filter Inputs -->
 <table>
@@ -53,6 +54,12 @@
         <input type="number" id="atlMax" name="atlMax">
       </div>
     </td>
+    <td>
+      <div>
+        <label for="sustainability_score">Lowest Sustainability Score:</label>
+        <input type="number" id="sustainability_score" name="sustainability_score">
+      </div>
+    </td>
   </tr>
 </table>
 
@@ -66,6 +73,8 @@
       <th data-sort="ath">ATH <span id="ath-arrow"></span></th>
       <th data-sort="atl">ATL <span id="atl-arrow"></span></th>
       <th data-sort="price_change_percentage_24h">24h Change % <span id="change-arrow"></span></th>
+      <th data-sort="sustainability_score">Sustainability Score <span id="sustainArrow"></span></th>
+
       <th>Watchlist</th>
     </tr>
   </thead>

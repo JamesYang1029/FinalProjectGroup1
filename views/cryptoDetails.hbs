@@ -3,15 +3,38 @@
 
 <div class="crypto-grid">
   {{#each cryptos}}
-    <div class="crypto-tile" data-id="{{id}}">
+    <div class="crypto-tile" data-id="{{id}}" data-name="{{name}}">
       <img src="{{image}}" alt="{{name}} logo" />
       <h2>{{name}} ({{symbol}})</h2>
+      <p class = "score-info-value"> </p>
       <p>Price: ${{current_price}}</p>
       <p>Market Cap: ${{market_cap}}</p>
       <button class="view-detail" data-id="{{id}}">View Details</button>
     </div>
   {{/each}}
 </div>
+<script>
+  document.querySelectorAll('.crypto-tile').forEach(tile => {
+    let name = tile.getAttribute('data-name');
+    let score = tile.querySelector('.score-info-value');
+    
+    fetch(`/cryptos/${name}`)
+      .then(res => res.json())
+      .then(data => {
+        let sustainabilityData = data.sustainabilityData;
+        if (!sustainabilityData) {
+          score.textContent = 'No sustainability data available.';
+          return;
+        }
+        console.log(name, sustainabilityData);
+        if (sustainabilityData.score) {
+          score.textContent = `Sustainability Score: ${sustainabilityData.score}`;
+        } else {
+          score.textContent = 'No sustainability score available.';
+        }
+      });
+  });
+</script>
 
 <div class="pagination">
   {{#if hasPrev}}
@@ -121,4 +144,10 @@
 .full-detail-link:hover {
   text-decoration: underline;
 }
+
+.score-info-value {
+  font-weight: bold;
+  color: #00d607; 
+}
 </style>
+

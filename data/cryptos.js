@@ -95,6 +95,7 @@ export async function getSpecificListing(name) {
   const crypto = await financialDataCollection.findOne({name: name});
   const news = await getNews(name);
   const cryptoRatingsCollection = await sustainability();
+  name = name.trim()
   const sustainabilityData = await cryptoRatingsCollection.findOne({
     crypto: { $regex: new RegExp(`^${name}$`, 'i') }
   });

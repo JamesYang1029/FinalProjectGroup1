@@ -12,6 +12,7 @@ async function fetchTableData() {
   const athMax = document.getElementById('athMax').value;
   const atlMin = document.getElementById('atlMin').value;
   const atlMax = document.getElementById('atlMax').value;
+  const sustainability_score = document.getElementById('sustainability_score').value;
 
   const res = await fetch(`/scanner/scannerTable?priceMin=${priceMin}&priceMax=${priceMax}&marketCapMin=${marketCapMin}&marketCapMax=${marketCapMax}&athMin=${athMin}&athMax=${athMax}&atlMin=${atlMin}&atlMax=${atlMax}&page=${currentPage}&sortBy=${sortBy}&sortOrder=${sortOrder}`);
   const data = await res.json();
@@ -28,6 +29,23 @@ async function fetchTableData() {
   totalPages = data.totalPages;
 
   data.cryptos.forEach(c => {
+    $.ajax({
+      url: `/cryptos/${c.name}`,
+      type: 'GET',
+      success: function(data) { 
+        let sustainabilityData = data.sustainabilityData;
+        let sustainabilityScore = "No sustainability data available.";
+        if (!sustainabilityData) {
+          sustainabilityScore = 'No sustainability data available.';
+          return;
+        }
+        if (sustainabilityData.score) {
+          sustainabilityScore = `${sustainabilityData.score}`;
+        } 
+        if (sustainabilityData.score < parseFloat(sustainability_score)) {
+          return;
+        }
+  
     //add watchlist button in the table
     const watchlistCell = window.isLoggedInGlobal
       ? `<form method="POST" action="/watchlist/add/${c._id}">
@@ -42,11 +60,13 @@ async function fetchTableData() {
         <td>$${c.ath?.toLocaleString()}</td>
         <td>$${c.atl?.toLocaleString()}</td>
         <td>${c.price_change_percentage_24h?.toFixed(2)}%</td>
+        <td>${sustainabilityScore}</td>
         <td>${watchlistCell}</td>
       </tr>
     `;
     tableBody.innerHTML += row;
-  });
+  }});
+});
 
   document.getElementById('pageNum').innerText = `Page ${currentPage} of ${totalPages}`;
   document.getElementById('totalPages').innerText = `/ Total: ${totalPages}`;
@@ -73,7 +93,7 @@ function updateSortingArrows() {
 
 document.addEventListener('DOMContentLoaded', () => {
   // Listen for changes on the filter inputs
-  document.querySelectorAll('#priceMin, #priceMax, #marketCapMin, #marketCapMax, #athMin, #athMax, #atlMin, #atlMax').forEach(input => {
+  document.querySelectorAll('#priceMin, #priceMax, #marketCapMin, #marketCapMax, #athMin, #athMax, #atlMin, #atlMax, #sustainability_score').forEach(input => {
     input.addEventListener('input', () => {
       currentPage = 1;
       fetchTableData();

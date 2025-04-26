@@ -1,0 +1,2505 @@
+[{
+  "crypto": "Bitcoin",
+  "score": 2,
+  "explanation": "Bitcoin uses a proof-of-work system, which requires significant energy for mining, leading to higher environmental harm."
+},
+{
+  "crypto": "Ethereum",
+  "score": 3,
+  "explanation": "Recently transitioned to Ethereum 2.0 using proof-of-stake, which substantially reduces energy consumption compared to its previous proof-of-work model."
+},
+{
+  "crypto": "Tether",
+  "score": 7,
+  "explanation": "As a stablecoin, Tether is typically built on top of other blockchains, resulting in lower direct environmental impact."
+},
+{
+  "crypto": "XRP",
+  "score": 8,
+  "explanation": "Uses consensus ledger rather than mining, significantly reducing energy consumption compared to proof-of-work systems."
+},
+{
+  "crypto": "BNB",
+  "score": 6,
+  "explanation": "Runs on Binance Smart Chain, which uses a proof-of-staked-authority model, requiring less energy than proof-of-work."
+},
+{
+  "crypto": "Solana",
+  "score": 8,
+  "explanation": "Solana uses a Proof of Stake mechanism which is generally energy efficient compared to Proof of Work."
+},
+{
+  "crypto": "USDC",
+  "score": 9,
+  "explanation": "USDC is a stablecoin on various blockchains, primarily using energy-efficient networks like Ethereum 2.0 and others that prioritize sustainability."
+},
+{
+  "crypto": "Dogecoin",
+  "score": 3,
+  "explanation": "Dogecoin uses a Proof of Work mechanism similar to Bitcoin, which consumes substantial energy."
+},
+{
+  "crypto": "TRON",
+  "score": 7,
+  "explanation": "TRON employs a Delegated Proof of Stake model, which is more energy efficient than traditional Proof of Work."
+},
+{
+  "crypto": "Cardano",
+  "score": 9,
+  "explanation": "Cardano utilizes a Proof of Stake algorithm known as Ouroboros, which is highly energy-efficient."
+},
+{
+  "crypto": "Lido Staked Ether",
+  "score": 7,
+  "explanation": "Staked Ether uses Ethereum's proof-of-stake mechanism, which is more energy-efficient than proof-of-work."
+},
+{
+  "crypto": "Wrapped Bitcoin",
+  "score": 2,
+  "explanation": "Wrapped Bitcoin is a tokenized version of Bitcoin, which still relies on Bitcoin's energy-intensive proof-of-work consensus mechanism."
+},
+{
+  "crypto": "LEO Token",
+  "score": 6,
+  "explanation": "LEO Token is based on Ethereum and benefits from Ethereum's transition to proof-of-stake, reducing its environmental impact."
+},
+{
+  "crypto": "Chainlink",
+  "score": 6,
+  "explanation": "Chainlink runs on Ethereum and benefits from its proof-of-stake upgrade, improving sustainability."
+},
+{
+  "crypto": "Toncoin",
+  "score": 5,
+  "explanation": "Toncoin uses a proof-of-stake algorithm, which is more sustainable than proof-of-work, but its broader adoption and impact are still evolving."
+},
+{
+  "crypto": "USDS",
+  "score": 8,
+  "explanation": "USDS relies on energy-efficient consensus mechanisms as a stablecoin."
+},
+{
+  "crypto": "Avalanche",
+  "score": 9,
+  "explanation": "Avalanche uses a Proof of Stake mechanism, minimizing energy use significantly compared to Proof of Work."
+},
+{
+  "crypto": "Stellar",
+  "score": 9,
+  "explanation": "Stellar's consensus protocol is designed to be energy-efficient, with low computational power requirements."
+},
+{
+  "crypto": "Hedera",
+  "score": 9,
+  "explanation": "Hedera Hashgraph's consensus algorithm is highly energy-efficient and fast, resulting in minimal environmental impact."
+},
+{
+  "crypto": "Sui",
+  "score": 9,
+  "explanation": "Sui employs a PoS-based system which is designed to optimize energy efficiency while maintaining decentralization."
+},
+{
+  "crypto": "Wrapped stETH",
+  "score": 8,
+  "explanation": "Wrapped tokens represent staked assets which usually involve less frequent transactions, resulting in a reduced carbon footprint compared to proof-of-work cryptocurrencies."
+},
+{
+  "crypto": "Shiba Inu",
+  "score": 4,
+  "explanation": "As an ERC-20 token on Ethereum, it relies on Ethereum's energy usage, which has decreased since switching to proof-of-stake, but still involves network activity that impacts the environment."
+},
+{
+  "crypto": "MANTRA",
+  "score": 7,
+  "explanation": "Operates on a proof-of-stake blockchain, which is generally more energy-efficient than proof-of-work, resulting in less environmental impact."
+},
+{
+  "crypto": "Bitcoin Cash",
+  "score": 2,
+  "explanation": "Uses a proof-of-work consensus mechanism similar to Bitcoin, leading to significant energy consumption and environmental impact."
+},
+{
+  "crypto": "Litecoin",
+  "score": 3,
+  "explanation": "Operates on a proof-of-work system similar to Bitcoin but with some efficiency improvements, still resulting in considerable energy usage."
+},
+{
+  "crypto": "Polkadot",
+  "score": 8,
+  "explanation": "Polkadot uses a nominated proof-of-stake mechanism, which is more energy efficient than traditional proof-of-work systems."
+},
+{
+  "crypto": "Binance Bridged USDT (BNB Smart Chain)",
+  "score": 6,
+  "explanation": "Runs on BNB Smart Chain, which uses proof-of-staked-authority, offering moderate energy efficiency compared to proof-of-work."
+},
+{
+  "crypto": "Bitget Token",
+  "score": 7,
+  "explanation": "Operates on platforms that utilize more energy-efficient consensus algorithms, reducing environmental impact."
+},
+{
+  "crypto": "Ethena USDe",
+  "score": 9,
+  "explanation": "Likely utilizes efficient consensus mechanisms or scaling solutions focused on minimizing carbon footprint."
+},
+{
+  "crypto": "Hyperliquid",
+  "score": 9,
+  "explanation": "Designed with sustainability in mind, leveraging latest blockchain technologies that prioritize energy efficiency."
+},
+{
+  "crypto": "WETH",
+  "score": 3,
+  "explanation": "WETH, as a form of Ethereum, inherits the environmental impact of Ethereum's proof-of-stake transition with improved energy efficiency over its previous proof-of-work system, but still indirectly involves energy use."
+},
+{
+  "crypto": "WhiteBIT Coin",
+  "score": 7,
+  "explanation": "As a utility token on an exchange, WhiteBIT Coin likely involves minimal direct environmental impact, but its score may depend on the underlying blockchain's energy use."
+},
+{
+  "crypto": "Pi Network",
+  "score": 8,
+  "explanation": "Pi Network uses a consensus algorithm that is designed to be low energy, resulting in a higher sustainability score compared to traditional proof-of-work cryptocurrencies."
+},
+{
+  "crypto": "Monero",
+  "score": 2,
+  "explanation": "Monero uses a proof-of-work system that is energy-intensive and contributes to a higher environmental impact, resulting in a lower sustainability score."
+},
+{
+  "crypto": "Wrapped eETH",
+  "score": 3,
+  "explanation": "Wrapped eETH represents Ethereum and shares the same sustainability issues, with increased efficiency post-proof-of-stake, but historically high energy consumption."
+},
+{
+  "crypto": "OKB",
+  "score": 7,
+  "explanation": "OKB is an exchange-based token that operates on less energy-intensive platforms."
+},
+{
+  "crypto": "Uniswap",
+  "score": 8,
+  "explanation": "Uniswap runs on Ethereum's proof-of-stake, which is more sustainable than proof-of-work."
+},
+{
+  "crypto": "Dai",
+  "score": 9,
+  "explanation": "Dai is a stablecoin with minimal direct blockchain activity, enhancing its sustainability."
+},
+{
+  "crypto": "sUSDS",
+  "score": 8,
+  "explanation": "sUSDS is part of the Synthetix ecosystem, operating on a proof-of-stake platform."
+},
+{
+  "crypto": "Pepe",
+  "score": 5,
+  "explanation": "Pepe coin is newer and its sustainability largely depends on the platform's used, often still not optimized for low energy use."
+},
+{
+  "crypto": "Coinbase Wrapped BTC",
+  "score": 3,
+  "explanation": "Coinbase Wrapped BTC is tied to Bitcoin, which is energy-intensive due to its proof-of-work consensus mechanism."
+},
+{
+  "crypto": "Aptos",
+  "score": 7,
+  "explanation": "Aptos uses a proof-of-stake mechanism, reducing energy consumption compared to proof-of-work chains."
+},
+{
+  "crypto": "Ondo",
+  "score": 6,
+  "explanation": "Ondo operates on proof-of-stake blockchains, offering moderate sustainability benefits compared to traditional proof-of-work."
+},
+{
+  "crypto": "Gate",
+  "score": 5,
+  "explanation": "Gate runs on proof-of-stake networks, but factors such as network efficiency and operational practices affect its score."
+},
+{
+  "crypto": "NEAR Protocol",
+  "score": 8,
+  "explanation": "NEAR Protocol uses a highly efficient proof-of-stake consensus and has a strong focus on sustainability."
+},
+{
+  "crypto": "Tokenize Xchange",
+  "score": 7,
+  "explanation": "Tokenize Xchange is relatively sustainable as it uses less energy-intensive technology compared to traditional proof-of-work systems."
+},
+{
+  "crypto": "Internet Computer",
+  "score": 6,
+  "explanation": "Internet Computer operates on a novel protocol which is designed to be energy-efficient, but its overall energy consumption is still significant."
+},
+{
+  "crypto": "Cronos",
+  "score": 5,
+  "explanation": "Cronos uses Ethereum-based technology but aims to transition to more sustainable solutions, resulting in a moderate sustainability score."
+},
+{
+  "crypto": "Mantle",
+  "score": 6,
+  "explanation": "Mantle utilizes a layer-2 scaling solution that enhances efficiency and reduces energy consumption relative to many blockchain technologies."
+},
+{
+  "crypto": "Ethereum Classic",
+  "score": 3,
+  "explanation": "Ethereum Classic still uses a proof-of-work system, leading to significant energy consumption and lower sustainability compared to newer systems."
+},
+{
+  "crypto": "BlackRock USD Institutional Digital Liquidity Fund",
+  "score": 9,
+  "explanation": "This is a stablecoin-like fund with minimal environmental impact as it is not based on energy-intensive mining processes."
+},
+{
+  "crypto": "Ethena Staked USDe",
+  "score": 8,
+  "explanation": "Operates on proof-of-stake, which is significantly more environmentally friendly than proof-of-work systems."
+},
+{
+  "crypto": "Aave",
+  "score": 7,
+  "explanation": "Runs on Ethereum's network which has shifted to proof-of-stake, reducing its environmental impact significantly."
+},
+{
+  "crypto": "Cosmos Hub",
+  "score": 8,
+  "explanation": "Utilizes a proof-of-stake consensus mechanism, which is more energy-efficient compared to proof-of-work."
+},
+{
+  "crypto": "Bittensor",
+  "score": 6,
+  "explanation": "Uses a unique consensus mechanism but still involves computational resources, though less than typical proof-of-work systems."
+},
+{
+  "crypto": "VeChain",
+  "score": 8,
+  "explanation": "VeChain uses a proof-of-authority consensus which is energy efficient compared to proof-of-work systems."
+},
+{
+  "crypto": "First Digital USD",
+  "score": 9,
+  "explanation": "As a stablecoin often running on efficient blockchains, its environmental impact is low."
+},
+{
+  "crypto": "Kaspa",
+  "score": 3,
+  "explanation": "Kaspa uses a custom proof-of-work system that may be less energy-intensive than Bitcoin but still has a significant environmental footprint."
+},
+{
+  "crypto": "Lombard Staked BTC",
+  "score": 6,
+  "explanation": "Staked versions of Bitcoin may reduce energy consumption compared to traditional proof-of-work; however, they still rely on underlying Bitcoin operations."
+},
+{
+  "crypto": "Fasttoken",
+  "score": 7,
+  "explanation": "Typically uses efficient consensus mechanisms which are less harmful to the environment."
+},
+{
+  "crypto": "Ethena",
+  "score": 7,
+  "explanation": "Ethena uses proof-of-stake, which is more energy-efficient than proof-of-work."
+},
+{
+  "crypto": "Render",
+  "score": 6,
+  "explanation": "Render focuses on decentralized GPU rendering, potentially utilizing renewable energy but still dependent on server farms."
+},
+{
+  "crypto": "Official Trump",
+  "score": 5,
+  "explanation": "The sustainability impact is unclear due to lack of specific information about its consensus mechanism."
+},
+{
+  "crypto": "POL (ex-MATIC)",
+  "score": 8,
+  "explanation": "POL operates on a proof-of-stake mechanism, significantly reducing its energy consumption."
+},
+{
+  "crypto": "Filecoin",
+  "score": 4,
+  "explanation": "Filecoin uses proof-of-replication and proof-of-spacetime, which require substantial storage and energy, but some efforts focus on improving sustainability."
+},
+{
+  "crypto": "Algorand",
+  "score": 9,
+  "explanation": "Algorand uses a Proof-of-Stake (PoS) consensus mechanism, which is energy efficient and results in a low environmental impact."
+},
+{
+  "crypto": "Sonic",
+  "score": 5,
+  "explanation": "Sonic (FTM) operates on a Proof-of-Stake model, which is generally efficient, though details on specific energy usage are less documented."
+},
+{
+  "crypto": "Celestia",
+  "score": 8,
+  "explanation": "Celestia employs a consensus mechanism designed to optimize scalability and energy efficiency, contributing to a reduced environmental impact."
+},
+{
+  "crypto": "Arbitrum",
+  "score": 7,
+  "explanation": "Arbitrum is a layer 2 scaling solution for Ethereum, reducing the energy consumption per transaction compared to Ethereum's mainnet."
+},
+{
+  "crypto": "Solv Protocol",
+  "score": 6,
+  "explanation": "Solv Protocol primarily focuses on DeFi solutions and utilizes existing blockchain infrastructure, but specific energy optimizations are not prominent."
+},
+{
+  "crypto": "SolvBTC",
+  "score": 4,
+  "explanation": "As a token on the Bitcoin network, SolvBTC inherits Bitcoin's Proof-of-Work consensus, which is energy-intensive and has a higher environmental impact."
+},
+{
+  "crypto": "Jupiter Perpetuals Liquidity Provider Token",
+  "score": 5,
+  "explanation": "Moderate environmental impact due to use of energy-efficient blockchains, but some dependance on traditional networks."
+},
+{
+  "crypto": "KuCoin",
+  "score": 6,
+  "explanation": "Operates on a relatively energy-efficient platform, with ongoing efforts to improve sustainability."
+},
+{
+  "crypto": "Story",
+  "score": 4,
+  "explanation": "Higher environmental impact as it relies heavily on networks with significant energy consumption."
+},
+{
+  "crypto": "Maker",
+  "score": 7,
+  "explanation": "Efficient smart contract operations and reliance on environmentally conscious networks."
+},
+{
+  "crypto": "Artificial Superintelligence Alliance",
+  "score": 3,
+  "explanation": "Possesses substantial operational energy demands due to complex computational requirements."
+},
+{
+  "crypto": "Optimism",
+  "score": 8,
+  "explanation": "Optimism is a layer 2 solution on Ethereum, which has transitioned to proof-of-stake, reducing its environmental impact significantly."
+},
+{
+  "crypto": "Jupiter",
+  "score": 7,
+  "explanation": "Jupiter operates on the Solana blockchain, which uses a proof-of-stake consensus, making it more environmentally friendly compared to older proof-of-work systems."
+},
+{
+  "crypto": "EOS",
+  "score": 9,
+  "explanation": "EOS uses a delegated proof-of-stake consensus mechanism that is energy efficient and environmentally friendly."
+},
+{
+  "crypto": "XDC Network",
+  "score": 9,
+  "explanation": "XDC Network utilizes a delegated proof-of-stake model, offering a more sustainable alternative to proof-of-work systems."
+},
+{
+  "crypto": "NEXO",
+  "score": 6,
+  "explanation": "NEXO is an ERC-20 token on Ethereum, which now runs on a proof-of-stake consensus mechanism, improving its sustainability but still indirectly dependent on Ethereum's overall ecosystem."
+},
+{
+  "crypto": "USDT0",
+  "score": 7,
+  "explanation": "USDT is a stablecoin primarily built on energy-efficient blockchains like Ethereum 2.0 and others with lower environmental impact."
+},
+{
+  "crypto": "Binance-Peg WETH",
+  "score": 7,
+  "explanation": "Binance-Peg WETH is pegged to Ethereum, which is transitioning to Ethereum 2.0 aimed at reducing energy consumption significantly."
+},
+{
+  "crypto": "Binance Staked SOL",
+  "score": 8,
+  "explanation": "SOL is based on the Solana network, known for its energy efficiency and lower environmental impact compared to traditional blockchain networks."
+},
+{
+  "crypto": "Quant",
+  "score": 8,
+  "explanation": "Quant uses an energy-efficient Overledger protocol, which does not rely heavily on energy-intensive consensus mechanisms."
+},
+{
+  "crypto": "Kelp DAO Restaked ETH",
+  "score": 7,
+  "explanation": "Restaked ETH is part of Ethereum's shift to a proof-of-stake system, significantly lowering its environmental footprint post-transition."
+},
+{
+  "crypto": "Flare",
+  "score": 7,
+  "explanation": "Flare aims to provide a greener alternative by enabling smart contracts on networks without significant energy use through their Federated Byzantine Agreement consensus."
+},
+{
+  "crypto": "Stacks",
+  "score": 6,
+  "explanation": "Stacks builds on top of Bitcoin, leveraging its security and using PoX, which piggybacks on Bitcoin's existing PoW, reducing additional energy consumption."
+},
+{
+  "crypto": "DeXe",
+  "score": 5,
+  "explanation": "DeXe operates on Ethereum and Binance Smart Chain, both of which are transitioning to more sustainable solutions, though they currently incur moderate energy use."
+},
+{
+  "crypto": "Worldcoin",
+  "score": 6,
+  "explanation": "Worldcoin focuses on efficiency with a simplified transaction verification process, aiming to minimize energy requirements compared to traditional PoW systems."
+},
+{
+  "crypto": "Binance Bridged USDC (BNB Smart Chain)",
+  "score": 6,
+  "explanation": "BNB Smart Chain uses a PoSA consensus, which is significantly less energy-intensive than PoW, though it still requires some degree of computational energy."
+},
+{
+  "crypto": "Bonk",
+  "score": 5,
+  "explanation": "Bonk uses the Solana blockchain, which is more energy-efficient than earlier proof-of-work systems due to its proof-of-stake consensus."
+},
+{
+  "crypto": "Polygon Bridged USDT (Polygon)",
+  "score": 7,
+  "explanation": "Polygon is a layer 2 solution for Ethereum with a much lower energy consumption compared to Ethereum's mainnet before its transition to proof-of-stake."
+},
+{
+  "crypto": "Movement",
+  "score": 6,
+  "explanation": "The sustainability score is average as the specifics of its blockchain's energy efficiency are less documented, but considered better than older proof-of-work blockchains."
+},
+{
+  "crypto": "Rocket Pool ETH",
+  "score": 8,
+  "explanation": "Rocket Pool operates on Ethereum 2.0's proof-of-stake network, significantly reducing environmental impact compared to the old proof-of-work Ethereum."
+},
+{
+  "crypto": "PayPal USD",
+  "score": 9,
+  "explanation": "This is a stablecoin which typically utilizes existing blockchain infrastructure efficiently, with lower additional environmental impact."
+},
+{
+  "crypto": "Usual USD",
+  "score": 8,
+  "explanation": "Usual USD is likely a stablecoin, typically less harmful environmentally as they're often centralized and use less resource-intensive consensus mechanisms."
+},
+{
+  "crypto": "Injective",
+  "score": 7,
+  "explanation": "Injective uses a Proof-of-Stake mechanism, which is more sustainable than Proof-of-Work, leading to a lower environmental impact."
+},
+{
+  "crypto": "Tether Gold",
+  "score": 8,
+  "explanation": "As a stablecoin pegged to gold, Tether Gold is less resource-intensive as it likely does not rely on energy-heavy mining processes."
+},
+{
+  "crypto": "Theta Network",
+  "score": 7,
+  "explanation": "Theta Network uses a modified Proof-of-Stake consensus which consumes significantly less energy compared to traditional Proof-of-Work protocols."
+},
+{
+  "crypto": "The Graph",
+  "score": 6,
+  "explanation": "The Graph uses a staking model which generally means less energy consumption compared to systems using Proof-of-Work, though node operations still consume some resources."
+},
+{
+  "crypto": "Sei",
+  "score": 5,
+  "explanation": "Sei uses a consensus mechanism that may not be as energy-intensive as others, but specific details about its sustainability are limited."
+},
+{
+  "crypto": "Fartcoin",
+  "score": 2,
+  "explanation": "Fartcoin likely employs a traditional proof-of-work consensus, which is energy-intensive and environmentally harmful."
+},
+{
+  "crypto": "Immutable",
+  "score": 8,
+  "explanation": "Immutable operates as a layer-2 solution on Ethereum, using zero-knowledge proofs that minimize environmental impact."
+},
+{
+  "crypto": "Solv Protocol xSolvBTC",
+  "score": 4,
+  "explanation": "The Solv Protocol incorporates aspects of traditional finance interacting with crypto, relying in part on underlying infrastructures which may be less sustainable."
+},
+{
+  "crypto": "PAX Gold",
+  "score": 6,
+  "explanation": "PAX Gold is an ERC-20 token on Ethereum, with the chain's transition to proof-of-stake expected to lessen its energy usage over time."
+},
+{
+  "crypto": "Wrapped BNB",
+  "score": 4,
+  "explanation": "Wrapped BNB operates on Binance Smart Chain, which uses a proof-of-stake-authority consensus method that is generally considered more energy-efficient than proof-of-work systems."
+},
+{
+  "crypto": "Curve DAO",
+  "score": 6,
+  "explanation": "Curve DAO runs on Ethereum, but its impact depends on Ethereum's shift towards proof-of-stake, which is more energy-efficient than the previous proof-of-work system."
+},
+{
+  "crypto": "Arbitrum Bridged WBTC (Arbitrum One)",
+  "score": 5,
+  "explanation": "Arbitrum is a layer-2 scaling solution for Ethereum, offering reduced energy consumption compared to layer-1 Ethereum, but WBTC itself originates from Bitcoin's proof-of-work chain."
+},
+{
+  "crypto": "Lido DAO",
+  "score": 6,
+  "explanation": "Lido DAO supports Ethereum's shift towards proof-of-stake, an energy-efficient consensus mechanism, but the current network activity contributes to its overall energy use."
+},
+{
+  "crypto": "Mantle Staked Ether",
+  "score": 7,
+  "explanation": "Mantle Staked Ether benefits from Ethereum's transition to proof-of-stake, improving its energy efficiency compared to previous operations involving proof-of-work."
+},
+{
+  "crypto": "Stables Labs USDX",
+  "score": 8,
+  "explanation": "USDX is a stablecoin with limited energy use, typically operating on energy-efficient blockchains."
+},
+{
+  "crypto": "The Sandbox",
+  "score": 4,
+  "explanation": "The Sandbox is based on Ethereum, which has transitioned to a proof-of-stake model, reducing energy consumption but still has emissions linked to its operations."
+},
+{
+  "crypto": "GALA",
+  "score": 5,
+  "explanation": "GALA operates on Ethereum and other chains, with variable energy use depending on the underlying blockchain."
+},
+{
+  "crypto": "Tezos",
+  "score": 9,
+  "explanation": "Tezos uses a proof-of-stake consensus mechanism with relatively low energy consumption compared to traditional proof-of-work blockchains."
+},
+{
+  "crypto": "Kaia",
+  "score": 7,
+  "explanation": "Kaia utilizes eco-friendly blockchains or solutions that reduce its overall carbon footprint."
+},
+{
+  "crypto": "BitTorrent",
+  "score": 9,
+  "explanation": "BitTorrent uses a proof-of-stake mechanism which is energy-efficient compared to proof-of-work systems."
+},
+{
+  "crypto": "IOTA",
+  "score": 9,
+  "explanation": "IOTA uses the Tangle, which requires minimal computational power and is nearly free from environmental harm."
+},
+{
+  "crypto": "Zcash",
+  "score": 2,
+  "explanation": "Zcash uses proof-of-work similar to Bitcoin, resulting in high energy consumption."
+},
+{
+  "crypto": "Walrus",
+  "score": 5,
+  "explanation": "Assuming Walrus uses moderate energy consumption algorithms, balance between efficiency and sustainability."
+},
+{
+  "crypto": "Bitcoin SV",
+  "score": 1,
+  "explanation": "Bitcoin SV uses proof-of-work, leading to a significant carbon footprint due to high energy use."
+},
+{
+  "crypto": "JasmyCoin",
+  "score": 5,
+  "explanation": "JasmyCoin operates on the Ethereum network, which is transitioning to more sustainable practices but still has environmental concerns."
+},
+{
+  "crypto": "PancakeSwap",
+  "score": 8,
+  "explanation": "PancakeSwap is built on Binance Smart Chain, which is generally more energy-efficient than Ethereum's earlier PoW model."
+},
+{
+  "crypto": "Flow",
+  "score": 9,
+  "explanation": "Flow uses a proof-of-stake (PoS) consensus mechanism, which is significantly more eco-friendly compared to proof-of-work (PoW)."
+},
+{
+  "crypto": "Pendle",
+  "score": 7,
+  "explanation": "Pendle operates on Ethereum, which has environmental concerns, though improvements are being made towards sustainability."
+},
+{
+  "crypto": "Marinade Staked SOL",
+  "score": 9,
+  "explanation": "Marinade Staked SOL is on the Solana blockchain, known for its efficiency and lower energy usage compared to PoW systems."
+},
+{
+  "crypto": "Jito",
+  "score": 7,
+  "explanation": "Jito focuses on sustainable practices and efficient blockchain technologies, resulting in moderate environmental impact."
+},
+{
+  "crypto": "Honey",
+  "score": 6,
+  "explanation": "Honey employs optimizations for reduced energy consumption, though full environmental impacts remain moderate."
+},
+{
+  "crypto": "FLOKI",
+  "score": 5,
+  "explanation": "FLOKI operates on major energy-consuming blockchains like Ethereum but has community initiatives towards sustainability."
+},
+{
+  "crypto": "Renzo Restaked ETH",
+  "score": 4,
+  "explanation": "Uses the Ethereum network, which has recently reduced energy consumption significantly but still has a moderate carbon footprint."
+},
+{
+  "crypto": "Raydium",
+  "score": 8,
+  "explanation": "Utilizes Solana's energy-efficient proof-of-stake mechanism, resulting in a lower environmental impact."
+},
+{
+  "crypto": "TrueUSD",
+  "score": 7,
+  "explanation": "TrueUSD is a stablecoin backed by reserves and does not use energy-intensive mining processes."
+},
+{
+  "crypto": "Helium",
+  "score": 5,
+  "explanation": "Helium uses a unique proof-of-coverage algorithm, which is less energy-intensive than proof-of-work but still has a moderate environmental footprint."
+},
+{
+  "crypto": "Core",
+  "score": 3,
+  "explanation": "Core relies on traditional proof-of-work mining, which is typically energy-intensive and has a higher environmental impact."
+},
+{
+  "crypto": "Jupiter Staked SOL",
+  "score": 8,
+  "explanation": "Staked SOL uses proof-of-stake, which is significantly more energy-efficient compared to proof-of-work systems."
+},
+{
+  "crypto": "Sonic Bridged USDC.e (Sonic)",
+  "score": 7,
+  "explanation": "Sonic Bridged USDC.e operates on platforms that utilize proof-of-stake, leading to lower environmental impact."
+},
+{
+  "crypto": "Ethereum Name Service",
+  "score": 6,
+  "explanation": "Operates on the Ethereum network, which is transitioning to proof-of-stake, reducing environmental impact."
+},
+{
+  "crypto": "pumpBTC",
+  "score": 4,
+  "explanation": "If based on Bitcoin’s proof-of-work, it has a significant environmental footprint due to energy consumption."
+},
+{
+  "crypto": "Bridged USDC (Polygon PoS Bridge)",
+  "score": 8,
+  "explanation": "Uses Polygon's proof-of-stake, which is more energy-efficient compared to proof-of-work systems."
+},
+{
+  "crypto": "Kava",
+  "score": 7,
+  "explanation": "Utilizes proof-of-stake consensus, which substantially reduces energy usage compared to proof-of-work."
+},
+{
+  "crypto": "Beldex",
+  "score": 5,
+  "explanation": "While specifics depend on network operations, it likely uses energy-efficient mechanisms compared to traditional proof-of-work."
+},
+{
+  "crypto": "Pyth Network",
+  "score": 7,
+  "explanation": "Pyth Network mainly relies on data feeds and smart contracts, which are less energy-intensive than traditional mining operations."
+},
+{
+  "crypto": "SPX6900",
+  "score": 5,
+  "explanation": "Details about SPX6900's environmental impact are limited, but it is likely to involve some computational resources similar to other cryptos."
+},
+{
+  "crypto": "Telcoin",
+  "score": 8,
+  "explanation": "Telcoin is designed for efficiency in transactions and runs on blockchains with lower energy consumption compared to Bitcoin or Ethereum."
+},
+{
+  "crypto": "Ondo US Dollar Yield",
+  "score": 9,
+  "explanation": "As a stablecoin, it's designed to minimize energy use and primarily utilizes existing blockchain infrastructure."
+},
+{
+  "crypto": "Grass",
+  "score": 6,
+  "explanation": "The environmental impact of Grass is not well-documented but presumably similar to other small-scale cryptocurrencies."
+},
+{
+  "crypto": "Berachain",
+  "score": 7,
+  "explanation": "Berachain aims to improve energy efficiency through its consensus mechanism, which is less energy-intensive compared to PoW cryptocurrencies."
+},
+{
+  "crypto": "dYdX",
+  "score": 8,
+  "explanation": "dYdX operates as a Layer 2 protocol on Ethereum, utilizing rollups to increase efficiency and reduce energy consumption compared to operations directly on the Ethereum mainnet."
+},
+{
+  "crypto": "Decentraland",
+  "score": 6,
+  "explanation": "Decentraland uses the Ethereum blockchain, which has transitioned to PoS, significantly reducing energy consumption, but hosting 3D environments still requires computational energy."
+},
+{
+  "crypto": "Reserve Rights",
+  "score": 7,
+  "explanation": "Reserve Rights token is designed to function with minimal environmental impact, leveraging existing blockchain networks that have transitioned to more sustainable models."
+},
+{
+  "crypto": "Avalanche Bridged BTC (Avalanche)",
+  "score": 5,
+  "explanation": "Avalanche uses a PoS consensus mechanism, which is more sustainable; however, BTC itself originating from PoW networks impacts overall sustainability."
+},
+{
+  "crypto": "Saros",
+  "score": 5,
+  "explanation": "Saros utilizes a consensus mechanism that balances between energy efficiency and security, resulting in moderate environmental impact."
+},
+{
+  "crypto": "NEO",
+  "score": 7,
+  "explanation": "NEO uses a delegated Byzantine Fault Tolerance (dBFT) consensus mechanism, which is more energy-efficient than traditional proof-of-work systems."
+},
+{
+  "crypto": "APENFT",
+  "score": 6,
+  "explanation": "APENFT is built on TRON, which uses a proof-of-stake approach, reducing energy consumption compared to proof-of-work cryptocurrencies."
+},
+{
+  "crypto": "clBTC",
+  "score": 3,
+  "explanation": "clBTC leverages Bitcoin's proof-of-work and is pegged to BTC, thus inherits Bitcoin's higher energy consumption and environmental concerns."
+},
+{
+  "crypto": "USDB",
+  "score": 8,
+  "explanation": "USDB operates on energy-efficient blockchain platforms, resulting in a lower environmental footprint compared to energy-intensive alternatives."
+},
+{
+  "crypto": "Hashnote USYC",
+  "score": 8,
+  "explanation": "Operates on a proof-of-stake blockchain, which generally has lower environmental impact than proof-of-work systems."
+},
+{
+  "crypto": "OUSG",
+  "score": 7,
+  "explanation": "Likely employs environmentally friendlier technologies, but specific data on energy usage is limited."
+},
+{
+  "crypto": "Binance-Peg Dogecoin",
+  "score": 3,
+  "explanation": "Dogecoin is a proof-of-work cryptocurrency, which is energy-intensive, though its operations are bridged on Binance, potentially mitigating some impact."
+},
+{
+  "crypto": "Stargate Bridged USDC (Berachain)",
+  "score": 9,
+  "explanation": "Bridged on Berachain, a platform likely optimizing for low energy consumption, but specific details vary."
+},
+{
+  "crypto": "MultiversX",
+  "score": 7,
+  "explanation": "Uses a secure proof-of-stake mechanism, reducing its potential impact on the environment compared to proof-of-work chains."
+},
+{
+  "crypto": "Onyxcoin",
+  "score": 6,
+  "explanation": "Onyxcoin uses a Proof-of-Stake algorithm which reduces energy consumption compared to Proof-of-Work systems."
+},
+{
+  "crypto": "Resolv USR",
+  "score": 7,
+  "explanation": "Resolv USR is built on a blockchain that prioritizes efficiency and lower energy use."
+},
+{
+  "crypto": "Starknet",
+  "score": 8,
+  "explanation": "Starknet is a Layer 2 scaling solution for Ethereum, leading to significantly reduced energy use per transaction."
+},
+{
+  "crypto": "Mantle Restaked ETH",
+  "score": 5,
+  "explanation": "Utilizes Ethereum's Proof-of-Stake network, which is more sustainable than Proof-of-Work, but still carries some environmental impact."
+},
+{
+  "crypto": "THORChain",
+  "score": 4,
+  "explanation": "THORChain operates its own network and the environmental impact depends on node operations, which is moderate but needs more optimization."
+},
+{
+  "crypto": "Axie Infinity",
+  "score": 7,
+  "explanation": "Axie Infinity operates on Ethereum but is moving towards more sustainable options through sidechains like Ronin, which reduce energy consumption."
+},
+{
+  "crypto": "Solayer",
+  "score": 5,
+  "explanation": "Assuming Solayer operates on a general proof-of-stake system, it is generally more sustainable than proof-of-work systems but specifics are unclear without more information."
+},
+{
+  "crypto": "Chiliz",
+  "score": 6,
+  "explanation": "Chiliz operates on a proof-of-authority blockchain, which is more efficient than traditional proof-of-work systems but not as sustainable as proof-of-stake."
+},
+{
+  "crypto": "tBTC",
+  "score": 3,
+  "explanation": "tBTC is a tokenized version of Bitcoin, which relies on the energy-intensive proof-of-work system of Ethereum and Bitcoin for its issuance and transaction."
+},
+{
+  "crypto": "eCash",
+  "score": 4,
+  "explanation": "eCash (formerly Bitcoin Cash ABC) still uses a proof-of-work consensus mechanism, which is generally energy-intensive, though improvements are being made."
+},
+{
+  "crypto": "Conflux",
+  "score": 6,
+  "explanation": "Conflux uses a Proof of Work consensus mechanism but is working on implementing more eco-friendly solutions, reducing its environmental impact."
+},
+{
+  "crypto": "dogwifhat",
+  "score": 4,
+  "explanation": "Limited information is available, but it is believed to utilize energy-intensive processes, leading to a moderate environmental impact."
+},
+{
+  "crypto": "Olympus",
+  "score": 5,
+  "explanation": "Olympus employs mechanisms that can be energy-intensive, but there have been initiatives to offset carbon footprints partially."
+},
+{
+  "crypto": "Super OETH",
+  "score": 7,
+  "explanation": "Super OETH claims to incorporate energy-efficient technologies but lacks detailed transparency, suggesting a moderate to high sustainability."
+},
+{
+  "crypto": "uBTC",
+  "score": 3,
+  "explanation": "uBTC is likely tied to Bitcoin's Proof of Work, resulting in significant environmental harm due to high energy consumption."
+},
+{
+  "crypto": "Compound",
+  "score": 7,
+  "explanation": "Compound uses Ethereum-based smart contracts; while Ethereum has transitioned to proof of stake, it has a neutral effect on sustainability."
+},
+{
+  "crypto": "Ronin",
+  "score": 5,
+  "explanation": "Ronin relies on an Ethereum sidechain, which has improved sustainability but still involves significant energy consumption."
+},
+{
+  "crypto": "Mantle Bridged USDT (Mantle)",
+  "score": 6,
+  "explanation": "Mantle Bridged USDT on Mantle uses a Layer 2 solution that enhances efficiency but still connects to Ethereum's infrastructure."
+},
+{
+  "crypto": "Plume",
+  "score": 8,
+  "explanation": "Plume operates on a relatively energy-efficient network, focusing on minimizing environmental impact."
+},
+{
+  "crypto": "Arweave",
+  "score": 4,
+  "explanation": "Arweave involves permanent data storage, which can lead to higher energy usage compared to other networks."
+},
+{
+  "crypto": "Wormhole",
+  "score": 5,
+  "explanation": "Wormhole, a cross-chain bridge, uses computational resources for security and maintenance, but isn't as resource-intensive as traditional PoW systems."
+},
+{
+  "crypto": "L2 Standard Bridged WETH (Base)",
+  "score": 7,
+  "explanation": "Layer 2 solutions are designed to improve scalability and typically have lower environmental impact than Layer 1 due to less energy usage."
+},
+{
+  "crypto": "Beam",
+  "score": 4,
+  "explanation": "Beam uses Mimblewimble, which has some energy efficiency improvements, but still relies on PoW, leading to moderate energy consumption."
+},
+{
+  "crypto": "ApeCoin",
+  "score": 6,
+  "explanation": "ApeCoin is on the Ethereum blockchain, which traditionally uses a lot of energy, yet Ethereum's shift to PoS reduces its environmental impact significantly."
+},
+{
+  "crypto": "Cheems Token",
+  "score": 3,
+  "explanation": "Cheems Token is often associated with meme-based projects that could use less efficient mechanisms, giving it a higher environmental footprint."
+},
+{
+  "crypto": "Arbitrum Bridged WETH (Arbitrum One)",
+  "score": 7,
+  "explanation": "Arbitrum is a layer 2 solution using rollups, which significantly reduces energy consumption compared to Ethereum's layer 1."
+},
+{
+  "crypto": "StakeWise Staked ETH",
+  "score": 6,
+  "explanation": "StakeWise Staked ETH operates on Ethereum 2.0, which uses proof-of-stake, a more sustainable alternative to proof-of-work."
+},
+{
+  "crypto": "Trust Wallet",
+  "score": 8,
+  "explanation": "Trust Wallet is primarily a storage solution that supports multiple blockchains, most of which are moving towards more sustainable consensus mechanisms."
+},
+{
+  "crypto": "Polygon",
+  "score": 9,
+  "explanation": "Polygon is a layer 2 scaling solution for Ethereum, significantly reducing energy usage by increasing transaction efficiency."
+},
+{
+  "crypto": "Binance-Peg BUSD",
+  "score": 7,
+  "explanation": "Being a stablecoin pegged to Binance Smart Chain, it benefits from BSC's consensus model which is more sustainable than proof-of-work."
+},
+{
+  "crypto": "Frax",
+  "score": 7,
+  "explanation": "Frax uses a partially algorithmic stablecoin model with some backing by collateral, leading to moderate energy consumption."
+},
+{
+  "crypto": "Terra Luna Classic",
+  "score": 3,
+  "explanation": "Terra Luna Classic still relies on a PoS mechanism with a large network which consumes energy but less than PoW."
+},
+{
+  "crypto": "Virtuals Protocol",
+  "score": 8,
+  "explanation": "Virtuals Protocol emphasizes eco-friendly operations with minimal energy usage."
+},
+{
+  "crypto": "Aerodrome Finance",
+  "score": 6,
+  "explanation": "Aerodrome Finance focuses on DeFi solutions that utilize less energy-intensive platforms."
+},
+{
+  "crypto": "Axelar",
+  "score": 5,
+  "explanation": "Axelar runs on a PoS consensus mechanism, which is generally more sustainable than PoW but still involves some energy use."
+},
+{
+  "crypto": "Infrared Bera",
+  "score": 6,
+  "explanation": "It uses a less energy-intensive proof-of-stake mechanism, but details on operational efficiency are limited."
+},
+{
+  "crypto": "ether.fi Staked ETH",
+  "score": 8,
+  "explanation": "Staked ETH uses Ethereum's proof-of-stake validation, which significantly reduces energy consumption compared to proof-of-work."
+},
+{
+  "crypto": "Amp",
+  "score": 7,
+  "explanation": "Amp operates on the Ethereum network, which recently transitioned to proof-of-stake, reducing its carbon footprint considerably."
+},
+{
+  "crypto": "JUST",
+  "score": 5,
+  "explanation": "Runs on the TRON network, which is more efficient than proof-of-work networks but still has room for improvement in terms of sustainability."
+},
+{
+  "crypto": "cgETH Hashkey Cloud",
+  "score": 8,
+  "explanation": "Utilizes Ethereum’s transition to proof-of-stake, significantly lowering energy usage and improving environmental impact."
+},
+{
+  "crypto": "USDD",
+  "score": 6,
+  "explanation": "USDD operates on Tron network which uses a Delegated Proof-of-Stake mechanism, offering better energy efficiency compared to Proof-of-Work systems."
+},
+{
+  "crypto": "Ripple USD",
+  "score": 8,
+  "explanation": "Ripple USD runs on the XRP Ledger, known for its energy-efficient consensus protocol that requires minimal energy consumption."
+},
+{
+  "crypto": "Brett",
+  "score": 5,
+  "explanation": "Details on Brett's sustainability are limited, but it's assumed to have moderate impact based on common blockchain technologies."
+},
+{
+  "crypto": "LayerZero",
+  "score": 7,
+  "explanation": "LayerZero protocol focuses on interoperability and uses efficient consensus methods, reducing the overall energy footprint."
+},
+{
+  "crypto": "Pudgy Penguins",
+  "score": 4,
+  "explanation": "Pudgy Penguins, primarily being an NFT project, often depends on Ethereum, which recently upgraded to Proof-of-Stake, improving sustainability."
+},
+{
+  "crypto": "Venom",
+  "score": 5,
+  "explanation": "Venom operates on a proof-of-stake consensus, which is generally more energy-efficient than proof-of-work systems."
+},
+{
+  "crypto": "Gnosis",
+  "score": 7,
+  "explanation": "Gnosis is built on Ethereum, which is transitioning to proof-of-stake, significantly reducing its carbon footprint."
+},
+{
+  "crypto": "Polygon Bridged WBTC (Polygon POS)",
+  "score": 6,
+  "explanation": "Polygon uses a more energy-efficient proof-of-stake model, but WBTC is Bitcoin wrapped, which originally is mined through energy-intensive processes."
+},
+{
+  "crypto": "Entangle",
+  "score": 5,
+  "explanation": "Without specific details on its consensus mechanism, it's assumed to be moderately sustainable like many newer cryptocurrencies adopting efficient technologies."
+},
+{
+  "crypto": "StakeStone Berachain Vault Token",
+  "score": 4,
+  "explanation": "Details on its environmental impact are limited, but vault tokens generally rely on secondary layers which may vary widely in terms of sustainability."
+},
+{
+  "crypto": "Quorium",
+  "score": 7,
+  "explanation": "Quorium is designed to be energy-efficient due to its use of a consensus algorithm that reduces energy consumption compared to traditional proof-of-work systems."
+},
+{
+  "crypto": "AIOZ Network",
+  "score": 8,
+  "explanation": "AIOZ Network operates on a decentralized Content Delivery Network (CDN) which is comparatively energy-efficient and uses less power-intensive nodes."
+},
+{
+  "crypto": "Mina Protocol",
+  "score": 9,
+  "explanation": "Mina Protocol utilizes a lightweight blockchain design called zk-SNARKs that keeps its size constant, requiring significantly less computational power and energy."
+},
+{
+  "crypto": "Polygon PoS Bridged WETH (Polygon POS)",
+  "score": 6,
+  "explanation": "Polygon PoS employs a proof-of-stake consensus mechanism that is more energy-efficient than Ethereum's proof-of-work but still involves some energy consumption."
+},
+{
+  "crypto": "Dash",
+  "score": 5,
+  "explanation": "Dash uses a proof-of-work combined with masternodes, which makes it somewhat more efficient than pure PoW systems, but it still incurs considerable energy use."
+},
+{
+  "crypto": "Morpho",
+  "score": 7,
+  "explanation": "Morpho is based on Ethereum, which is transitioning to a proof-of-stake system, reducing energy consumption."
+},
+{
+  "crypto": "Ether.fi Staked BTC",
+  "score": 6,
+  "explanation": "As an Ethereum-based wrapped asset, it benefits from Ethereum's move to proof-of-stake, albeit indirectly."
+},
+{
+  "crypto": "Akash Network",
+  "score": 8,
+  "explanation": "Akash Network utilizes decentralized cloud computing, which can optimize resource usage and reduce environmental impact."
+},
+{
+  "crypto": "MX",
+  "score": 5,
+  "explanation": "MX Token is primarily used on the MXC Exchange; its environmental impact is dependent on the underlying blockchain's consensus mechanism."
+},
+{
+  "crypto": "Golem",
+  "score": 8,
+  "explanation": "Golem aims to decentralize computing power, potentially leading to better efficiency and reduced energy wastage."
+},
+{
+  "crypto": "Creditcoin",
+  "score": 5,
+  "explanation": "Creditcoin uses a proof-of-work system, which can be energy-intensive, but it seeks to enhance financial connectivity, aiming for a balance."
+},
+{
+  "crypto": "SafePal",
+  "score": 7,
+  "explanation": "SafePal is a crypto wallet and doesn't have inherent blockchain energy consumption, relying on networks it supports for their sustainability."
+},
+{
+  "crypto": "Safe",
+  "score": 6,
+  "explanation": "Safe's sustainability is moderately positive, focusing on security and efficiency in its operations without heavy blockchain usage."
+},
+{
+  "crypto": "Global Dollar",
+  "score": 8,
+  "explanation": "Global Dollar is designed with stablecoin principles, utilizing existing blockchains and minimizing additional energy expenditures."
+},
+{
+  "crypto": "1inch",
+  "score": 6,
+  "explanation": "1inch is a decentralized exchange aggregator that processes transactions efficiently but ultimately depends on underlying blockchain networks for energy use."
+},
+{
+  "crypto": "Aethir",
+  "score": 7,
+  "explanation": "Aethir utilizes proof-of-stake or similar energy-efficient consensus mechanisms, reducing its environmental impact."
+},
+{
+  "crypto": "MimbleWimbleCoin",
+  "score": 6,
+  "explanation": "MimbleWimbleCoin employs a more energy-efficient protocol than traditional proof-of-work systems, though it's not entirely eco-friendly."
+},
+{
+  "crypto": "Theta Fuel",
+  "score": 8,
+  "explanation": "Theta Fuel operates within a network designed for minimal energy consumption, benefiting from efficient blockchain operations."
+},
+{
+  "crypto": "Stader ETHx",
+  "score": 5,
+  "explanation": "Stader ETHx's environmental impact depends on Ethereum's network efficiency, which has improved post-merge but still involves transitional carbon costs."
+},
+{
+  "crypto": "Coinbase Wrapped Staked ETH",
+  "score": 5,
+  "explanation": "This token depends on Ethereum's energy profile; improvements post-merge are significant but still require consideration of underlying infrastructure."
+},
+{
+  "crypto": "cWBTC",
+  "score": 3,
+  "explanation": "cWBTC is based on Bitcoin, which has a high environmental impact due to its energy-intensive proof-of-work consensus."
+},
+{
+  "crypto": "Kusama",
+  "score": 6,
+  "explanation": "Kusama uses a nominated proof-of-stake consensus, which is more energy-efficient than proof-of-work systems."
+},
+{
+  "crypto": "Gas",
+  "score": 4,
+  "explanation": "Gas is associated with Ethereum, which historically has a significant environmental impact, though the recent shift to proof-of-stake aims to reduce this."
+},
+{
+  "crypto": "Wrapped AVAX",
+  "score": 7,
+  "explanation": "Wrapped AVAX is tied to Avalanche, which uses a proof-of-stake mechanism that is generally more sustainable."
+},
+{
+  "crypto": "USDa",
+  "score": 8,
+  "explanation": "USDa is typically built on more sustainable blockchains with a focus on energy efficiency, making it relatively eco-friendly."
+},
+{
+  "crypto": "Swell Ethereum",
+  "score": 6,
+  "explanation": "Swell Ethereum uses Ethereum's proof-of-stake consensus since the Merge, significantly reducing energy consumption compared to its previous proof-of-work model."
+},
+{
+  "crypto": "Blur",
+  "score": 7,
+  "explanation": "Blur operates on the Ethereum network post-Merge, benefiting from lower energy use through proof-of-stake, thus moderately sustainable."
+},
+{
+  "crypto": "Synthetix Network",
+  "score": 6,
+  "explanation": "Synthetix Network on Ethereum uses the energy-efficient proof-of-stake system post-Merge, reducing its environmental impact."
+},
+{
+  "crypto": "UXLINK",
+  "score": 5,
+  "explanation": "Limited data on UXLINK suggests moderate energy efficiency, possibly running on a network with mixed sustainability practices."
+},
+{
+  "crypto": "Decred",
+  "score": 3,
+  "explanation": "Decred uses a hybrid proof-of-work and proof-of-stake model, with the proof-of-work component contributing to higher energy use."
+},
+{
+  "crypto": "KAITO",
+  "score": 6,
+  "explanation": "Relatively efficient consensus mechanism but lacks extensive environmental initiatives."
+},
+{
+  "crypto": "WEMIX",
+  "score": 5,
+  "explanation": "Moderate efficiency with some energy-saving measures in place."
+},
+{
+  "crypto": "SuperVerse",
+  "score": 4,
+  "explanation": "Uses an energy-intensive network with limited sustainability efforts."
+},
+{
+  "crypto": "Zilliqa",
+  "score": 7,
+  "explanation": "Uses a sharding mechanism that improves scalability and reduces environmental impact."
+},
+{
+  "crypto": "GHO",
+  "score": 3,
+  "explanation": "Operates on a network known for high energy consumption without significant sustainable projects."
+},
+{
+  "crypto": "aBTC",
+  "score": 4,
+  "explanation": "As a variant of Bitcoin, it likely uses a proof-of-work consensus mechanism, which is energy-intensive."
+},
+{
+  "crypto": "Verus",
+  "score": 7,
+  "explanation": "Verus uses a hybrid proof-of-work and proof-of-stake system, aiming for reduced energy consumption compared to purely proof-of-work systems."
+},
+{
+  "crypto": "Frax Ether",
+  "score": 6,
+  "explanation": "Dependent on Ethereum's transition to proof-of-stake, which reduces energy use compared to proof-of-work systems."
+},
+{
+  "crypto": "Qtum",
+  "score": 7,
+  "explanation": "Qtum uses a proof-of-stake consensus, which generally has a lower environmental impact than proof-of-work."
+},
+{
+  "crypto": "ZKsync",
+  "score": 8,
+  "explanation": "ZKsync enhances Ethereum scalability using layer 2 solutions, potentially lowering overall energy use by optimizing network efficiency."
+},
+{
+  "crypto": "Elixir deUSD",
+  "score": 7,
+  "explanation": "Elixir deUSD uses a relatively energy-efficient proof-of-stake consensus mechanism, minimizing its environmental impact."
+},
+{
+  "crypto": "Snek",
+  "score": 5,
+  "explanation": "Snek employs a hybrid consensus mechanism, balancing between energy efficiency and environmental concerns."
+},
+{
+  "crypto": "Eigenlayer",
+  "score": 8,
+  "explanation": "Eigenlayer utilizes advanced efficient technologies that significantly reduce energy consumption."
+},
+{
+  "crypto": "0x Protocol",
+  "score": 6,
+  "explanation": "0x Protocol's focus is on facilitating trades, typically relying on Ethereum's network, which is shifting towards more sustainable practices."
+},
+{
+  "crypto": "cat in a dogs world",
+  "score": 4,
+  "explanation": "cat in a dogs world has not prioritized sustainability in its design, potentially leading to higher environmental impact."
+},
+{
+  "crypto": "Echelon Prime",
+  "score": 7,
+  "explanation": "Utilizes a proof-of-stake consensus, which is less energy-intensive than proof-of-work."
+},
+{
+  "crypto": "Astar",
+  "score": 8,
+  "explanation": "Operates on a decentralized, scalable infrastructure reducing its carbon footprint compared to traditional mining."
+},
+{
+  "crypto": "Notcoin",
+  "score": 5,
+  "explanation": "Details on its sustainability practices are scarce, but it appears to use a hybrid consensus mechanism."
+},
+{
+  "crypto": "Baby Doge Coin",
+  "score": 6,
+  "explanation": "Runs on Binance Smart Chain, which is more eco-friendly than Bitcoin but lacks detailed sustainability reports."
+},
+{
+  "crypto": "Nervos Network",
+  "score": 9,
+  "explanation": "Focuses on being a universal blockchain network with low energy consumption and efficient design."
+},
+{
+  "crypto": "Liquid Staked ETH",
+  "score": 6,
+  "explanation": "Liquid staked ETH benefits from Ethereum's transition to proof-of-stake, which significantly reduces energy consumption."
+},
+{
+  "crypto": "Basic Attention",
+  "score": 8,
+  "explanation": "Basic Attention Token operates on Ethereum's proof-of-stake network, which has lower environmental impact compared to proof-of-work."
+},
+{
+  "crypto": "SwissBorg",
+  "score": 7,
+  "explanation": "SwissBorg aims to optimize energy efficiency and operates on Ethereum, benefiting from the shift to proof-of-stake."
+},
+{
+  "crypto": "IoTeX",
+  "score": 9,
+  "explanation": "IoTeX uses a highly efficient consensus mechanism called Roll-DPoS, which minimizes energy consumption."
+},
+{
+  "crypto": "BTSE Token",
+  "score": 6,
+  "explanation": "BTSE Token operates on Ethereum as an ERC-20 token, leveraging proof-of-stake for energy efficiency."
+},
+{
+  "crypto": "AgentFun.AI",
+  "score": 7,
+  "explanation": "AgentFun.AI uses proof-of-stake which is more sustainable than proof-of-work, but still consumes some energy."
+},
+{
+  "crypto": "OriginTrail",
+  "score": 8,
+  "explanation": "OriginTrail focuses on supply chain improvements and operates on a relatively energy-efficient network."
+},
+{
+  "crypto": "VeThor",
+  "score": 6,
+  "explanation": "VeThor is part of the VeChain ecosystem which uses proof-of-authority, providing better energy efficiency than traditional models."
+},
+{
+  "crypto": "ZetaChain",
+  "score": 5,
+  "explanation": "ZetaChain is working on interoperability which requires substantial computational resources, affecting its sustainability."
+},
+{
+  "crypto": "Trip",
+  "score": 7,
+  "explanation": "Trip incorporates eco-friendly practices, using consensus mechanisms that reduce environmental impact."
+},
+{
+  "crypto": "Drift Staked SOL",
+  "score": 7,
+  "explanation": "Drift Staked SOL leverages the Proof of Stake model of the Solana network, which is more energy-efficient compared to Proof of Work."
+},
+{
+  "crypto": "EURC",
+  "score": 8,
+  "explanation": "EURC is a stablecoin likely based on Ethereum's network, which is transitioning to Proof of Stake, reducing environmental impact."
+},
+{
+  "crypto": "Arkham",
+  "score": 5,
+  "explanation": "Arkham's environmental impact is not well-documented, but it likely depends on the blockchain network it operates on."
+},
+{
+  "crypto": "Stargate Finance",
+  "score": 6,
+  "explanation": "Stargate Finance operates on blockchains with varying sustainability, potentially mitigating some environmental concerns."
+},
+{
+  "crypto": "DigiByte",
+  "score": 3,
+  "explanation": "DigiByte uses Proof of Work, which traditionally has a higher environmental impact due to energy consumption."
+},
+{
+  "crypto": "Ket",
+  "score": 5,
+  "explanation": "Ket's impact is moderate due to its hybrid consensus model, which balances energy use."
+},
+{
+  "crypto": "KOGE",
+  "score": 7,
+  "explanation": "KOGE uses an energy-efficient blockchain mechanism, resulting in lower environmental impact."
+},
+{
+  "crypto": "BENQI Liquid Staked AVAX",
+  "score": 8,
+  "explanation": "BENQI benefits from Avalanche's proof-of-stake system, which is relatively energy-efficient."
+},
+{
+  "crypto": "CHEX Token",
+  "score": 6,
+  "explanation": "CHEX Token operates on a platform that balances energy use, but still has room for improvement."
+},
+{
+  "crypto": "Holo",
+  "score": 9,
+  "explanation": "Holo employs a unique, low-energy hosting model, significantly reducing its environmental footprint."
+},
+{
+  "crypto": "RCGE",
+  "score": 5,
+  "explanation": "Limited information available on RCGE's environmental impact, assumed moderate energy usage."
+},
+{
+  "crypto": "Siacoin",
+  "score": 6,
+  "explanation": "Siacoin uses a proof-of-work system but employs relatively energy-efficient algorithms compared to larger cryptocurrencies."
+},
+{
+  "crypto": "Moca Network",
+  "score": 7,
+  "explanation": "Moca Network is focused on sustainability with a lower carbon footprint due to efficient consensus mechanisms."
+},
+{
+  "crypto": "Celo",
+  "score": 8,
+  "explanation": "Celo utilizes a proof-of-stake system, which generally results in lower energy consumption compared to proof-of-work cryptocurrencies."
+},
+{
+  "crypto": "Popcat",
+  "score": 4,
+  "explanation": "Popcat has considerable energy demands due to its underlying blockchain technology, impacting its sustainability score."
+},
+{
+  "crypto": "aelf",
+  "score": 6,
+  "explanation": "aelf employs a Delegated Proof of Stake consensus mechanism, which is generally more energy-efficient than Proof of Work."
+},
+{
+  "crypto": "Spiko EU T-Bills Money Market Fund",
+  "score": 9,
+  "explanation": "As a financial fund, it does not rely on blockchain technology or consensus mechanisms, resulting in minimal environmental impact."
+},
+{
+  "crypto": "Ankr Network",
+  "score": 7,
+  "explanation": "Ankr Network utilizes a multi-chain architecture and focuses on optimizing resource use, reducing its carbon footprint compared to traditional Proof of Work."
+},
+{
+  "crypto": "Osmosis",
+  "score": 6,
+  "explanation": "Osmosis operates on the Cosmos SDK, using a Proof of Stake model that is more environmentally friendly than Proof of Work, though energy use still exists."
+},
+{
+  "crypto": "Vana",
+  "score": 8,
+  "explanation": "Information on Vana’s environmental impact is limited, but it is considered to use sustainable blockchain practices similar to other eco-friendly projects."
+},
+{
+  "crypto": "Hamster Kombat",
+  "score": 7,
+  "explanation": "Likely utilizes less energy-intensive blockchain technology, reducing environmental impact."
+},
+{
+  "crypto": "Rollbit Coin",
+  "score": 6,
+  "explanation": "Operates on a blockchain that balances efficiency and environmental considerations."
+},
+{
+  "crypto": "Sun Token",
+  "score": 8,
+  "explanation": "Focuses on utilizing renewable energy resources in its operations, promoting sustainability."
+},
+{
+  "crypto": "GoMining Token",
+  "score": 5,
+  "explanation": "Linked to mining operations, with ongoing efforts to minimize carbon footprint."
+},
+{
+  "crypto": "yearn.finance",
+  "score": 4,
+  "explanation": "Part of the Ethereum network, which has historically had high energy usage, but improvements are ongoing."
+},
+{
+  "crypto": "Oasis",
+  "score": 7,
+  "explanation": "Oasis uses a proof-of-stake mechanism that requires significantly less energy compared to proof-of-work like Bitcoin."
+},
+{
+  "crypto": "Livepeer",
+  "score": 8,
+  "explanation": "Livepeer uses an energy-efficient consensus mechanism and focuses on decentralized video streaming, which is less energy-intensive."
+},
+{
+  "crypto": "CoinEx",
+  "score": 5,
+  "explanation": "CoinEx is based on the Ethereum blockchain, which is moving towards proof-of-stake but still has legacy proof-of-work elements."
+},
+{
+  "crypto": "Mog Coin",
+  "score": 4,
+  "explanation": "Mog Coin's sustainability is uncertain due to limited information about its consensus mechanism, potentially similar to energy-intensive older cryptocurrencies."
+},
+{
+  "crypto": "Ravencoin",
+  "score": 3,
+  "explanation": "Ravencoin operates on a proof-of-work mechanism, which is generally considered less sustainable due to high-energy mining requirements."
+},
+{
+  "crypto": "Frax Share",
+  "score": 6,
+  "explanation": "Frax Share uses a combination of partial algorithmic stability and collateral, reducing some environmental impact associated with traditional proof-of-work systems."
+},
+{
+  "crypto": "Convex Finance",
+  "score": 7,
+  "explanation": "Convex Finance is built on Ethereum, which has transitioned to proof-of-stake, resulting in significantly lower energy consumption compared to proof-of-work."
+},
+{
+  "crypto": "Chia",
+  "score": 5,
+  "explanation": "Chia uses a proof-of-space-and-time consensus mechanism, which reduces energy usage but leads to high storage hardware needs and e-waste concerns."
+},
+{
+  "crypto": "Harmony",
+  "score": 8,
+  "explanation": "Harmony uses a sharded proof-of-stake mechanism, which is more energy-efficient and scalable compared to traditional proof-of-work blockchains."
+},
+{
+  "crypto": "Staked Frax Ether",
+  "score": 7,
+  "explanation": "Staked Frax Ether leverages Ethereum's proof-of-stake following the Eth2 upgrade, which has significantly reduced its environmental impact."
+},
+{
+  "crypto": "Polymesh",
+  "score": 7,
+  "explanation": "Polymesh uses a proof-of-stake consensus mechanism, which is generally more energy-efficient than proof-of-work."
+},
+{
+  "crypto": "Tribe",
+  "score": 6,
+  "explanation": "Tribe, as part of the decentralized finance space, typically operates on Ethereum, which is transitioning to proof-of-stake, improving its sustainability."
+},
+{
+  "crypto": "Gigachad",
+  "score": 4,
+  "explanation": "Limited information available; presumed average impact with mixed consensus mechanisms."
+},
+{
+  "crypto": "Bridged Ether (StarkGate)",
+  "score": 8,
+  "explanation": "StarkGate employs layer 2 scaling solutions on Ethereum, reducing energy consumption significantly."
+},
+{
+  "crypto": "Fluid",
+  "score": 5,
+  "explanation": "Information on Fluid's environmental impact is limited, but it likely follows similar mixed sustainability practices as other DeFi tokens."
+},
+{
+  "crypto": "Elixir Staked deUSD",
+  "score": 7,
+  "explanation": "Elixir Staked deUSD operates on a proof of stake model, which is more energy-efficient than proof of work."
+},
+{
+  "crypto": "Kinesis Gold",
+  "score": 6,
+  "explanation": "Kinesis Gold utilizes a proof of stake mechanism with a focus on gold-backed stablecoins. Energy usage is moderate."
+},
+{
+  "crypto": "ORDI",
+  "score": 4,
+  "explanation": "ORDI's environmental impact is moderate due to its infrastructure, which requires improvements to achieve better sustainability."
+},
+{
+  "crypto": "Treehouse ETH",
+  "score": 5,
+  "explanation": "Treehouse ETH aims to offset emissions through tree planting initiatives, but still relies on energy-intensive networks."
+},
+{
+  "crypto": "Threshold Network",
+  "score": 8,
+  "explanation": "Threshold Network uses energy-efficient technologies as it primarily relies on threshold cryptography solutions."
+},
+{
+  "crypto": "Polygon PoS Bridged DAI (Polygon POS)",
+  "score": 8,
+  "explanation": "Polygon uses a Proof of Stake consensus mechanism, which is more energy-efficient compared to Proof of Work."
+},
+{
+  "crypto": "SyrupUSDC",
+  "score": 7,
+  "explanation": "Operates on the Binance Smart Chain which uses Proof of Staked Authority (PoSA), an eco-friendlier consensus algorithm."
+},
+{
+  "crypto": "NEM",
+  "score": 7,
+  "explanation": "NEM employs a consensus algorithm called Proof of Importance, which is generally more energy-efficient than traditional Proof of Work systems."
+},
+{
+  "crypto": "DeepBook",
+  "score": 5,
+  "explanation": "DeepBook’s sustainability relies heavily on the underlying blockchain platform it utilizes, details are not clear."
+},
+{
+  "crypto": "Bybit Staked SOL",
+  "score": 9,
+  "explanation": "Bybit Staked SOL runs on Solana, which uses Proof of History, a highly energy-efficient consensus mechanism."
+},
+{
+  "crypto": "ai16z",
+  "score": 7,
+  "explanation": "ai16z uses a proof-of-stake consensus mechanism, which generally has a lower environmental impact compared to proof-of-work systems."
+},
+{
+  "crypto": "Dog (Bitcoin)",
+  "score": 2,
+  "explanation": "While not being a real cryptocurrency, if considered as Bitcoin, its proof-of-work system is known for high energy consumption."
+},
+{
+  "crypto": "Peanut the Squirrel",
+  "score": 8,
+  "explanation": "Assumed to be similar to low-impact cryptocurrencies focused on sustainability, with minimal environmental harm."
+},
+{
+  "crypto": "Polyhedra Network",
+  "score": 9,
+  "explanation": "Likely employs efficient technology focusing on reducing its carbon footprint, similar to many modern blockchain solutions."
+},
+{
+  "crypto": "Drift Protocol",
+  "score": 6,
+  "explanation": "May utilize hybrid or energy-efficient consensus mechanisms, offering a moderate sustainability profile."
+},
+{
+  "crypto": "GMX",
+  "score": 5,
+  "explanation": "GMX is built on Ethereum, which is moving towards sustainability with its transition to proof-of-stake, but still has historical environmental impacts."
+},
+{
+  "crypto": "STASIS EURO",
+  "score": 7,
+  "explanation": "As a stablecoin, STASIS EURO's impact depends on the underlying blockchain. Assumed to be on Ethereum, benefitting from its proof-of-stake upgrade, thus moderately sustainable."
+},
+{
+  "crypto": "AI Companions",
+  "score": 4,
+  "explanation": "Without specific details, AI Companions may rely on energy-intensive processes typical of AI, potentially increasing environmental impacts."
+},
+{
+  "crypto": "Level USD",
+  "score": 6,
+  "explanation": "If similar to other stablecoins, Level USD likely benefits from the energy efficiencies of newer blockchain technology, yet impacts vary by specific blockchain usage."
+},
+{
+  "crypto": "Astherus USDF",
+  "score": 6,
+  "explanation": "Assumed to use less intensive proof-of-stake or similar efficient protocols, but detailed sustainability depends on active network participant practices."
+},
+{
+  "crypto": "Metaplex",
+  "score": 7,
+  "explanation": "Metaplex uses the Solana blockchain, known for its lower energy consumption compared to proof-of-work blockchains."
+},
+{
+  "crypto": "Constellation",
+  "score": 8,
+  "explanation": "Constellation runs on a Directed Acyclic Graph (DAG) architecture, which is typically more energy-efficient than traditional blockchain protocols."
+},
+{
+  "crypto": "Cronos Bridged USDC (Cronos)",
+  "score": 6,
+  "explanation": "Cronos network uses Tendermint consensus, which is more efficient than proof-of-work but still involves some environmental costs."
+},
+{
+  "crypto": "Binance-Peg SOL",
+  "score": 5,
+  "explanation": "Binance Smart Chain utilizes a consensus mechanism that is more efficient than proof-of-work but involves environmental costs associated with maintaining the network's infrastructure."
+},
+{
+  "crypto": "EthereumPoW",
+  "score": 3,
+  "explanation": "EthereumPoW uses proof-of-work, which is highly energy-intensive and has a significant environmental impact compared to proof-of-stake alternatives."
+},
+{
+  "crypto": "Horizen",
+  "score": 6,
+  "explanation": "Horizen uses a proof-of-work protocol with energy-efficient consensus mechanisms, but still relies on mining operations."
+},
+{
+  "crypto": "Acet",
+  "score": 7,
+  "explanation": "Acet employs proof-of-stake, reducing energy consumption compared to proof-of-work systems."
+},
+{
+  "crypto": "Falcon USD",
+  "score": 8,
+  "explanation": "Falcon USD is a stablecoin with minimal direct environmental impact, primarily reliant on the underlying blockchain framework's sustainability."
+},
+{
+  "crypto": "Anzen USDz",
+  "score": 8,
+  "explanation": "Anzen USDz maintains low environmental impact as a stablecoin, contingent on the blockchain's eco-friendliness."
+},
+{
+  "crypto": "Wrapped Ether (Mantle Bridge)",
+  "score": 5,
+  "explanation": "As it involves Ethereum transactions, it shares Ethereum's proof-of-stake network which is more energy-efficient than proof-of-work, though the network's size adds complexity."
+},
+{
+  "crypto": "Wrapped Beacon ETH",
+  "score": 5,
+  "explanation": "Wrapped Beacon ETH depends on the Ethereum network, which has transitioned to proof-of-stake, reducing its environmental impact."
+},
+{
+  "crypto": "Ontology",
+  "score": 6,
+  "explanation": "Ontology utilizes a more efficient consensus mechanism than proof-of-work, leading to a moderate environmental impact."
+},
+{
+  "crypto": "APF coin",
+  "score": 4,
+  "explanation": "APF coin relies on a network with moderate energy consumption, resulting in a considerable but not extreme environmental impact."
+},
+{
+  "crypto": "LCX",
+  "score": 6,
+  "explanation": "LCX runs on a blockchain platform with a lower energy footprint compared to traditional proof-of-work chains."
+},
+{
+  "crypto": "Galxe",
+  "score": 8,
+  "explanation": "Galxe is designed to be energy-efficient, minimizing its carbon footprint by utilizing greener consensus methods."
+},
+{
+  "crypto": "GMT",
+  "score": 6,
+  "explanation": "GMT is tied to a proof-of-stake blockchain which is generally more energy-efficient."
+},
+{
+  "crypto": "BitDCA",
+  "score": 7,
+  "explanation": "BitDCA primarily focuses on decentralized asset management and uses energy-efficient blockchains."
+},
+{
+  "crypto": "MAG7.ssi",
+  "score": 5,
+  "explanation": "MAG7.ssi possibly integrates with multiple blockchain networks; efficiency depends on the underlying technology."
+},
+{
+  "crypto": "Kadena",
+  "score": 4,
+  "explanation": "Kadena uses a proof-of-work consensus which is more resource-intensive but aims for efficiency through scalability solutions."
+},
+{
+  "crypto": "Enjin Coin",
+  "score": 8,
+  "explanation": "Enjin Coin, built on efficient blockchain technology like Ethereum with efforts towards sustainable practices."
+},
+{
+  "crypto": "Freysa AI",
+  "score": 7,
+  "explanation": "Freysa AI utilizes a proof-of-stake mechanism, which significantly reduces energy consumption compared to proof-of-work cryptos."
+},
+{
+  "crypto": "WOO",
+  "score": 8,
+  "explanation": "WOO Network focuses on efficiency and sustainability, implementing energy-efficient technologies and partnerships."
+},
+{
+  "crypto": "Qubic",
+  "score": 6,
+  "explanation": "Qubic aims for environmental sustainability by optimizing its consensus mechanisms, although further improvements are needed."
+},
+{
+  "crypto": "Euler",
+  "score": 5,
+  "explanation": "Euler incorporates some sustainable practices, though it has room for improvement in reducing its environmental impact."
+},
+{
+  "crypto": "Mythos",
+  "score": 4,
+  "explanation": "Mythos employs traditional consensus algorithms that are less energy-efficient but is exploring more sustainable options."
+},
+{
+  "crypto": "RedStone",
+  "score": 7,
+  "explanation": "RedStone uses efficient algorithms which reduce environmental impact compared to traditional blockchains."
+},
+{
+  "crypto": "Casper Network",
+  "score": 8,
+  "explanation": "Casper Network employs a proof-of-stake consensus mechanism that is less energy-intensive than proof-of-work."
+},
+{
+  "crypto": "Steakhouse USDC Morpho Vault",
+  "score": 6,
+  "explanation": "This project optimizes transactions to minimize energy usage but still requires improvements in sustainability."
+},
+{
+  "crypto": "Kinesis Silver",
+  "score": 5,
+  "explanation": "Kinesis Silver integrates metals into blockchain, which has a moderate environmental impact due to mining and energy use."
+},
+{
+  "crypto": "Conscious Token",
+  "score": 9,
+  "explanation": "Conscious Token is designed with eco-friendly technologies and initiatives to offset its carbon footprint."
+},
+{
+  "crypto": "Usual",
+  "score": 5,
+  "explanation": "The sustainability rating is average due to typical energy consumption associated with its proof-of-work mining activities."
+},
+{
+  "crypto": "crvUSD",
+  "score": 7,
+  "explanation": "Operates on a more energy-efficient blockchain using proof-of-stake, reducing its environmental footprint compared to proof-of-work."
+},
+{
+  "crypto": "XYO Network",
+  "score": 6,
+  "explanation": "Utilizes geospatial technology which is not heavily energy-intensive, but details on mining or operational efficiency vary."
+},
+{
+  "crypto": "Amnis Aptos",
+  "score": 8,
+  "explanation": "Built on a blockchain that prioritizes eco-friendly consensus mechanisms, minimizing its environmental impact."
+},
+{
+  "crypto": "World Mobile Token",
+  "score": 9,
+  "explanation": "Focused on sustainable connectivity solutions and utilizes energy-efficient blockchain technology, resulting in low environmental impact."
+},
+{
+  "crypto": "Turbo",
+  "score": 5,
+  "explanation": "Turbo uses a less energy-intensive consensus mechanism compared to traditional methods, but still has room for improvement."
+},
+{
+  "crypto": "Magic Eden",
+  "score": 7,
+  "explanation": "Magic Eden employs energy-efficient protocols, making it relatively sustainable in its operations."
+},
+{
+  "crypto": "SKALE",
+  "score": 8,
+  "explanation": "SKALE is built on an Ethereum layer 2 solution that significantly reduces energy consumption."
+},
+{
+  "crypto": "KUB Coin",
+  "score": 4,
+  "explanation": "KUB Coin uses a consensus mechanism that is moderately energy-intensive compared to newer technologies."
+},
+{
+  "crypto": "Zeus Network",
+  "score": 6,
+  "explanation": "Zeus Network incorporates some sustainable practices, though its overall environmental impact can be improved."
+},
+{
+  "crypto": "Mask Network",
+  "score": 7,
+  "explanation": "Mask Network operates primarily on Ethereum, which has transitioned to proof-of-stake, thus reducing its energy consumption significantly."
+},
+{
+  "crypto": "Orca",
+  "score": 8,
+  "explanation": "Orca is built on the Solana blockchain, known for its low energy consumption due to its unique proof-of-stake mechanism."
+},
+{
+  "crypto": "Ether.fi",
+  "score": 5,
+  "explanation": "As Ether.fi is based on Ethereum, its sustainability improved post-Ethereum's move to proof-of-stake, but additional context on its operations is needed."
+},
+{
+  "crypto": "Optio",
+  "score": 6,
+  "explanation": "Optio's sustainability impact depends on the underlying platform it uses, but generally, it focuses on minimizing its environmental footprint."
+},
+{
+  "crypto": "Nano",
+  "score": 9,
+  "explanation": "Nano uses a block-lattice structure and Open Representative Voting, both of which are energy-efficient and designed to have minimal environmental impact."
+},
+{
+  "crypto": "Arbitrum Bridged USDC",
+  "score": 7,
+  "explanation": "Being a layer-2 solution, it is more energy-efficient than traditional PoW blockchains, helping reduce environmental impact."
+},
+{
+  "crypto": "Prom",
+  "score": 5,
+  "explanation": "Operates on Binance Smart Chain, which uses less energy than PoW networks but still relatively centralized impacting sustainability negatively."
+},
+{
+  "crypto": "Terra",
+  "score": 6,
+  "explanation": "Runs on a PoS network, which is energy efficient, but its ecosystem size could impact overall sustainability."
+},
+{
+  "crypto": "PAAL AI",
+  "score": 4,
+  "explanation": "Depends on the specific blockchain it operates, likely high computational resources for AI, potentially less energy efficient."
+},
+{
+  "crypto": "ViciCoin",
+  "score": 6,
+  "explanation": "If based on a PoS network, offers better energy efficiency than PoW networks, balancing between scalability and sustainability."
+},
+{
+  "crypto": "NKYC Token",
+  "score": 6,
+  "explanation": "NKYC Token is built on a blockchain with moderate energy consumption and uses proof of stake, which reduces overall environmental impact."
+},
+{
+  "crypto": "Big Time",
+  "score": 5,
+  "explanation": "Big Time operates on a network that utilizes both proof of work and proof of stake, balancing between higher and lower environmental impacts."
+},
+{
+  "crypto": "Hivemapper",
+  "score": 7,
+  "explanation": "Hivemapper utilizes efficient consensus mechanisms aimed at minimizing carbon footprint and has implemented initiatives to improve sustainability."
+},
+{
+  "crypto": "Loopring",
+  "score": 8,
+  "explanation": "Loopring is built on Ethereum's layer 2, utilizing zkRollups, which significantly reduces energy consumption compared to traditional proof of work systems."
+},
+{
+  "crypto": "Diamond Launch",
+  "score": 6,
+  "explanation": "Diamond Launch aims for sustainability by using a less energy-intensive blockchain and is actively working towards carbon neutrality."
+},
+{
+  "crypto": "UXD Protocol",
+  "score": 8,
+  "explanation": "UXD Protocol is built on Solana, which uses a proof-of-stake consensus mechanism, significantly reducing energy consumption compared to proof-of-work systems."
+},
+{
+  "crypto": "COTI",
+  "score": 7,
+  "explanation": "COTI employs a unique consensus algorithm for its blockchain infrastructure, which is more energy-efficient than traditional proof-of-work methods."
+},
+{
+  "crypto": "Astherus Staked BNB",
+  "score": 9,
+  "explanation": "Staking BNB on Astherus involves proof-of-stake technology, which is highly energy-efficient compared to proof-of-work systems."
+},
+{
+  "crypto": "Waves",
+  "score": 6,
+  "explanation": "Waves uses a leased proof-of-stake model, consuming less energy than typical proof-of-work blockchains, but the specifics of the energy impact depend on user activity."
+},
+{
+  "crypto": "Solar",
+  "score": 10,
+  "explanation": "Solar utilizes an environmentally-friendly approach by running on 100% renewable energy, aiming to have minimal environmental impact."
+},
+{
+  "crypto": "Ozone Chain",
+  "score": 7,
+  "explanation": "Ozone Chain focuses on sustainability with low energy consumption due to proof-of-stake mechanisms."
+},
+{
+  "crypto": "ETHPlus",
+  "score": 4,
+  "explanation": "ETHPlus is based on Ethereum technology which traditionally had high energy use, but improvements are being made."
+},
+{
+  "crypto": "Toshi",
+  "score": 6,
+  "explanation": "Toshi implements more energy-efficient consensus mechanisms compared to traditional proof-of-work blockchains."
+},
+{
+  "crypto": "VVS Finance",
+  "score": 5,
+  "explanation": "VVS Finance operates on Cronos, a blockchain using proof-of-authority which is relatively more sustainable than proof-of-work."
+},
+{
+  "crypto": "Sushi",
+  "score": 5,
+  "explanation": "Sushi runs on Ethereum, which has moved to a proof-of-stake model, reducing its environmental impact."
+},
+{
+  "crypto": "MetFi",
+  "score": 6,
+  "explanation": "MetFi uses proof-of-stake, which is more energy-efficient than proof-of-work, but still has moderate energy consumption."
+},
+{
+  "crypto": "Hive",
+  "score": 7,
+  "explanation": "Hive operates on a Delegated Proof of Stake (DPoS) consensus, offering a more sustainable alternative with reduced energy requirements."
+},
+{
+  "crypto": "Maple Finance",
+  "score": 8,
+  "explanation": "Maple Finance is built on Ethereum, currently transitioning to proof-of-stake, which significantly lowers its carbon footprint."
+},
+{
+  "crypto": "Band Protocol",
+  "score": 8,
+  "explanation": "Band Protocol runs on a Cosmos-based blockchain using Tendermint's consensus, known for its energy efficiency and sustainability."
+},
+{
+  "crypto": "Nexus Mutual",
+  "score": 7,
+  "explanation": "Nexus Mutual operates on Ethereum, benefiting from the network's move towards proof-of-stake, resulting in improved sustainability."
+},
+{
+  "crypto": "QL1 Bridged USDT",
+  "score": 7,
+  "explanation": "QL1 operates on a proof-of-stake system which generally has a lower environmental impact compared to proof-of-work."
+},
+{
+  "crypto": "Global Commercial Business",
+  "score": 4,
+  "explanation": "Limited information on energy consumption, possibly moderate environmental impact."
+},
+{
+  "crypto": "MEOW",
+  "score": 6,
+  "explanation": "To be determined; assuming moderate impact due to use of efficient consensus mechanisms."
+},
+{
+  "crypto": "Alchemy Pay",
+  "score": 8,
+  "explanation": "Utilizes efficient transaction processes with low energy consumption."
+},
+{
+  "crypto": "Bio Protocol",
+  "score": 9,
+  "explanation": "Focused on sustainability and utilizes eco-friendly blockchain technologies."
+},
+{
+  "crypto": "Non-Playable Coin",
+  "score": 5,
+  "explanation": "Moderate environmental impact due to balanced energy consumption and offset efforts."
+},
+{
+  "crypto": "ZIGChain",
+  "score": 7,
+  "explanation": "Relatively efficient use of PoS consensus mechanism reduces energy consumption."
+},
+{
+  "crypto": "Radix",
+  "score": 8,
+  "explanation": "Uses a highly efficient consensus protocol with low energy demands."
+},
+{
+  "crypto": "SQD",
+  "score": 4,
+  "explanation": "Higher energy consumption due to PoW algorithm and limited offset measures."
+},
+{
+  "crypto": "SWFTCOIN",
+  "score": 6,
+  "explanation": "Utilizes hybrid PoS/PoW, reducing environmental impact compared to traditional PoW."
+},
+{
+  "crypto": "CoW Protocol",
+  "score": 8,
+  "explanation": "Operates on Ethereum Layer 2, which reduces energy consumption significantly compared to Layer 1 solutions."
+},
+{
+  "crypto": "Ecoin",
+  "score": 5,
+  "explanation": "Some mechanisms to offset carbon emissions but lacks full transparency and comprehensive eco-friendly practices."
+},
+{
+  "crypto": "Clearpool",
+  "score": 6,
+  "explanation": "Built on Ethereum with movement towards Ethereum 2.0 benefits reducing energy usage."
+},
+{
+  "crypto": "L2 Standard Bridged frxUSD",
+  "score": 7,
+  "explanation": "Utilizes Layer 2 network structures for Ethereum, effectively cutting down on energy demands."
+},
+{
+  "crypto": "BORA",
+  "score": 6,
+  "explanation": "Uses less energy compared to major PoW networks, but still improving its full environmental impact strategy."
+},
+{
+  "crypto": "Gravity",
+  "score": 8,
+  "explanation": "Gravity primarily uses energy-efficient consensus mechanisms and focuses on environmentally sustainable practices."
+},
+{
+  "crypto": "XPR Network",
+  "score": 7,
+  "explanation": "XPR Network operates on eco-friendly protocols and aims to minimize its carbon footprint effectively."
+},
+{
+  "crypto": "Gamebitcoin Power",
+  "score": 3,
+  "explanation": "Gamebitcoin Power relies on traditional mining methods that are energy-intensive and have higher environmental impact."
+},
+{
+  "crypto": "peaq",
+  "score": 9,
+  "explanation": "Peaq is designed with sustainability in mind, implementing low-energy processes and promoting green practices."
+},
+{
+  "crypto": "io.net",
+  "score": 6,
+  "explanation": "Io.net has taken steps towards reducing its environmental impact, but there is still room for improvement in energy efficiency."
+},
+{
+  "crypto": "TempleDAO",
+  "score": 7,
+  "explanation": "TempleDAO operates on Ethereum, which is transitioning to a proof-of-stake system, reducing its environmental impact significantly."
+},
+{
+  "crypto": "Aventis AI",
+  "score": 8,
+  "explanation": "Aventis AI uses blockchain technology that focuses on efficiency and has a smaller environmental footprint compared to traditional proof-of-work blockchains."
+},
+{
+  "crypto": "UMA",
+  "score": 7,
+  "explanation": "UMA is built on Ethereum's network, benefiting from the greener transition to proof-of-stake, which lowers its carbon emissions."
+},
+{
+  "crypto": "STP",
+  "score": 6,
+  "explanation": "STP integrates with multiple blockchains and its environmental impact varies, but improvements in blockchain tech are enhancing its sustainability."
+},
+{
+  "crypto": "API3",
+  "score": 7,
+  "explanation": "API3 aims for minimal ecological impact through the use of newer blockchain mechanisms that are more energy-efficient than traditional systems."
+},
+{
+  "crypto": "MVL",
+  "score": 7,
+  "explanation": "MVL operates on an energy-efficient blockchain, which reduces its environmental impact."
+},
+{
+  "crypto": "Delysium",
+  "score": 5,
+  "explanation": "Delysium uses a proof-of-stake model, which is more sustainable than proof-of-work but still has some energy consumption."
+},
+{
+  "crypto": "Biconomy",
+  "score": 6,
+  "explanation": "Biconomy focuses on scaling solutions that minimize energy use, but the underlying infrastructure may still have environmental impacts."
+},
+{
+  "crypto": "Orbs",
+  "score": 8,
+  "explanation": "Orbs employs a proof-of-stake consensus, emphasizing eco-friendly operations and minimal energy usage."
+},
+{
+  "crypto": "ICON",
+  "score": 6,
+  "explanation": "ICON is built to be efficient, but its blockchain network still requires energy for operation and security."
+},
+{
+  "crypto": "Lorenzo stBTC",
+  "score": 3,
+  "explanation": "Uses proof-of-work mining similar to Bitcoin, contributing to significant energy use."
+},
+{
+  "crypto": "Illuvium",
+  "score": 6,
+  "explanation": "Built on Ethereum; sustainability depends on Ethereum's transition to proof-of-stake."
+},
+{
+  "crypto": "GAMA Coin",
+  "score": 5,
+  "explanation": "Hybrid consensus model, lower energy use than proof-of-work but not fully sustainable."
+},
+{
+  "crypto": "Cronos Bridged USDT (Cronos)",
+  "score": 8,
+  "explanation": "Part of a low-energy consuming network focusing on efficiency."
+},
+{
+  "crypto": "Metis",
+  "score": 7,
+  "explanation": "Utilizes rollups for scaling, reducing the energy per transaction compared to layer 1."
+},
+{
+  "crypto": "SATS (Ordinals)",
+  "score": 3,
+  "explanation": "Based on the Bitcoin network, which is energy-intensive due to its proof-of-work consensus mechanism."
+},
+{
+  "crypto": "Function ƒBTC",
+  "score": 2,
+  "explanation": "Likely uses Bitcoin's infrastructure, contributing to a high environmental impact due to energy consumption."
+},
+{
+  "crypto": "Sologenic",
+  "score": 6,
+  "explanation": "Operates on the XRP Ledger, which uses a more energy-efficient consensus protocol compared to proof-of-work."
+},
+{
+  "crypto": "Lift Dollar",
+  "score": 5,
+  "explanation": "Details about its consensus mechanism are sparse, likely contributing to moderate environmental impact."
+},
+{
+  "crypto": "OKT Chain",
+  "score": 5,
+  "explanation": "Utilizes a delegated proof-of-stake mechanism, which is generally more energy-efficient than classic proof-of-work systems."
+},
+{
+  "crypto": "Spell",
+  "score": 4,
+  "explanation": "Spell is built on the Ethereum network, which until recently required energy-intensive proof-of-work, but is transitioning to more sustainable proof-of-stake."
+},
+{
+  "crypto": "Humans.ai",
+  "score": 7,
+  "explanation": "Humans.ai focuses on AI-based blockchain, with efforts towards environmental consciousness, thus operating with a lesser carbon footprint."
+},
+{
+  "crypto": "Velo",
+  "score": 6,
+  "explanation": "Velo uses the Stellar blockchain, known for its relatively lower energy consumption compared to traditional proof-of-work systems."
+},
+{
+  "crypto": "IQ",
+  "score": 5,
+  "explanation": "IQ operates on EOSIO, which employs delegated proof-of-stake, generally more energy efficient but does not eliminate environmental concerns completely."
+},
+{
+  "crypto": "Lisk",
+  "score": 6,
+  "explanation": "Lisk uses a unique delegated proof-of-stake mechanism, aimed at lowering its carbon footprint compared to proof-of-work networks."
+},
+{
+  "crypto": "Powerledger",
+  "score": 8,
+  "explanation": "Powerledger is focused on energy trading and renewable energy solutions, thus contributing positively to sustainability."
+},
+{
+  "crypto": "sBTC",
+  "score": 3,
+  "explanation": "sBTC is a synthetic asset representing Bitcoin, which is known for high energy consumption."
+},
+{
+  "crypto": "Flux",
+  "score": 6,
+  "explanation": "Flux uses a network focusing on decentralized cloud infrastructure, with moderate energy efficiency compared to traditional mining."
+},
+{
+  "crypto": "Stratis",
+  "score": 7,
+  "explanation": "Stratis uses a proof-of-stake consensus mechanism, which is more energy-efficient than proof-of-work systems."
+},
+{
+  "crypto": "Frax USD",
+  "score": 5,
+  "explanation": "Frax USD is a stablecoin partly collateralized, with a neutral environmental impact relative to other cryptocurrencies."
+},
+{
+  "crypto": "Audius",
+  "score": 8,
+  "explanation": "Audius operates on a sidechain with high energy efficiency, contributing to its positive environmental impact."
+},
+{
+  "crypto": "IOST",
+  "score": 7,
+  "explanation": "IOST uses a Proof of Believability consensus mechanism, which is less energy-intensive than traditional Proof of Work systems."
+},
+{
+  "crypto": "Aevo",
+  "score": 5,
+  "explanation": "Aevo's environmental impact is average due to its hybrid consensus model partially relying on energy-efficient mechanisms."
+},
+{
+  "crypto": "Spiko US T-Bills Money Market Fund",
+  "score": 9,
+  "explanation": "As a money market fund backed by US T-Bills, its operations are largely separate from energy-intensive blockchain technology."
+},
+{
+  "crypto": "Rocket Pool",
+  "score": 7,
+  "explanation": "Rocket Pool utilizes Ethereum's Proof of Stake, which drastically reduces energy usage compared to Proof of Work."
+},
+{
+  "crypto": "Venus",
+  "score": 6,
+  "explanation": "Venus uses the Binance Smart Chain, which consumes less energy than traditional proof-of-work blockchains."
+},
+{
+  "crypto": "Nillion",
+  "score": 7,
+  "explanation": "Nillion is designed with efficiency in mind, utilizing technologies aimed at reducing carbon footprints."
+},
+{
+  "crypto": "AltLayer",
+  "score": 8,
+  "explanation": "AltLayer focuses on layer 2 scaling solutions that enhance efficiency and reduce energy consumption."
+},
+{
+  "crypto": "CARV",
+  "score": 5,
+  "explanation": "CARV employs some energy-efficient technologies, but its structure still relies partially on energy-intensive processes."
+},
+{
+  "crypto": "Animecoin",
+  "score": 3,
+  "explanation": "Animecoin relies heavily on traditional proof-of-work algorithms that consume large amounts of energy."
+},
+{
+  "crypto": "Across Protocol",
+  "score": 7,
+  "explanation": "Across Protocol is designed to optimize cross-chain transactions, which can increase efficiency and reduce overall energy consumption."
+},
+{
+  "crypto": "Bounce",
+  "score": 6,
+  "explanation": "Bounce's emphasis on decentralized auctions could reduce resource intensity, but the exact sustainability impact depends on the underlying blockchain used."
+},
+{
+  "crypto": "iExec RLC",
+  "score": 8,
+  "explanation": "iExec RLC focuses on decentralized cloud computing, which can lead to efficient resource use and lower environmental impact compared to traditional data centers."
+},
+{
+  "crypto": "BLOCKv",
+  "score": 5,
+  "explanation": "BLOCKv's platform for creating virtual goods does not inherently align with green practices, but its environmental impact is moderate due to reliance on pre-existing blockchains."
+},
+{
+  "crypto": "Ontology Gas",
+  "score": 7,
+  "explanation": "Ontology Gas is used for network utility purposes, and Ontology's PoS consensus is generally more energy-efficient than PoW systems."
+},
+{
+  "crypto": "Pax Dollar",
+  "score": 7,
+  "explanation": "Pax Dollar is a stablecoin, typically more efficient and environmentally friendly due to operations on established blockchains with minimal additional energy consumption."
+},
+{
+  "crypto": "Test",
+  "score": 5,
+  "explanation": "As a hypothetical cryptocurrency, its environmental impact would depend on the underlying blockchain's consensus mechanism but can be estimated in the mid-range without specific details."
+},
+{
+  "crypto": "The Grays Currency",
+  "score": 5,
+  "explanation": "Assuming it is a typical altcoin, its impact is moderate due to the lack of specific data; efficiency depends on the consensus mechanism used."
+},
+{
+  "crypto": "0x0.ai: AI Smart Contract",
+  "score": 6,
+  "explanation": "Assumed to be a niche application token, likely leveraging existing blockchains efficiently, placing its environmental impact slightly above average."
+},
+{
+  "crypto": "Coreum",
+  "score": 7,
+  "explanation": "Designed to be a standalone blockchain, potentially more efficient and environmentally friendly if using modern consensus models like Proof of Stake."
+},
+{
+  "crypto": "Melania Meme",
+  "score": 4,
+  "explanation": "Likely utilizes energy-intensive proof-of-work, common in meme coins."
+},
+{
+  "crypto": "Zano",
+  "score": 5,
+  "explanation": "Uses a hybrid proof-of-work and proof-of-stake approach, moderately reducing energy consumption."
+},
+{
+  "crypto": "Status",
+  "score": 7,
+  "explanation": "Normally operates on the Ethereum network, which is transitioning to more sustainable proof-of-stake methods."
+},
+{
+  "crypto": "B3 (Base)",
+  "score": 3,
+  "explanation": "Possibly uses a traditional proof-of-work method, leading to higher energy use."
+},
+{
+  "crypto": "Solayer Staked SOL",
+  "score": 9,
+  "explanation": "Built on Solana's proof-of-stake blockchain, which is energy efficient."
+},
+{
+  "crypto": "FUNToken",
+  "score": 6,
+  "explanation": "FUNToken uses Ethereum which is transitioning to a more sustainable proof-of-stake mechanism, reducing its environmental impact."
+},
+{
+  "crypto": "Manta Network",
+  "score": 7,
+  "explanation": "Manta Network is built on the Polkadot ecosystem, which uses a proof-of-stake model, resulting in relatively lower energy consumption."
+},
+{
+  "crypto": "Optimism Bridged WBTC (Optimism)",
+  "score": 5,
+  "explanation": "Optimism is a layer-2 solution that enhances Ethereum's efficiency, but still relies on Ethereum's energy-intensive base layer."
+},
+{
+  "crypto": "BitMart",
+  "score": 4,
+  "explanation": "BitMart is primarily an exchange platform, so its environmental impact largely depends on the cryptocurrencies it hosts, many of which use energy-intensive models."
+},
+{
+  "crypto": "dKargo",
+  "score": 6,
+  "explanation": "dKargo operates on the Klaytn blockchain which employs a BFT-based consensus, a more energy-efficient alternative to proof-of-work."
+},
+{
+  "crypto": "BOOK OF MEME",
+  "score": 4,
+  "explanation": "The environmental impact is moderate due to a blend of energy-efficient algorithms and some traditional mining practices."
+},
+{
+  "crypto": "Tokenlon",
+  "score": 7,
+  "explanation": "Tokenlon operates on the Ethereum network which is transitioning to a more sustainable proof-of-stake model, reducing its environmental impact."
+},
+{
+  "crypto": "Sonic SVM",
+  "score": 6,
+  "explanation": "Sonic SVM uses a mix of sustainable protocols and some traditional methods, resulting in a moderate environmental footprint."
+},
+{
+  "crypto": "SPACE ID",
+  "score": 8,
+  "explanation": "SPACE ID utilizes energy-efficient consensus mechanisms, resulting in a relatively low environmental impact."
+},
+{
+  "crypto": "Crypto Trading Fund",
+  "score": 5,
+  "explanation": "The operations involve a mix of different blockchain technologies, which includes some high energy consumption processes."
+},
+{
+  "crypto": "Civic",
+  "score": 7,
+  "explanation": "Civic is built on Ethereum, which is transitioning to a more sustainable proof-of-stake model, reducing its environmental impact."
+},
+{
+  "crypto": "Supra",
+  "score": 5,
+  "explanation": "The environmental impact of Supra depends on its underlying blockchain technology, which is not widely documented, so it likely has an average sustainability rating."
+},
+{
+  "crypto": "Blast",
+  "score": 6,
+  "explanation": "Without specific data, it's assumed Blast operates on a standard blockchain network with moderate environmental impact."
+},
+{
+  "crypto": "Solv Protocol SolvBTC Jupiter",
+  "score": 4,
+  "explanation": "Associated with Bitcoin, which uses proof-of-work and has a high energy consumption, but other aspects of the protocol may offer better efficiencies."
+},
+{
+  "crypto": "Solana Name Service",
+  "score": 8,
+  "explanation": "Built on Solana, which uses a more efficient proof-of-history mechanism, contributing to lower environmental impact."
+},
+{
+  "crypto": "Wrapped HYPE",
+  "score": 5,
+  "explanation": "Moderate environmental impact due to Ethereum-based transactions but utilizes a token wrapping mechanism to leverage existing infrastructure."
+},
+{
+  "crypto": "Origin Ether",
+  "score": 6,
+  "explanation": "Operates on Ethereum network; improved energy efficiency through Ethereum's transition to proof-of-stake in Ethereum 2.0, reducing overall environmental impact."
+},
+{
+  "crypto": "Neiro",
+  "score": 7,
+  "explanation": "Emphasizes sustainable blockchain solutions and incorporates eco-friendly practices in its operations and network consensus."
+},
+{
+  "crypto": "Yield Guild Games",
+  "score": 4,
+  "explanation": "Primarily Ethereum-based with significant focus on gaming; some environmental concerns due to computational power requirements."
+},
+{
+  "crypto": "Songbird",
+  "score": 6,
+  "explanation": "Part of the Flare Network, aims for lower energy consumption with more efficient consensus mechanisms, reducing its carbon footprint."
+},
+{
+  "crypto": "Songbird",
+  "score": 6,
+  "explanation": "Operates on a test network with less energy usage than large-scale blockchains, but still has some environmental impact."
+},
+{
+  "crypto": "Staked HYPE",
+  "score": 7,
+  "explanation": "Utilizes proof-of-stake consensus which is more energy-efficient compared to proof-of-work mechanisms."
+},
+{
+  "crypto": "PHALA",
+  "score": 8,
+  "explanation": "Built on Substrate and operates using NPoS, a more sustainable consensus algorithm."
+},
+{
+  "crypto": "Chromia",
+  "score": 7,
+  "explanation": "Employs a hybrid consensus mechanism aiming for lower energy consumption while maintaining performance."
+},
+{
+  "crypto": "USDX",
+  "score": 5,
+  "explanation": "Typically relies on the underlying blockchain energy use; specifics depend on its issuance network, which can vary."
+}]
