@@ -1,4 +1,5 @@
 import express from 'express';
+import { ensureAuthenticated, ensureAdmin } from '../middleware/auth.js';
 import multer from 'multer';
 import path from 'path';
 import { adminData } from '../data/index.js';
@@ -6,6 +7,8 @@ import { adminData } from '../data/index.js';
 const { apiUpdate, manualUpdateFromFile } = adminData;
 
 const router = express.Router();
+
+router.use(ensureAuthenticated, ensureAdmin);
 
 const upload = multer({
   dest: 'uploads/',

@@ -8,7 +8,8 @@
     <label for="password">Password</label>
     <input type="password" id="password" name="password" required />
 
-    <button type="submit">Login</button>
+    <button type="submit" class="btn login-btn">Login</button>
+    <button type="button" id="adminLoginBtn" class="btn">Login as Admin</button>
   </form>
   <p class="form-footer">
     Don’t have an account? <a href="/register">Register here</a>
@@ -55,5 +56,14 @@
       // If the request fails (network error, etc.)
       errorDisplay.textContent = 'Login failed. Please try again.';
     }
+  });
+
+  // “Login as Admin” button handler
+  document.getElementById('adminLoginBtn').addEventListener('click', () => {
+    // Fill in seeded admin credentials
+    document.getElementById('username').value = 'admin';
+    document.getElementById('password').value = 'adminpass';
+    // Submit form via the same handler
+    loginForm.dispatchEvent(new Event('submit'));
   });
 </script>

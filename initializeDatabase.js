@@ -46,6 +46,7 @@ async function createDatabase() {
         username,
         password,
         watchlist: [],
+        role: u.role
       });
     }
     console.log(" Seeded test users");
