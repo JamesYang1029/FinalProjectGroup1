@@ -1,5 +1,7 @@
 import { MongoClient } from "mongodb";
 import axios from "axios";
+import bcrypt from "bcrypt";
+import testUsers from "./config/testUsers.json" with { type: "json" };
 
 // MongoDB URI and Database Name
 const uri = "mongodb://localhost:27017";
@@ -28,10 +30,25 @@ async function createDatabase() {
     // Collections
     const cryptoRatings = db.collection("cryptoRatings");
     const financialData = db.collection("financialData");
+    const userCol = db.collection("users");
 
     // Clear existing data
     await cryptoRatings.deleteMany({});
     await financialData.deleteMany({});
+    await userCol.deleteMany({});
+
+    // Seed test users
+    console.log(" Seeding test users...");
+    for (const u of testUsers) {
+      const username = u.username.trim().toLowerCase();
+      const password = await bcrypt.hash(u.password, 10);
+      await userCol.insertOne({
+        username,
+        password,
+        watchlist: [],
+      });
+    }
+    console.log(" Seeded test users");
 
     // Fetch cryptocurrency data
     const response = await axios.get(API_URL);
