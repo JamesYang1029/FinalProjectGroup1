@@ -19,8 +19,15 @@
         <li class="nav-item scanner-item"><a href="/scanner" class="nav-link">Scanner</a></li>
         {{!-- <li class="nav-item trading-item"><a href="/paper-trading" class="nav-link">Paper Trading</a></li> --}}
         <li class="nav-item watchlist-item"><a href="/watchlist" class="nav-link">Watchlist</a></li>
-        <li class="nav-item admin-item"><a href="/admin" class="nav-link">Admin</a></li>
-        <li class="nav-item login-item"><a href="/login" class="nav-link">Login</a></li>
+        <!-- <li class="nav-item admin-item"><a href="/admin" class="nav-link">Admin</a></li>
+        <li class="nav-item login-item"><a href="/login" class="nav-link">Login</a></li> -->
+        {{!-- only show “Admin” to logged-in admins, otherwise hide --}}
+        {{#if user}}
+          {{#if (eq user.role "admin")}}
+            <li class="nav-item admin-item"><a href="/admin" class="nav-link">Admin</a></li>
+          {{/if}}
+        {{/if}}
+          <li class="nav-item login-item"><a href="/login" class="nav-link">Login</a> </li>
       </ul>
     </nav>
   </header>

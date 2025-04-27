@@ -27,6 +27,12 @@ app.use(session({
   saveUninitialized: false
 }));
 // Middleware to serve static files
+// Make the logged‐in user available in all Handlebars templates as `user`
+app.use((req, res, next) => {
+  res.locals.user = req.session.user || null;
+  next();
+  });
+  
 //app.use("/public", express.static(path.resolve("public")));
 app.use(express.static(path.resolve("public")));
 

@@ -51,10 +51,11 @@ router.post('/register', async (req, res) => {
     const insertResult = await userCollection.insertOne({
       username,
       password: hashed,
-      watchlist: [] // initialize empty watchlist
+      watchlist: [],
+      role: 'user'            //  default role for new signups 
     });
   
-    req.session.user = { _id: insertResult.insertedId, username };
+    req.session.user = { _id: insertResult.insertedId, username, role: 'user' };
     res.redirect('/');
   } catch (e) {
     console.error(e);
@@ -79,7 +80,7 @@ router.post('/login', async (req, res) => {
   const match = await bcrypt.compare(password, user.password);
 
   if (!match) return res.status(400).render('login', { error: 'Invalid credentials' });
-  req.session.user = { _id: user._id, username: user.username };
+  req.session.user = { _id: user._id, username: user.username, role: user.role };//  carry the role into session
   res.redirect('/');
 } catch (e) {
   console.error(e);
