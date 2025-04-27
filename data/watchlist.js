@@ -44,6 +44,15 @@ export async function addToWatchlist(userId, cryptoId) {
   );
 }
 
+//Remove a saved entry by its crypto _id from a user’s watchlist
+export async function removeFromWatchlist(userId, cryptoId) {
+  const userCol = await users();
+  await userCol.updateOne(
+    { _id: new ObjectId(userId) },
+    { $pull: { watchlist: { _id: new ObjectId(cryptoId) } } }
+  );
+}
+
 // Directly return the saved watchlist
 export async function getWatchlist(userId) {
   const userCol = await users();

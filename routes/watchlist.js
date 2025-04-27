@@ -1,7 +1,7 @@
 // routes/watchlist.js
 import express from "express";
 import { ensureAuthenticated } from "../middleware/auth.js";
-import { addToWatchlist, getWatchlist } from "../data/watchlist.js";
+import { addToWatchlist, getWatchlist, removeFromWatchlist} from "../data/watchlist.js";
 import { cryptoRatings } from "../config/mongoCollections.js";
 import { ObjectId } from "mongodb";
 
@@ -44,5 +44,15 @@ router.get(
     }
   }
 );
+
+// POST /watchlist/remove/:id
+router.post('/watchlist/remove/:id', ensureAuthenticated, async (req, res, next) => {
+  try {
+    await removeFromWatchlist(req.session.user._id, req.params.id);
+    res.redirect('/watchlist');
+  } catch (e) {
+    next(e);
+  }
+});
 
 export default router;
