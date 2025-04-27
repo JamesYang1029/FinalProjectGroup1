@@ -3,6 +3,7 @@ import express from 'express';
 import bcrypt from 'bcrypt';
 import { users } from '../config/mongoCollections.js';
 import { registerUser, loginUser } from '../data/users.js';
+import { sanitizeInput } from '../validation/sanitization.js';
 
 const router = express.Router();
 
@@ -24,8 +25,15 @@ router.get('/register', (req, res) => {
 
 // POST /register
 router.post('/register', async (req, res) => {
-    const username = req.body.username?.trim().toLowerCase();
-    const password = req.body.password;
+  try {  
+    let { username, password } = req.body;
+
+    // ✅ sanitize and normalize input
+    username = sanitizeInput(username?.trim().toLowerCase());
+    password = sanitizeInput(password?.trim());
+
+    //const username = req.body.username?.trim().toLowerCase();
+    //const password = req.body.password;
   
     if (!username || !password || typeof username !== 'string' || typeof password !== 'string') {
       return res.status(400).render('register', { error: 'All fields are required and must be valid.' });
@@ -48,11 +56,22 @@ router.post('/register', async (req, res) => {
   
     req.session.user = { _id: insertResult.insertedId, username };
     res.redirect('/');
+  } catch (e) {
+    console.error(e);
+    res.status(500).render('register', { error: 'Internal server error' });
+  }
   });
 
 // POST /login
 router.post('/login', async (req, res) => {
-  const { username, password } = req.body;
+  try {
+    let { username, password } = req.body;
+
+    // ✅ sanitize and normalize input
+    username = sanitizeInput(username?.trim().toLowerCase());
+    password = sanitizeInput(password?.trim());
+
+  //const { username, password } = req.body;
   const userCollection = await users();
   const user = await userCollection.findOne({ username });
 
@@ -62,6 +81,10 @@ router.post('/login', async (req, res) => {
   if (!match) return res.status(400).render('login', { error: 'Invalid credentials' });
   req.session.user = { _id: user._id, username: user.username };
   res.redirect('/');
+} catch (e) {
+  console.error(e);
+  res.status(500).render('login', { error: 'Internal server error' });
+}
 });
 
 // GET /logout
