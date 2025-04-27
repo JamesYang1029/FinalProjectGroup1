@@ -38,7 +38,7 @@ and uses database name:
 We provide one script that clears and populates all collections:
 
   • `cryptoRatings` (market data)
-  • `financialData`  (365-day OHLC data)
+  • `financialData`  (365-day OHLC data) (this step calls api so it may take longer (aroung 30mins))
   • `users`          (20 test users with hashed passwords)
 
 To run it:
