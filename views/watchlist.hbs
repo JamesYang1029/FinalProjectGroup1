@@ -9,6 +9,9 @@
           <h2>{{this.name}} ({{this.symbol}})</h2>
           <p>Sustainability Score: {{this.sustainabilityScore}}</p>
           <p>Price: ${{this.price}}</p>
+          <form method="POST" action="/watchlist/remove/{{this._id}}" style="display:inline">
+            <button type="submit" class="btn">Remove</button>
+          </form>
         </li>
       {{/each}}
     </ul>
